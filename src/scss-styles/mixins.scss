@@ -1,0 +1,164 @@
+@mixin flex($flow, $justify, $align) {
+  display: flex;
+
+  @if ($flow == 0) {
+    flex-flow: row nowrap;
+  } @else {
+    flex-flow: $flow;
+  }
+
+  @if ($justify == 0) {
+    justify-content: center;
+  } @else {
+    justify-content: $justify;
+  }
+
+  @if ($align == 0) {
+    align-items: center;
+  } @else {
+    align-items: $align;
+  }
+}
+
+@mixin eflex($flow, $justify, $align) {
+  @if ($flow == 0) {
+    flex-flow: row nowrap;
+  } @else {
+    flex-flow: $flow;
+  }
+  @if ($justify == 0) {
+    justify-content: center;
+  } @else {
+    justify-content: $justify;
+  }
+  @if ($align == 0) {
+    align-items: center;
+  } @else {
+    align-items: $align;
+  }
+}
+
+@function v($var) {
+  @return var(--#{$var});
+}
+
+$mobile: 375;
+$tablet: 768;
+$sdesktop: 1000;
+$desktop: 1200;
+
+$breakpoints: (
+  "phone":        375px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px
+);
+
+//Written for min-width
+
+@mixin mq($width, $type: min){ //tablet, min
+  @if map_has_key($breakpoints, $width){  //true
+    $width: map_get($breakpoints, $width); //tablet -> 768px
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width){
+      @content;
+    }
+  }
+}
+
+
+
+@mixin center() {
+  display: grid;
+  place-items: center;
+}
+
+@mixin ab-center() {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// padding mixins
+
+@mixin px($rem-units) {
+  padding-left: #{$rem-units}rem;
+  padding-right: #{$rem-units}rem;
+}
+
+@mixin py($rem-units) {
+  padding-top: #{$rem-units}rem;
+  padding-bottom: #{$rem-units}rem;
+}
+
+
+//Create a clamp mixin that gives us the correct number for clamp
+
+
+
+// $mobile: 375;
+// $tablet: 768;
+// $sdesktop: 1000;
+// $desktop: 1200;
+
+
+$breakpoints-units: (
+  "mobile":        375,
+  "mobile-wide":   480,
+  "phablet":      560,
+  "tablet-small": 640,
+  "tablet":       768,
+  "tablet-wide":  1024,
+  "desktop":      1248,
+  "desktop-wide": 1440
+);
+
+@function fluid($size, $minSize, $maxSize, $oneRem: 10){
+  @if map-has-key($breakpoints-units, $size){
+    $size: map-get($breakpoints-units, $size);
+    $mobile: map-get($breakpoints-units, mobile);
+    $minWidth: $mobile / $oneRem;
+    $maxWidth: $size / $oneRem;
+    $slope: ($maxSize - $minSize) / ($maxWidth - $minWidth);
+    $yAxisIntersection: -$minWidth * $slope + $minSize;
+    $vwUnits: $slope * 100;
+    @return clamp(#{$minSize}rem, #{$yAxisIntersection}rem + #{$vwUnits}vw,#{$maxSize}rem);
+  }
+}
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+      border-radius: 3px;
+  }
+  @if $direction == down {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $color;
+      margin-top: 0 - round( $size / 2.5 );
+  } @else if $direction == up {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+      margin-bottom: 0 - round( $size / 2.5 );
+  } @else if $direction == right {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+      margin-right: -$size;
+  } @else if  $direction == left {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid $color;
+      margin-left: -$size;
+  }
+}

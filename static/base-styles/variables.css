@@ -1,0 +1,54 @@
+:root {
+    /* Colors - Dark - HSL */
+
+    --blue-50: hsl(213, 70%, 88%);
+    --blue-500: hsl(212, 20%, 32%);
+    --blue-700: hsl(212, 14%, 19%);
+    --blue-800: hsl(213, 13%, 13%);
+    --blue-900: hsl(214, 14%, 10%);
+
+    --cyan-200: #7EDBD4;
+    --cyan-500: #4ECDC4;
+    --cyan-600: #24E1D4;
+    --cyan-700: #27A69D;
+
+    --red-100: hsl(0, 100%, 79%);
+    --red-300: hsl(0, 100%, 71%);
+    --red-500: hsl(0, 100%, 66%);
+
+    --white-100:hsl(0, 0%, 100%);
+    --white-97:hsl(0, 0%, 97%);
+    --white-93:hsl(0, 0%, 93%);
+    --white-86:hsl(0, 0%, 86%);
+    --white-80:hsl(0, 0%, 80%);
+    --white-70:hsl(0, 0%, 70%);
+    --white-60:hsl(0, 0%, 60%);
+    --white-38:hsl(0, 0%, 38%);
+
+    --black-100: hsla(0, 0%, 0%, 1);
+    --black-100: hsla(0, 0%, 0%, 0.85);
+    --black-100: hsla(0, 0%, 0%, 0.75);
+    --black-100: hsla(0, 0%, 0%, 0.5);
+    --black-100: hsla(0, 0%, 0%, 0.3);
+
+    --fira: 'Fira Sans', sans-serif;
+
+    --z-index-priority: 10;
+    --z-index-overlay: 5;
+}
+
+:root {
+    /* Colors - Dark - Semantic */
+    --clr-highlight-1: var(--white-93);
+    --clr-highlight-2: var(--white-80);
+    --clr-highlight-3: var(--white-60);
+    --clr-highlight-last: var(--white-38);
+
+    --clr-accent-cyan: var(--cyan-600);
+    --clr-accent-cyan-2: var(--cyan-700);
+    --clr-accent-red: var(--red-300);
+
+    --clr-bg: var(--blue-900);
+    --clr-bg-offset: var(--blue-800);
+
+}
