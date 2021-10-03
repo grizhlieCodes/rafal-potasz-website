@@ -1,57 +1,104 @@
-:root {
-    /* Colors - Dark - HSL */
+html {
+	/* Colors - Dark - HSL */
 
-    --blue-50: hsl(213, 70%, 88%);
-    --blue-500: hsl(212, 20%, 32%);
-    --blue-700: hsl(212, 14%, 19%);
-    --blue-800: hsl(213, 13%, 13%);
-    --blue-900: hsl(214, 14%, 10%);
+	--blue-50: hsl(213, 70%, 88%);
+	--blue-500: hsl(212, 20%, 32%);
+	--blue-700: hsl(212, 14%, 19%);
+	--blue-800: hsl(213, 13%, 13%);
+	--blue-900: hsl(214, 14%, 10%);
 
-    --cyan-200: #7EDBD4;
-    --cyan-500: #4ECDC4;
-    --cyan-600: #24E1D4;
-    --cyan-700: #27A69D;
+	--cyan-200: #7edbd4;
+	--cyan-500: #4ecdc4;
+	--cyan-600: #24e1d4;
+	--cyan-700: #27a69d;
 
-    --red-100: hsl(0, 100%, 79%);
-    --red-300: hsl(0, 100%, 71%);
-    --red-500: hsl(0, 100%, 66%);
+	--red-100: hsl(0, 100%, 79%);
+	--red-300: hsl(0, 100%, 71%);
+	--red-500: hsl(0, 100%, 66%);
 
-    --white-100:hsl(0, 0%, 100%);
-    --white-97:hsl(0, 0%, 97%);
-    --white-93:hsl(0, 0%, 93%);
-    --white-86:hsl(0, 0%, 86%);
-    --white-80:hsl(0, 0%, 80%);
-    --white-70:hsl(0, 0%, 70%);
-    --white-60:hsl(0, 0%, 60%);
-    --white-38:hsl(0, 0%, 38%);
+	--white-100: hsl(0, 0%, 100%);
+	--white-97: hsl(0, 0%, 97%);
+	--white-93: hsl(0, 0%, 93%);
+	--white-86: hsl(0, 0%, 86%);
+	--white-80: hsl(0, 0%, 80%);
+	--white-70: hsl(0, 0%, 70%);
+	--white-60: hsl(0, 0%, 60%);
+	--white-38: hsl(0, 0%, 38%);
 
-    --black-100: hsla(0, 0%, 0%, 1);
-    --black-100: hsla(0, 0%, 0%, 0.85);
-    --black-100: hsla(0, 0%, 0%, 0.75);
-    --black-100: hsla(0, 0%, 0%, 0.5);
-    --black-100: hsla(0, 0%, 0%, 0.3);
+	--black-100: hsla(0, 0%, 0%, 1);
+	--black-85: hsla(0, 0%, 0%, 0.85);
+	--black-75: hsla(0, 0%, 0%, 0.75);
+	--black-50: hsla(0, 0%, 0%, 0.5);
+	--black-30: hsla(0, 0%, 0%, 0.3);
 
-    --fira: 'Fira Sans', sans-serif;
+	--fira: 'Fira Sans', sans-serif;
 
-    --z-index-priority: 10;
-    --z-index-overlay: 5;
+	--z-index-priority: 10;
+	--z-index-overlay: 5;
 }
 
-:root {
-    /* Colors - Dark - Semantic */
-    --clr-highlight-1: var(--white-93);
-    --clr-highlight-2: var(--white-80);
-    --clr-highlight-3: var(--white-60);
-    --clr-highlight-last: var(--white-38);
+html {
+	/* TEXT Colors*/
+        --clr-text-heading: var(--white-93);
+        --clr-text-focused: var(--white-80);
+        --clr-text-faded: var(--white-60);
+        --clr-text-last: var(--white-38);
+        --clr-text-accent-cyan: var(--cyan-600);
+        --clr-text-accent-red: var(--red-300);
+        --clr-text-btn: var(--blue-800);
 
-    --clr-accent-cyan: var(--cyan-600);
-    --clr-accent-cyan-2: var(--cyan-700);
-    --clr-accent-red: var(--red-300);
+	/* Background Colors */
+        --clr-bg-accent-cyan: var(--cyan-600);
+        --clr-bg-accent-red: var(--red-300);
 
-    --clr-bg: var(--blue-900);
-    --clr-bg-offset: var(--blue-800);
 
-    --clr-hero-darker: var(--blue-900);
-    --clr-hero-lighter: var(--blue-500);
 
+
+	/* Misc Colors */
+        /* Toggle Colors */
+            --clr-toggle-bg: var(--blue-700);
+            --clr-toggle-dial: var(--blue-900);
+            --clr-toggle-accent: var(--cyan-600);
+
+        /* Hero Img Bg Colors */
+            --clr-hero-bg-img-darker: var(--blue-900);
+            --clr-hero-bg-img-lighter: var(--blue-500);
+        /* Text Colors */
+    
+        
+        /* Burger Colors */
+            --clr-burger-btn-bg: var(--white-93);
+            --clr-burger-btn-bg-active: var(--cyan-600);
+        
+        /* Overlay Colors */
+            --clr-overlay-bg: var(--blue-900);
 }
+
+body.light {
+    /* Text colors changed for light mode */
+	--clr-text-heading: var(--blue-700);
+	--clr-text-focused: var(--blue-500);
+    --clr-text-accent-cyan: var(--cyan-700);
+
+    /* Misc colors changed for light mode */
+    --clr-burger-btn-bg: var(--blue-700);
+	--clr-burger-btn-bg-active: var(--cyan-700);
+
+    /* Toggle colors changed for light mode */
+    --clr-toggle-bg: var(--blue-500);
+	--clr-toggle-dial: var(--white-97);
+	--clr-toggle-accent: var(--cyan-600);
+
+    /* Hero Image colors changed for light mode */
+    --clr-hero-bg-img-darker: var(--white-97);
+	--clr-hero-bg-img-lighter: var(--black-75);
+}
+
+/* What do we need variables for? */
+
+/* 
+    - Text
+    - Background
+    - Borders/Lines
+    - Misc - SVgs, spans
+*/
