@@ -1,6 +1,8 @@
 <script>
 	import portfolio from '$lib/stores/portfolio.js';
 	import Logo from '$lib/Navigation/Logo.svelte'
+    import Hero from '$lib/Home/hero/Hero.svelte'
+
 </script>
 
 <!-- {#each $portfolio as {vimeoEmbed, name}}
@@ -14,13 +16,9 @@
 	</div>
 {/each} -->
 
-<section>
-	<!-- <Logo width="3.9rem"/> -->
-</section>
+<Hero />
 
 <style lang="scss">
-	iframe {
-		pointer-events: none;
-	}
-
+	@import '../scss-styles/mixins';
+	
 </style>
