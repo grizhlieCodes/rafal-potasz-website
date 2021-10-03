@@ -28,13 +28,13 @@
 		}
 	}
 
-	section.section--900 {
-		grid-template-columns: 1fr minmax(27rem, 90rem) 1fr;
-	}
+	// section.section--900 {
+	// 	grid-template-columns: 1fr minmax(27rem, 90rem) 1fr;
+	// }
 
-	:global(section.section--900 > *) {
-		grid-column: 2/3;
-	}
+	// :global(section.section--900 > *) {
+	// 	grid-column: 2/3;
+	// }
 
 	section:nth-of-type(1){
 		padding-top: 5rem;
