@@ -15,6 +15,7 @@
         width: 100%;
         height: 100%;
         background: v(clr-bg);
-        opacity: 0.85;
+        opacity: 0.95;
+        z-index: v(z-index-overlay);
     }
 </style>
