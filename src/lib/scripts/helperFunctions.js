@@ -17,3 +17,11 @@ export const calcRealSize = (winWidth, scrollWidth) => {
     }
     return result
 };
+
+export const setHeroImgHeight = (container) => {
+    const imagesContainer = container.querySelector('.images-container');
+    const firstImage = imagesContainer.querySelector('img:nth-of-type(1)');
+    const firstImageHeight = firstImage.getBoundingClientRect().height;
+
+    container.style.height = firstImageHeight + 'px';
+}
