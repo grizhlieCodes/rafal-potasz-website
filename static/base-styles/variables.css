@@ -51,4 +51,7 @@
     --clr-bg: var(--blue-900);
     --clr-bg-offset: var(--blue-800);
 
+    --clr-hero-darker: var(--blue-900);
+    --clr-hero-lighter: var(--blue-500);
+
 }
