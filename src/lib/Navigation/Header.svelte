@@ -32,10 +32,11 @@
 	@import '../../scss-styles/mixins';
 	header {
 		@include flex(row nowrap, space-between, center);
-		padding: 2.8rem 2.4rem;
+		padding: 2.8rem 0rem;
 		position: relative;
 		width: 100%;
 		max-width: 111rem;
 		margin: auto;
+		grid-area: header;
 	}
 </style>
