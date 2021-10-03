@@ -37,7 +37,7 @@ let portfolioData = [
     {
         name: "galleria",
         subtitle: "Website Development",
-        type: ["Featured", "Dev"],
+        type: [ "Dev"],
         dateStamp: new Date('2021', '06', '28'),
         description: ["As soon as I saw the design I wanted to code it up. This is a sleak and minimal gallery web-app.", "Figuring out how to structure everything with CSS grid was the most fun and challenging aspect of this project now that I look back on it. I defenitely want to improve in my understanding of CSS grid in order to write up a custom JS code for a mosaic layout grid."],
         github: 'https://github.com/grizhlieCodes/galleria-slideshow-site',
@@ -48,7 +48,7 @@ let portfolioData = [
     {
         name: "designo",
         subtitle: "Website Development",
-        type: ["Featured", "Dev"],
+        type: ["Dev"],
         dateStamp: new Date('2021', '01', '23'),
         description: ["Beautiful design turned into code. A 7 page project of which the prime focus was on sass architecture and thinking via components and reusable, clean, code.", "This project included working with leaflet js and most of the time was spent styling as well as creating components. This was the first time I attempted thinking via components and the results were favourable; I quickly picked up Svelte afterwards to expand on them."],
         github: 'https://github.com/grizhlieCodes/designo',
@@ -59,7 +59,7 @@ let portfolioData = [
     {
         name: "antara",
         subtitle: "Brand Design + Website Design & Development",
-        type: ["Featured", "Dev"],
+        type: ["Dev", "Design"],
         dateStamp: new Date('2020', '10', '6'),
         description: ["A real project for the family business. I had to rebrand the company and opted for a sleek professional design. My code will be using an older mindset of pixel-perfection but overall the website looks good. This project is actually the reason I wanted to learn web development, read about it in the about me page!", "Fun fact: The name 'Antara' was derived from the first 2 letters of each of the team member's name: ANna, TAriq and RAfal, little bit of witty creative on my part 😁."],
         github: '',
