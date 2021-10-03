@@ -2,13 +2,9 @@
 
 // gsap.registerPlugin(ScrollTrigger);
 export const flyItem = (node, [direction, delay = 0, index = 0]) => {
-    console.log(direction, delay, index)
     gsap.from(node, {
         scrollTrigger: {
             trigger: node,
-            // start: "bottom -20rem",
-            // scrub: 1,
-            // markers: 1
         },
         x: direction,
         duration: 0.15,
@@ -20,16 +16,11 @@ export const flyItem = (node, [direction, delay = 0, index = 0]) => {
 //Fly multiple items with a delay
 export const flyMultipleItems = (node, direction, itemNode) => {
     let items = [...node.querySelectorAll("a")]
-    // console.log(items)
     items.forEach((item, index) => {
-        // console.log(item)
         gsap.from(item, {
             scrollTrigger: {
                 trigger: item,
-                // scrub: 1,
                 markers: 1,
-                // start: "top 75%",
-                // end: "bottom 75%"
             },
             x: direction,
             duration: 0.5,
@@ -55,7 +46,6 @@ export const moveOnScroll = (node, distance) => {
                 start: "top 50rem",
                 end: "bottom 0%",
                 scrub: 1,
-                // markers: 1
             },
             y: bottom,
         })
