@@ -1,0 +1,97 @@
+<script>
+	import { moveOnScroll } from '$lib/scripts/animations.js';
+
+	let imageNames = [
+		{ name: 'rafal', directionFrom: [] },
+		{ name: 'rust', directionFrom: ['top', 'left'] },
+		{ name: 'computer', directionFrom: ['bottom'] },
+		{ name: 'watch', directionFrom: ['left'] },
+		{ name: 'statue', directionFrom: ['top', 'right'] },
+		{ name: 'eagle', directionFrom: ['bottom', 'right'] },
+		{ name: 'book', directionFrom: ['bottom', 'left'] }
+	];
+</script>
+
+<div class="hero-img-container">
+	<div class="backdrop" />
+	<div class="imges-container">
+		{#each imageNames as { name }}
+			<img
+				class={name}
+				src="/images/home/shared/hero-images/{name}.png"
+				alt={name}
+				use:moveOnScroll={5} />
+		{/each}
+	</div>
+</div>
+
+<style lang="scss">
+	@import '../../../scss-styles/mixins';
+
+	.hero-img-container {
+		width: 100%;
+		max-width:  fluid(desktop, 32.5, 40);
+		height: fluid(desktop, 32.5, 45);
+		position: relative;
+		z-index: 1;
+		@include mq(tablet){
+            flex-grow: 1;
+        }
+	}
+
+	.imges-container {
+		width: 100%;
+		height: 0;
+		padding-top: 111%;
+		position: absolute;
+	}
+
+	.backdrop {
+		top: 0;
+		left: 0;
+		width: 100%;
+		// height: 0;
+		padding-top: 100%;
+		/* height: 100%; */
+		/* aspect-ratio: 1; */
+		background: radial-gradient(circle, v(clr-hero-lighter) 10%, v(clr-hero-darker));
+		border-radius: 50%;
+		position: absolute;
+	}
+
+	.imges-container img {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.imges-container img:not(:is(.rafal, .eagle, .book, .computer)) {
+		animation: 4s infinite hoverImage ease-in-out alternate;
+	}
+
+	.imges-container img.rust {
+		animation-delay: 1.5s;
+	}
+	.imges-container img.watch {
+		animation-delay: 0.5s;
+	}
+
+	@keyframes hoverImage {
+		from {
+			top: 0;
+		}
+		to {
+			top: -2rem;
+		}
+	}
+
+	.rafal {
+		z-index: 2;
+	}
+	.book,
+	.computer,
+	.eagle {
+		z-index: 3;
+	}
+</style>
