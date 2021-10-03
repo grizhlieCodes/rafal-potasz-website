@@ -1,5 +1,7 @@
 <script>
 	import { moveOnScroll } from '$lib/scripts/animations.js';
+	import { setHeroImgHeight } from '$lib/scripts/helperFunctions.js';
+	import {onMount} from 'svelte';
 
 	let imageNames = [
 		{ name: 'rafal', directionFrom: [] },
@@ -10,11 +12,20 @@
 		{ name: 'eagle', directionFrom: ['bottom', 'right'] },
 		{ name: 'book', directionFrom: ['bottom', 'left'] }
 	];
+	let container;
+	onMount(() => {
+		setHeroImgHeight(container)
+	})
+
 </script>
 
-<div class="hero-img-container">
+<!-- <svelte:window bind:innerWidth={width} /> -->
+
+<svelte:window on:resize={() => setHeroImgHeight(container)} />
+
+<div class="hero-img-container" bind:this={container}>
 	<div class="backdrop" />
-	<div class="imges-container">
+	<div class="images-container">
 		{#each imageNames as { name }}
 			<img
 				class={name}
@@ -30,16 +41,16 @@
 
 	.hero-img-container {
 		width: 100%;
-		max-width:  fluid(desktop, 32.5, 40);
-		height: fluid(desktop, 32.5, 45);
+		max-width: fluid(desktop, 32.5, 40);
+		// height: fluid(desktop, 32.5, 45);
 		position: relative;
 		z-index: 1;
-		@include mq(tablet){
-            flex-grow: 1;
-        }
+		@include mq(tablet) {
+			flex-grow: 1;
+		}
 	}
 
-	.imges-container {
+	.images-container {
 		width: 100%;
 		height: 0;
 		padding-top: 111%;
@@ -59,21 +70,21 @@
 		position: absolute;
 	}
 
-	.imges-container img {
+	.images-container img {
 		width: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
 	}
 
-	.imges-container img:not(:is(.rafal, .eagle, .book, .computer)) {
+	.images-container img:not(:is(.rafal, .eagle, .book, .computer)) {
 		animation: 4s infinite hoverImage ease-in-out alternate;
 	}
 
-	.imges-container img.rust {
+	.images-container img.rust {
 		animation-delay: 1.5s;
 	}
-	.imges-container img.watch {
+	.images-container img.watch {
 		animation-delay: 0.5s;
 	}
 
