@@ -36,8 +36,12 @@
 	:global(body) {
 		width: 100%;
 		height: 200vh;
-		background-image: url('/images/shared/bg-dark.png');
+		background-image: url('/images/shared/bg-light.png');
 		background-repeat: repeat;
+	}
+
+	:global(body.dark) {
+		background-image: url('/images/shared/bg-dark.png');
 	}
 
 	:global(div#svelte) {
@@ -46,10 +50,14 @@
 		grid-template-areas:
 			'. header .'
 			'. main .'
-			'. footer .';
+			'footer footer footer';
 
 		@include mq(tablet) {
-			grid-template-columns: minmax(4rem, 1fr) minmax(70rem, 90rem) minmax(4rem, 1fr);
+			grid-template-columns: minmax(4rem, 1fr) 1fr minmax(70rem, 90rem) 1fr minmax(4rem, 1fr);
+			grid-template-areas:
+				'. header header header .'
+				'. . main . .'
+				'footer footer footer footer footer';
 		}
 
 		@include mq(desktop) {
