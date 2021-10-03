@@ -52,7 +52,8 @@
 		h1 {
 			font-size: fluid('desktop', 3.5, 5);
 			font-weight: 700;
-			color: v(clr-highlight-1);
+			color: v(clr-text-heading);
+			transition: color 400ms;
 			line-height: fluid('desktop', 3.5, 5);
 		}
 
@@ -60,7 +61,8 @@
 			max-width: 34rem;
 			margin-bottom: 2rem;
 			font-size: 1.8rem;
-			color: v(clr-highlight-2);
+			color: v(clr-text-focused);
+			transition: color 400ms;
 			line-height: 2.3rem;
 			font-weight: 700;
 

@@ -8,13 +8,11 @@
     @import '../../scss-styles/mixins';
     .overlay {
         position: fixed;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
+        @include ab-center();
         width: 100%;
         height: 100%;
-        background: v(clr-bg);
+        background: v(clr-overlay-bg);
+        transition: background 400ms;
         opacity: 0.95;
         z-index: v(z-index-overlay);
     }

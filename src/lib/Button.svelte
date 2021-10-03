@@ -1,7 +1,5 @@
 <script>
 	export let link, content, type, btnClass;
-
-	console.log(content);
 </script>
 
 {#if type === 'anchor'}
@@ -17,14 +15,15 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		padding: 1rem 2rem;
-		transition: opacity 250ms, transform 250ms;
 		outline: none;
 		border: none;
+		color: v(clr-text-btn);
+		transition: color 400ms, background 400ms,opacity 400ms, transform 400ms;
 		&.primary {
-			background: v(clr-accent-cyan);
+			background: v(clr-bg-accent-cyan);
 		}
 		&.secondary {
-			background: v(clr-accent-red);
+			background: v(clr-bg-accent-red);
 		}
 		&:hover {
 			opacity: 0.8;

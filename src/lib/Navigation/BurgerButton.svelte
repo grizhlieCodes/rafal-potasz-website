@@ -26,10 +26,9 @@
 			--cubic: cubic-bezier(0.9, 0.33, 0.83, 0.92);
 			display: block;
 			height: 0.2rem;
-			background: v(clr-highlight-1);
+			background: v(clr-burger-btn-bg);
 			border-radius: 1rem;
-			transition: background 250ms v(cubic), width 250ms v(cubic), transform 250ms v(cubic),
-				opacity 250ms v(cubic);
+			transition: background 400ms v(cubic), width 400ms v(cubic), transform 400ms v(cubic),	opacity 400ms v(cubic);
 			transform-origin: 0.1px 1px;
 
 			&:nth-child(1) {
@@ -45,13 +44,13 @@
 
 		&:hover {
 			span {
-				background: v(clr-accent-cyan);
+				background: v(clr-burger-btn-bg-active);
 			}
 		}
 
 		&.active {
 			span {
-				background: v(clr-accent-cyan);
+				background: v(clr-burger-btn-bg-active);
 				&:nth-child(1) {
 					transform: rotate(45deg);
 				}

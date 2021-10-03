@@ -19,8 +19,6 @@
 
 </script>
 
-<!-- <svelte:window bind:innerWidth={width} /> -->
-
 <svelte:window on:resize={() => setHeroImgHeight(container)} />
 
 <div class="hero-img-container" bind:this={container}>
@@ -42,7 +40,6 @@
 	.hero-img-container {
 		width: 100%;
 		max-width: fluid(desktop, 32.5, 40);
-		// height: fluid(desktop, 32.5, 45);
 		position: relative;
 		z-index: 1;
 		@include mq(tablet) {
@@ -65,7 +62,8 @@
 		padding-top: 100%;
 		/* height: 100%; */
 		/* aspect-ratio: 1; */
-		background: radial-gradient(circle, v(clr-hero-lighter) 10%, v(clr-hero-darker));
+		background: radial-gradient(circle, v(clr-hero-bg-img-lighter) 10%, v(clr-hero-bg-img-darker));
+		transition: background 400ms;
 		border-radius: 50%;
 		position: absolute;
 	}

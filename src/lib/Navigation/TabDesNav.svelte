@@ -35,28 +35,28 @@
 	}
 
 	a.navigation__link {
-		transition: color 250ms;
+		transition: color 400ms;
 		font-size: 1.6rem;
 		font-family: v(fira);
-		color: v(clr-highlight-3);
+		color: v(clr-text-faded);
 		z-index: 5;
 		@include flex(row nowrap, start, center);
-		gap: 2.2rem;
+		gap: 1rem;
 
 		&.active {
-			color: v(clr-accent-cyan);
+			color: v(clr-text-accent-cyan);
 		}
 
 		&:hover:not(.active) {
-			color: v(clr-highlight-2);
+			color: v(clr-text-focused);
 		}
 	}
 
 	:global(a.navigation__link.active svg path) {
-		fill: v(clr-accent-cyan) !important;
+		fill: v(clr-text-accent-cyan) !important;
 	}
 
 	:global(a.navigation__link:hover:not(.active) svg path) {
-		fill: v(clr-highlight-2) !important;
+		fill: v(clr-text-focused) !important;
 	}
 </style>

@@ -6,6 +6,7 @@
 	import MobileNav from './MobileNav.svelte';
 	import TabDesNav from './TabDesNav.svelte';
 	import BurgerButton from './BurgerButton.svelte';
+	import DmToggle from './DarkmodeToggle.svelte'
 
 	let showMobileNav = false,
 		size = getContext('size');
@@ -18,6 +19,7 @@
 
 <header>
 	<Logo />
+	<DmToggle />
 	{#if $size === 'mobile'}
 		<BurgerButton on:toggleMenu={toggleMobileNav} />
 		{#if showMobileNav}

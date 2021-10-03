@@ -5,8 +5,6 @@
 	import {getContext} from 'svelte';
 
 	let size = getContext('size')
-
-	$: console.log($size)
 </script>
 
 <Section>
