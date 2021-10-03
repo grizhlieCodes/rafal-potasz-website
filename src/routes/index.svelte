@@ -15,10 +15,13 @@
             title="{name}"/>
 	</div>
 {/each} -->
-
-<Hero />
+<main>
+	<Hero />
+</main>
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
-	
+	main {
+		grid-area: main;
+	}
 </style>
