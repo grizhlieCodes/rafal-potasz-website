@@ -36,6 +36,7 @@ export const moveOnScroll = (node, distance) => {
     const bottom = `${value}rem`
     const left = `-${value}rem`
     const right = `${value}rem`
+    const startVal = '-50%'
     if (nodeClass === 'rafal') {
         return
     }
@@ -43,7 +44,7 @@ export const moveOnScroll = (node, distance) => {
         gsap.to(node, {
             scrollTrigger: {
                 trigger: node,
-                start: "top 50rem",
+                start: startVal,
                 end: "bottom 0%",
                 scrub: 1,
             },
@@ -55,7 +56,7 @@ export const moveOnScroll = (node, distance) => {
         gsap.to(node, {
             scrollTrigger: {
                 trigger: node,
-                start: "top 50rem",
+                start: startVal,
                 end: "bottom 0%",
                 scrub: 1
             },
@@ -69,7 +70,7 @@ export const moveOnScroll = (node, distance) => {
         gsap.to(node, {
             scrollTrigger: {
                 trigger: node,
-                start: "top 50rem",
+                start: startVal,
                 end: "bottom 0%",
                 scrub: 1
             },
@@ -82,7 +83,7 @@ export const moveOnScroll = (node, distance) => {
         gsap.to(node, {
             scrollTrigger: {
                 trigger: node,
-                start: "top 50rem",
+                start: startVal,
                 end: "bottom 0%",
                 scrub: 1
             },
@@ -94,7 +95,7 @@ export const moveOnScroll = (node, distance) => {
         gsap.to(node, {
             scrollTrigger: {
                 trigger: node,
-                start: "top 50rem",
+                start: startVal,
                 end: "bottom 0%",
                 scrub: 1
             },
@@ -107,9 +108,9 @@ export const moveOnScroll = (node, distance) => {
         gsap.to(node, {
             scrollTrigger: {
                 trigger: node,
-                start: "top 50rem",
+                start: startVal,
                 end: "bottom 0%",
-                scrub: 1
+                scrub: 1,
             },
             // opacity: 1,
             x: right,

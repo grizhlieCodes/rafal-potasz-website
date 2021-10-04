@@ -47,6 +47,7 @@
 	}
 
 	:global(div#svelte) {
+		overflow: hidden;
 		display: grid;
 		grid-template-columns: minmax(2.4rem, 4rem) minmax(32.7rem, 1fr) minmax(2.4rem, 4rem);
 		grid-template-areas:
