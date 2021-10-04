@@ -13,10 +13,20 @@
 		{ name: 'book', directionFrom: ['bottom', 'left'] }
 	];
 	let container;
-	onMount(() => {
+	let timeoutCounter = 0
+
+	const countedTimeout = () => {
+		setHeroImgHeight(container)
+		timeoutCounter++
 		setTimeout(() => {
-			setHeroImgHeight(container)
+			if(timeoutCounter !== 5){
+				setHeroImgHeight(container)
+			}
 		},600)
+	}
+
+	onMount(() => {
+		countedTimeout()
 	})
 
 </script>
