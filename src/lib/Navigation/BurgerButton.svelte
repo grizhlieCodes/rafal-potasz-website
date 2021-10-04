@@ -1,7 +1,8 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
-	let buttonClicked = false;
+	export let buttonActive
+	$: buttonClicked = buttonActive;
 	const toggleBtnClicked = () => {
 		buttonClicked = !buttonClicked;
         dispatch('toggleMenu')

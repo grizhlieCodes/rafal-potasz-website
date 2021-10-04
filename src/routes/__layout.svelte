@@ -9,7 +9,9 @@
 		scrollbarWidth,
 		realWidth = writable(''),
 		mounted = false,
-		showOverlay = false;
+		showOverlay = false,
+		showMobileNav = false;
+
 	$: realWidth.set(calcRealSize(windowWidth, scrollbarWidth));
 	setContext('size', realWidth);
 
@@ -19,20 +21,31 @@
 			scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 		}
 	});
+
+	const toggleMenu = () => {
+		showOverlay = !showOverlay
+		showMobileNav = !showMobileNav
+	};
+
+	const closeActiveModal = () => {
+		if(showMobileNav){
+			showOverlay = !showOverlay
+			showMobileNav = !showMobileNav
+		}
+	}
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
 {#if showOverlay}
-	<Overlay />
+	<Overlay on:closeModal={closeActiveModal} />
 {/if}
 
-<Header on:toggleMenu={() => (showOverlay = !showOverlay)} />
+<Header on:toggleMenu={toggleMenu} {showMobileNav} />
 <slot />
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
-
 
 	:global(body) {
 		width: 100%;

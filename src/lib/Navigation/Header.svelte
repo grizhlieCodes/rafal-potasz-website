@@ -7,11 +7,13 @@
 	import TabDesNav from './TabDesNav.svelte';
 	import BurgerButton from './BurgerButton.svelte';
 
-	let showMobileNav = false,
-		size = getContext('size');
+	export let showMobileNav = false
+
+	$: showMobileNavReactive = showMobileNav
+
+	let size = getContext('size');
 
 	const toggleMobileNav = () => {
-		showMobileNav = !showMobileNav;
 		dispatch('toggleMenu');
 	};
 </script>
@@ -19,8 +21,8 @@
 <header>
 	<Logo />
 	{#if $size === 'mobile'}
-		<BurgerButton on:toggleMenu={toggleMobileNav} />
-		{#if showMobileNav}
+		<BurgerButton on:toggleMenu={toggleMobileNav} buttonActive={showMobileNavReactive} />
+		{#if showMobileNavReactive}
 			<MobileNav />
 		{/if}
     {:else}

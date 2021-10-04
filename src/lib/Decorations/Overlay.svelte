@@ -1,8 +1,25 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
     import {fade} from 'svelte/transition';
+
+    const dispatchModalClosure = () => {
+        dispatch('closeModal')
+    }
+
+    const handleKeydown = (e) => {
+        let key = e.key
+        let escape = key === 'Escape'
+        if(escape){
+            dispatchModalClosure()
+        }
+    }
 </script>
 
-<div class="overlay" transition:fade={{duration: 250}}></div>
+<svelte:window on:keydown={handleKeydown} />
+
+<div class="overlay" transition:fade={{duration: 250}} on:click={dispatchModalClosure}></div>
 
 <style lang="scss">
     @import '../../scss-styles/mixins';
