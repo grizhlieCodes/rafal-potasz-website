@@ -7,7 +7,7 @@
 			content: 'my work 👆',
 			btnClass: 'primary',
 			type: 'anchor',
-			link: '/'
+			link: '/portfolio'
 		},
 		{
 			content: 'say hello 📧',

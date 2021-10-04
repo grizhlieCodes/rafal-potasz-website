@@ -27,5 +27,7 @@ import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
 	@import '../scss-styles/mixins';
 	main {
 		grid-area: main;
+		@include flex(column nowrap, start, start);
+		gap: 12rem;
 	}
 </style>

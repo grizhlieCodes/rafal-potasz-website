@@ -1,5 +1,5 @@
 <script>
-	export let direction, dimension, top = '0', left = '0', bottom = '0', right = '0';
+	export let direction, dimension, top = '', left = '', bottom = '', right = '';
 </script>
 
 {#if direction === 'horizontal'}

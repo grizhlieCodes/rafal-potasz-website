@@ -21,7 +21,7 @@
 		justify-items: center;
 		align-items: start;
 		padding: v(padding);
-		overflow: hidden;
+		// overflow: hidden;
 
 		@include mq(tablet){
 			--padding: 4rem;
