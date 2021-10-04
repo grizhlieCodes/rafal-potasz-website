@@ -1,13 +1,13 @@
 <script>
-    import HeroImage from './HeroImage.svelte'
-    import HeroText from './HeroText.svelte'
-	import Section from '$lib/Core/Section.svelte'
-	import {getContext} from 'svelte';
+	import HeroImage from './HeroImage.svelte';
+	import HeroText from './HeroText.svelte';
+	import Section from '$lib/Core/Section.svelte';
+	import { getContext } from 'svelte';
 
-	let size = getContext('size')
+	let size = getContext('size');
 </script>
 
-<Section>
+<Section sectionClass="hero">
 	<div class="flex-container">
 		<HeroImage />
 		<HeroText />
@@ -22,9 +22,8 @@
 		@include flex(column nowrap, start, center);
 		gap: 6rem;
 
-		
-        @include mq(tablet){
-            @include eflex(row-reverse nowrap, space-between, center);
-        }
+		@include mq(tablet) {
+			@include eflex(row-reverse nowrap, space-between, center);
+		}
 	}
 </style>

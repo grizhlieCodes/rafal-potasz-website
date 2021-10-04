@@ -19,6 +19,7 @@
 		border: none;
 		color: v(clr-text-btn);
 		transition: color 400ms, background 400ms,opacity 400ms, transform 400ms;
+		font-family: v(fira);
 		&.primary {
 			background: v(clr-bg-accent-cyan);
 		}

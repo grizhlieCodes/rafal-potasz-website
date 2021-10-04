@@ -1,5 +1,6 @@
 <script>
 	import Button from '$lib/Button.svelte';
+	import Heading from '$lib/Decorations/Heading.svelte'
 
 	let buttons = [
 		{
@@ -18,11 +19,7 @@
 </script>
 
 <div class="hero-text-container">
-	<h1>
-		No-nonsense
-		<br />
-		web developer
-	</h1>
+	<Heading content="No-nonsense" content2="web developer" type="1" />
 	<p>
 		Hello 👋, I'm Rafal, a self-taught front-end web developer with an eye for design, obsessively
 		learning towards becoming full-stack.
@@ -50,11 +47,7 @@
 		}
 
 		h1 {
-			font-size: fluid('desktop', 3.5, 5);
-			font-weight: 700;
-			color: v(clr-text-heading);
-			transition: color 400ms;
-			line-height: fluid('desktop', 3.5, 5);
+
 		}
 
 		p {

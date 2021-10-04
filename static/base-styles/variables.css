@@ -19,6 +19,7 @@ html {
 	--white-100: hsl(0, 0%, 100%);
 	--white-97: hsl(0, 0%, 97%);
 	--white-93: hsl(0, 0%, 93%);
+	--white-90: hsl(0, 0%, 90%);
 	--white-86: hsl(0, 0%, 86%);
 	--white-80: hsl(0, 0%, 80%);
 	--white-70: hsl(0, 0%, 70%);
@@ -35,6 +36,7 @@ html {
 
 	--z-index-priority: 10;
 	--z-index-overlay: 5;
+	--z-index-bg: -1;
 }
 
 html {
@@ -50,11 +52,15 @@ html {
 	/* Background Colors */
         --clr-bg-accent-cyan: var(--cyan-600);
         --clr-bg-accent-red: var(--red-300);
+		--clr-body-bg: var(--blue-900);
 
 
 
 
 	/* Misc Colors */
+
+		/* Lines Colors */
+			--clr-line-bg: var(--blue-700);
         /* Toggle Colors */
             --clr-toggle-bg: var(--blue-700);
             --clr-toggle-dial: var(--blue-900);
@@ -72,26 +78,38 @@ html {
         
         /* Overlay Colors */
             --clr-overlay-bg: var(--blue-900);
+
+		/* Logo Colors */
+			--clr-text-logo-span: var(--white-38);
 }
 
 body.light {
     /* Text colors changed for light mode */
-	--clr-text-heading: var(--blue-700);
-	--clr-text-focused: var(--blue-500);
-    --clr-text-accent-cyan: var(--cyan-700);
+		--clr-text-heading: var(--blue-700);
+		--clr-text-focused: var(--blue-500);
+		--clr-text-accent-cyan: var(--cyan-700);
+
+	/* Backgrounds */
+		--clr-body-bg: var(--white-97);
+
+	/* Misc colr for lines */
+		--clr-line-bg: var(--white-90);
 
     /* Misc colors changed for light mode */
-    --clr-burger-btn-bg: var(--blue-700);
-	--clr-burger-btn-bg-active: var(--cyan-700);
+		--clr-burger-btn-bg: var(--blue-700);
+		--clr-burger-btn-bg-active: var(--cyan-700);
 
     /* Toggle colors changed for light mode */
-    --clr-toggle-bg: var(--blue-500);
-	--clr-toggle-dial: var(--white-97);
-	--clr-toggle-accent: var(--cyan-600);
+		--clr-toggle-bg: var(--blue-500);
+		--clr-toggle-dial: var(--white-97);
+		--clr-toggle-accent: var(--cyan-600);
 
     /* Hero Image colors changed for light mode */
-    --clr-hero-bg-img-darker: var(--white-97);
-	--clr-hero-bg-img-lighter: var(--black-75);
+		--clr-hero-bg-img-darker: var(--white-97);
+		--clr-hero-bg-img-lighter: var(--black-75);
+
+	/* Logo Colors */
+		--clr-text-logo-span: var(--black-30);
 }
 
 /* What do we need variables for? */

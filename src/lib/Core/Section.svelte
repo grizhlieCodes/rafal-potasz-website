@@ -1,8 +1,8 @@
 <script>
-    
+    export let sectionClass
 </script>
 
-<section class="section--900">
+<section class="{sectionClass}">
 
     <slot />
 
