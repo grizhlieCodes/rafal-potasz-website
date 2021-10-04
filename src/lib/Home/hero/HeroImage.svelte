@@ -14,7 +14,9 @@
 	];
 	let container;
 	onMount(() => {
-		setHeroImgHeight(container)
+		setTimeout(() => {
+			setHeroImgHeight(container)
+		},600)
 	})
 
 </script>
