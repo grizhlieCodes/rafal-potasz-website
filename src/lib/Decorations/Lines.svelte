@@ -4,6 +4,8 @@
 	let mounted = false,
 		headerHeight = 0,
 		heroHeight = 0,
+		philosophyHeight = 0,
+		sectionGap = 0,
 		philHeight,
 		allComplete = false,
 		loaded;
@@ -18,6 +20,8 @@
 	const updateHeights = () => {
 		headerHeight = returnElHeight('header');
 		heroHeight = returnElHeight('section.hero');
+		philosophyHeight = returnElHeight('section.philosophy')
+
 		setTimeout(() => {
 			allComplete = true;
 		}, 500);
@@ -25,6 +29,9 @@
 	const returnElHeight = (selector) => {
 		const el = document.querySelector(`${selector}`);
 		const elHeight = el.clientHeight;
+		const main = document.querySelector('main')
+		const mainGridGap = `${window.getComputedStyle(main).getPropertyValue('row-gap')}`
+		sectionGap = mainGridGap
 		return elHeight;
 	};
 </script>
@@ -36,10 +43,15 @@
 		<Line direction="vertical" dimension="100vh" left="5%" />
 		<span class="circle" />
 	</div>
-	<div class="section first-section" style="height: {heroHeight}px;">
+	<div class="section first-section" style="height: {heroHeight}px; margin-bottom: {sectionGap};">
 		<!-- <Line direction="horizontal" dimension="100vw" top="20%" />
 		<Line direction="vertical" dimension="100vh" left="5%" />
 		<span class="circle" /> -->
+	</div>
+	<div class="section first-section" style="height: {philosophyHeight}px; margin-bottom: {sectionGap};">
+		<!-- <!-- <Line direction="horizontal" dimension="100vw" top="20%" /> -->
+		<Line direction="horizontal" dimension="65vw" left="0%" bottom="-20%"/>
+		<!-- <span class="circle" /> --> -->
 	</div>
 </div>
 <!-- {/if} -->
