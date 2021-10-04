@@ -71,9 +71,6 @@
 		<div class="bg-triangle normal">
 			<Icon name="triangle" width="50rem" />
 		</div>
-		<!-- <div class="bg-triangle right">
-			<Icon name="triangle" width="40rem" />
-		</div> -->
 	</div>
 </Section>
 

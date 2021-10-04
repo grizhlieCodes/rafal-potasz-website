@@ -36,7 +36,6 @@
 	};
 </script>
 
-<!-- {#if allComplete} -->
 <div class="lines-container">
 	<div class="section first-section" style="height: {headerHeight}px;">
 		<Line direction="horizontal" dimension="100vw" top="20%" />
@@ -44,17 +43,12 @@
 		<span class="circle" />
 	</div>
 	<div class="section first-section" style="height: {heroHeight}px; margin-bottom: {sectionGap};">
-		<!-- <Line direction="horizontal" dimension="100vw" top="20%" />
-		<Line direction="vertical" dimension="100vh" left="5%" />
-		<span class="circle" /> -->
 	</div>
 	<div class="section first-section" style="height: {philosophyHeight}px; margin-bottom: {sectionGap};">
-		<!-- <!-- <Line direction="horizontal" dimension="100vw" top="20%" /> -->
+
 		<Line direction="horizontal" dimension="65vw" left="0%" bottom="-20%"/>
-		<!-- <span class="circle" /> --> -->
 	</div>
 </div>
-<!-- {/if} -->
 
 <style lang="scss">
 	@import '../../scss-styles/mixins';
