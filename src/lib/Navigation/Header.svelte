@@ -6,7 +6,6 @@
 	import MobileNav from './MobileNav.svelte';
 	import TabDesNav from './TabDesNav.svelte';
 	import BurgerButton from './BurgerButton.svelte';
-	import DmToggle from './DarkmodeToggle.svelte'
 
 	let showMobileNav = false,
 		size = getContext('size');
@@ -19,7 +18,6 @@
 
 <header>
 	<Logo />
-	<DmToggle />
 	{#if $size === 'mobile'}
 		<BurgerButton on:toggleMenu={toggleMobileNav} />
 		{#if showMobileNav}
@@ -35,10 +33,14 @@
 	header {
 		@include flex(row nowrap, space-between, center);
 		padding: 2.8rem 0rem;
-		position: relative;
 		width: 100%;
 		max-width: 111rem;
 		margin: auto;
 		grid-area: header;
+		position: relative;
+
+		@include mq(tablet){
+			padding: 7rem 0rem;
+		}
 	}
 </style>

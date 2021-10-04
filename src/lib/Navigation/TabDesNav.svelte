@@ -1,5 +1,7 @@
 <script>
-    	import { flyItem } from '$lib/scripts/animations.js';
+	import DmToggle from './DarkmodeToggle.svelte';
+
+	import { flyItem } from '$lib/scripts/animations.js';
 	import { page } from '$app/stores';
 	$: path = $page.path;
 	import { capitaliseFirstLetter } from '$lib/scripts/helperFunctions.js';
@@ -23,6 +25,8 @@
 			<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
 		</a>
 	{/each}
+	<DmToggle />
+
 </nav>
 
 <style lang="scss">

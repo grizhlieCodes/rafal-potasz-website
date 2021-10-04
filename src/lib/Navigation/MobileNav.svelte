@@ -1,4 +1,6 @@
 <script>
+	import DmToggle from './DarkmodeToggle.svelte';
+
 	import { page } from '$app/stores';
 	import { flyItem } from '$lib/scripts/animations.js';
 	import { fly } from 'svelte/transition';
@@ -24,6 +26,8 @@
 			<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
 		</a>
 	{/each}
+	<DmToggle />
+
 </nav>
 
 <style lang="scss">
