@@ -37,6 +37,7 @@ html {
 	--z-index-priority: 10;
 	--z-index-overlay: 5;
 	--z-index-bg: -1;
+	--z-index-behind-bg: -5;
 }
 
 html {
