@@ -100,10 +100,10 @@
 
 	@keyframes hoverImage {
 		from {
-			top: 0;
+			transform: translate(0, 0);
 		}
 		to {
-			top: -2rem;
+			transform: translate(0, -2rem);
 		}
 	}
 
