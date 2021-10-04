@@ -55,31 +55,22 @@ html {
         --clr-bg-accent-red: var(--red-300);
 		--clr-body-bg: var(--blue-900);
 
-
-
-
 	/* Misc Colors */
-
 		/* Lines Colors */
 			--clr-line-bg: var(--blue-700);
         /* Toggle Colors */
             --clr-toggle-bg: var(--blue-700);
             --clr-toggle-dial: var(--blue-900);
             --clr-toggle-accent: var(--cyan-600);
-
         /* Hero Img Bg Colors */
             --clr-hero-bg-img-darker: var(--blue-900);
             --clr-hero-bg-img-lighter: var(--blue-500);
         /* Text Colors */
-    
-        
         /* Burger Colors */
             --clr-burger-btn-bg: var(--white-93);
             --clr-burger-btn-bg-active: var(--cyan-600);
-        
         /* Overlay Colors */
             --clr-overlay-bg: var(--blue-900);
-
 		/* Logo Colors */
 			--clr-text-logo-span: var(--white-38);
 }

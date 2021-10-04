@@ -65,7 +65,7 @@
 			{/each}
 		</p>
 		<Button {...btnData} />
-		<img
+		<img class="philosophy__nietzsche-img"
 			src="/images/home/{$size}/nietzsche.png"
 			alt="Portrait of Frederich Nietzsche with his usual contemplating look." />
 		<div class="bg-triangle normal">
@@ -79,6 +79,13 @@
 
 <style lang="scss">
 	@import '../../../scss-styles/mixins';
+
+	:global(body.light){
+		img.philosophy__nietzsche-img {
+			border-radius: 50%;
+			mix-blend-mode: unset;
+		}
+	}
 
 	.flex-container {
 		width: 100%;
@@ -123,6 +130,7 @@
 			z-index: v(z-index-bg);
 			mix-blend-mode: lighten;
 			width: 25rem;
+			transition: border-radius 400ms;
 
 			@include mq(tablet-small) {
 				bottom: unset;
