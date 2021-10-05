@@ -4,13 +4,13 @@
 	import {onMount} from 'svelte';
 
 	let imageNames = [
-		{ name: 'rafal', directionFrom: [] },
-		{ name: 'rust', directionFrom: ['top', 'left'] },
-		{ name: 'computer', directionFrom: ['bottom'] },
-		{ name: 'watch', directionFrom: ['left'] },
-		{ name: 'statue', directionFrom: ['top', 'right'] },
-		{ name: 'eagle', directionFrom: ['bottom', 'right'] },
-		{ name: 'book', directionFrom: ['bottom', 'left'] }
+		{ name: 'rafal'},
+		{ name: 'rust'},
+		{ name: 'computer'},
+		{ name: 'watch'},
+		{ name: 'statue'},
+		{ name: 'eagle'},
+		{ name: 'book'}
 	];
 	let container;
 	let timeoutCounter = 0
@@ -37,11 +37,13 @@
 	<div class="backdrop" />
 	<div class="images-container">
 		{#each imageNames as { name }}
+		<div class="{name} individual-img-container" use:moveOnScroll={5}>
 			<img
 				class={name}
 				src="/images/home/shared/hero-images/{name}.png"
 				alt={name}
-				use:moveOnScroll={5} />
+				 />
+		</div>
 		{/each}
 	</div>
 </div>
@@ -80,30 +82,34 @@
 		position: absolute;
 	}
 
-	.images-container img {
+	.images-container .individual-img-container {
 		width: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
+
+		img {
+			width: 100%;
+		}
 	}
 
-	.images-container img:not(:is(.rafal, .eagle, .book, .computer)) {
+	.images-container  .individual-img-container img:not(:is(.rafal, .eagle, .book, .computer)) {
 		animation: 4s infinite hoverImage ease-in-out alternate;
 	}
 
-	.images-container img.rust {
+	.images-container .individual-img-container img.rust {
 		animation-delay: 1.5s;
 	}
-	.images-container img.watch {
+	.images-container  .individual-img-container img.watch {
 		animation-delay: 0.5s;
 	}
 
 	@keyframes hoverImage {
-		from {
-			transform: translate(0, 0);
-		}
+		// from {
+		// 	transform: translate(0, 0);
+		// }
 		to {
-			transform: translate(0, -2rem);
+			transform: translateY(-2rem);
 		}
 	}
 
