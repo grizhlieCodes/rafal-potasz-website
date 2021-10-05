@@ -26,6 +26,7 @@
 			allComplete = true;
 		}, 500);
 	};
+
 	const returnElHeight = (selector) => {
 		const el = document.querySelector(`${selector}`);
 		const elHeight = el.clientHeight;
@@ -34,7 +35,12 @@
 		sectionGap = mainGridGap
 		return elHeight;
 	};
+
+	
+
 </script>
+
+<svelte:window on:resize={updateHeights} />
 
 <div class="lines-container">
 	<div class="section first-section" style="height: {headerHeight}px;">
@@ -45,7 +51,6 @@
 	<div class="section first-section" style="height: {heroHeight}px; margin-bottom: {sectionGap};">
 	</div>
 	<div class="section first-section" style="height: {philosophyHeight}px; margin-bottom: {sectionGap};">
-
 		<Line direction="horizontal" dimension="65vw" left="0%" bottom="-20%"/>
 	</div>
 </div>
