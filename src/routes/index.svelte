@@ -3,6 +3,7 @@
 	import Logo from '$lib/Navigation/Logo.svelte'
     import Hero from '$lib/Home/hero/Hero.svelte'
 	import Lines from '$lib/Decorations/Lines.svelte'
+	import Main from '$lib/Core/Main.svelte'
 import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
 
 </script>
@@ -17,10 +18,12 @@ import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
             title="{name}"/>
 	</div>
 {/each} -->
+
 <main>
 	<Hero />
 	<Philosophy />
 </main>
+
 <Lines />
 
 <style lang="scss">
@@ -30,4 +33,5 @@ import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
 		@include flex(column nowrap, start, start);
 		gap: 12rem;
 	}
+
 </style>

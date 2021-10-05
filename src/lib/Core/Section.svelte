@@ -21,6 +21,7 @@
 		justify-items: center;
 		align-items: start;
 		padding: v(padding);
+		grid-row: span 1;
 		// overflow: hidden;
 
 		@include mq(tablet){
