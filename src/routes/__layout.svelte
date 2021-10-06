@@ -65,14 +65,14 @@
 		grid-template-columns: minmax(2.4rem, 4rem) minmax(32.7rem, 1fr) minmax(2.4rem, 4rem);
 		grid-template-areas:
 			'. header .'
-			'. main .'
+			'main main main'
 			'footer footer footer';
 
 		@include mq(tablet) {
 			grid-template-columns: minmax(4rem, 1fr) 1fr minmax(70rem, 90rem) 1fr minmax(4rem, 1fr);
 			grid-template-areas:
 				'. header header header .'
-				'. . main . .'
+				'main main main main main'
 				'footer footer footer footer footer';
 		}
 
@@ -80,7 +80,7 @@
 			grid-template-columns: 1fr minmax(0rem, 10.5rem) 90rem minmax(0rem, 10.5rem) 1fr;
 			grid-template-areas:
 				'. header header header .'
-				'. . main . .'
+				'main main main main main'
 				'footer footer footer footer footer';
 		}
 	}

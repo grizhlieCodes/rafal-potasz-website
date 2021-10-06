@@ -19,19 +19,19 @@ import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
 	</div>
 {/each} -->
 
-<main>
+<Main>
 	<Hero />
 	<Philosophy />
-</main>
+</Main>
 
 <Lines />
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
-	main {
-		grid-area: main;
-		@include flex(column nowrap, start, start);
-		gap: 12rem;
-	}
+	// main {
+	// 	grid-area: main;
+	// 	@include flex(column nowrap, start, start);
+	// 	gap: 12rem;
+	// }
 
 </style>

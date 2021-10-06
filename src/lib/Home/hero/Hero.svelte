@@ -7,7 +7,7 @@
 	let size = getContext('size');
 </script>
 
-<Section sectionClass="hero">
+<Section sectionClass="hero span-900">
 	<div class="flex-container">
 		<HeroImage />
 		<HeroText />

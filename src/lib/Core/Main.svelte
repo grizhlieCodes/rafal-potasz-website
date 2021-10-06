@@ -14,7 +14,7 @@
 		display: grid;
 		grid-template-columns: minmax(2.4rem, 4rem) minmax(32.7rem, 1fr) minmax(2.4rem, 4rem);
 		grid-template-areas: 'col1 col2 col3';
-        gap: 12rem;
+        row-gap: 12rem;
 
 		@include mq(tablet) {
 			grid-template-columns: minmax(4rem, 1fr) 1fr minmax(70rem, 90rem) 1fr minmax(4rem, 1fr);

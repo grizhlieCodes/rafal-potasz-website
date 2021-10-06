@@ -51,7 +51,7 @@
 	];
 </script>
 
-<Section sectionClass="philosophy">
+<Section sectionClass="philosophy span-1220">
 	<div class="flex-container">
 		<Heading content="my philosophy" type="2" />
 		<p class="tags">
