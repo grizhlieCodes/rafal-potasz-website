@@ -14,7 +14,6 @@
 		font-size: fluid(desktop, 1.6, 1.9);
 		font-weight: 700;
 		text-transform: uppercase;
-		// padding: 1rem 2rem;
 		@include px(fluid(tablet, 0.5, 2));
 		@include py(fluid(tablet, 0.75, 1));
 		outline: none;
@@ -23,16 +22,20 @@
 		transition: color 400ms, background 400ms,opacity 400ms, transform 400ms;
 		font-family: v(fira);
 		text-align: center;
+
 		&.primary {
 			background: v(clr-bg-accent-cyan);
 		}
+
 		&.secondary {
 			background: v(clr-bg-accent-red);
 		}
+
 		&:hover {
 			opacity: 0.8;
 			transform: scale(1.1);
 		}
+
 		&:active {
 			transform: scale(0.9);
 		}
