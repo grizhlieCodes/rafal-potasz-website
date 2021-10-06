@@ -8,6 +8,7 @@
 
 <style lang="scss">
 	@import '../../scss-styles/mixins';
+
 	main {
 		width: 100%;
 		grid-area: main;
@@ -23,7 +24,6 @@
 
 		@include mq(desktop) {
 			grid-template-columns: 1fr minmax(4rem, 16rem) 90rem minmax(4rem, 16rem) 1fr;
-			grid-template-areas: 'col1 col2 col3 col4 col5';
 		}
 	}
 
@@ -34,6 +34,7 @@
             grid-column: col3 / col3;
         }
 	}
+
 	:global(main section.span-1220) {
 		grid-column: col2 / col2;
         
@@ -41,6 +42,7 @@
             grid-column: col2 / col4;
         }
 	}
+
 	:global(main section.span-1440) {
 		grid-column: col2 / col2;
         
@@ -48,4 +50,5 @@
             grid-column: col1 / col5;
         }
 	}
+
 </style>
