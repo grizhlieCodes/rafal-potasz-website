@@ -14,12 +14,15 @@
 		font-size: fluid(desktop, 1.6, 1.9);
 		font-weight: 700;
 		text-transform: uppercase;
-		padding: 1rem 2rem;
+		// padding: 1rem 2rem;
+		@include px(fluid(tablet, 0.5, 2));
+		@include py(fluid(tablet, 0.75, 1));
 		outline: none;
 		border: none;
 		color: v(clr-text-btn);
 		transition: color 400ms, background 400ms,opacity 400ms, transform 400ms;
 		font-family: v(fira);
+		text-align: center;
 		&.primary {
 			background: v(clr-bg-accent-cyan);
 		}

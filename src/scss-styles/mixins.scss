@@ -89,13 +89,13 @@ $breakpoints: (
 // padding mixins
 
 @mixin px($rem-units) {
-  padding-left: #{$rem-units}rem;
-  padding-right: #{$rem-units}rem;
+  padding-left: #{$rem-units};
+  padding-right: #{$rem-units};
 }
 
 @mixin py($rem-units) {
-  padding-top: #{$rem-units}rem;
-  padding-bottom: #{$rem-units}rem;
+  padding-top: #{$rem-units};
+  padding-bottom: #{$rem-units};
 }
 
 
