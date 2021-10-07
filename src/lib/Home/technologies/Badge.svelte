@@ -1,17 +1,16 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
 
     import {fade, fly, slide} from 'svelte/transition'
-	export let name, text, info;
+	export let name, text, index,lastClickedIndex;
+    $: lastClickedIndexReactive = lastClickedIndex
 
-	let showInfo = false;
 
-	const toggleInfo = (e) => {
-		showInfo = !showInfo;
-	};
 </script>
 
 
-<div class="badge {name}" on:click={toggleInfo} class:active={showInfo}>
+<div class="badge {name}" on:click={() => dispatch('clickedBadge', index)} class:active={index === lastClickedIndexReactive}>
 	<!-- <div class="hoverable-overlay" /> -->
 
 	<img src="/images/home/shared/tech-logos/{name}.png" alt="{name} svg icon" />
@@ -28,13 +27,13 @@
        Inefficient as every single badge would do this.
 
  -->
-{#if showInfo}
+<!-- {#if showInfo}
 	<div class="info-container" transition:slide={{duration: 250}}>
 		{#each info as par}
 			<p>{par}</p>
 		{/each}
 	</div>
-{/if}
+{/if} -->
 
 <style lang="scss">
 
@@ -52,18 +51,16 @@
 		font-size: fluid(desktop, 1.4, 1.63);
 		gap: 0.8rem;
 		position: relative;
-        transition: 250ms ease, flex-grow 250ms, flex-basis 250ms;
+        transition: background 250ms, flex-grow 250ms;
         cursor: pointer;
 
         &:hover {
             background: v(clr-tech-badge-hover-bg);
-            
         }
         
         &.active {
             background: v(clr-tech-badge-hover-bg);
             flex-grow: 1;
-            // flex-basis: 100%;
         }
 
         * {
@@ -84,27 +81,5 @@
 		// 	background: transparent;
 		// }
 	}
-	.info-container {
-        width: max-content;
-        // max-width: 35rem;
-		// position: fixed;
-		// left: 50%;
-        // transform: translate(-50%, 0);
-		// top: 0;
-		@include flex(column nowrap, start, start);
-		background: v(clr-tech-info-bg);
-        z-index: v(z-index-priority);
-        padding: 3rem 4rem;
-        color: v(clr-text-focused);
-        font-family: v(fira);
-        font-size: fluid(desktop, 1.4, 1.65);
-        flex: 1 0 100%;
-        gap: 1rem;
-        
-        p {
-            text-align: left;
-            width: 100%;
-        }
 
-	}
 </style>
