@@ -5,6 +5,7 @@
 	import Lines from '$lib/Decorations/Lines.svelte'
 	import Main from '$lib/Core/Main.svelte'
 import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
+import Technologies from '$lib/Home/technologies/Technologies.svelte';
 
 </script>
 
@@ -22,6 +23,7 @@ import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
 <Main>
 	<Hero />
 	<Philosophy />
+	<Technologies />
 </Main>
 
 <Lines />

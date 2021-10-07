@@ -57,6 +57,7 @@
 		&:hover:not(.active) {
 			color: v(clr-text-focused);
 		}
+		
 	}
 
 	:global(a.navigation__link.active svg path) {
