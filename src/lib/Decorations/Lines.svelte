@@ -5,6 +5,7 @@
 		headerHeight = 0,
 		heroHeight = 0,
 		philosophyHeight = 0,
+		technologiesHeight = 0,
 		sectionGap = 0,
 		philHeight,
 		allComplete = false,
@@ -21,6 +22,7 @@
 		headerHeight = returnElHeight('header');
 		heroHeight = returnElHeight('section.hero');
 		philosophyHeight = returnElHeight('section.philosophy')
+		technologiesHeight = returnElHeight('section.technologies')
 
 		setTimeout(() => {
 			allComplete = true;
@@ -51,7 +53,10 @@
 	<div class="section first-section" style="height: {heroHeight}px; margin-bottom: {sectionGap};">
 	</div>
 	<div class="section first-section" style="height: {philosophyHeight}px; margin-bottom: {sectionGap};">
-		<Line direction="horizontal" dimension="65vw" left="0%" bottom="-20%"/>
+		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-20%"/>
+	</div>
+	<div class="section first-section" style="height: {technologiesHeight}px; margin-bottom: {sectionGap};">
+		<Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/>
 	</div>
 </div>
 
