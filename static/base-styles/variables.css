@@ -73,6 +73,11 @@ html {
             --clr-overlay-bg: var(--blue-900);
 		/* Logo Colors */
 			--clr-text-logo-span: var(--white-38);
+
+		/* Tech Badge Colors */
+			--clr-tech-badge-bg: var(--blue-800);
+			--clr-tech-badge-hover-bg: var(--blue-500);
+			--clr-tech-info-bg: var(--blue-700);
 }
 
 body.light {
