@@ -8,7 +8,7 @@ export const capitaliseFirstLetter = (string) => {
 export const calcRealSize = (winWidth, scrollWidth) => {
     let width = winWidth - scrollWidth;
     let result
-    if (width >= 1024) {
+    if (width >= 1248) {
         result = 'desktop';
     } else if (width >= 768) {
         result = 'tablet';
