@@ -127,22 +127,22 @@
 			z-index: v(z-index-bg);
 			mix-blend-mode: lighten;
 			width: 25rem;
-			transition: border-radius 400ms;
+			transition: border-radius 400ms, transform 250ms, left 250ms, right 250ms;
 
 			@include mq(tablet-small) {
 				bottom: unset;
 				top: 50%;
-				transform: translate(65%, -50%);
+				transform: translate(50%, -50%);
 				width: 27.5rem;
 			}
 			@include mq(tablet) {
 				bottom: unset;
-				transform: translate(50%, -50%);
+				transform: translate(20%, -50%);
 			}
 
 			@include mq(tablet-wide) {
 				width: 30rem;
-				transform: translate(80%, -50%);
+				transform: translate(0%, -50%);
 			}
 		}
 
