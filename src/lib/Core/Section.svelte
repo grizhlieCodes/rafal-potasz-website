@@ -20,7 +20,7 @@
 		display: grid;
 		justify-items: center;
 		align-items: start;
-		padding: v(padding);
+		padding: v(padding) 0;
 		grid-row: span 1;
 		// overflow: hidden;
 
