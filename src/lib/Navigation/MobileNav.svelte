@@ -1,17 +1,23 @@
 <script>
 	import DmToggle from './DarkmodeToggle.svelte';
-
 	import { page } from '$app/stores';
 	import { flyItem } from '$lib/scripts/animations.js';
 	import { fly } from 'svelte/transition';
-	$: path = $page.path;
 	import { capitaliseFirstLetter } from '$lib/scripts/helperFunctions.js';
 	import Icon from '$lib/Decorations/Icon.svelte';
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
+	$: path = $page.path;
 	let navData = [
 		{ name: 'home', link: '/' },
 		{ name: 'about', link: '/about' },
 		{ name: 'portfolio', link: '/portfolio' }
 	];
+
+	const closeNavModal = () => {
+		dispatch('closeNavModal')
+	};
 </script>
 
 <nav class="navigation" out:fly={{ duration: 250, x: -100 }}>
@@ -20,13 +26,12 @@
 			href={link}
 			class="navigation__link"
 			class:active={path === link}
-			use:flyItem={['-20rem', 0.15, i]}>
+			use:flyItem={['-20rem', 0.15, i]} on:click={closeNavModal}>
 			<Icon {name} width="2.89rem" />
-
 			<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
 		</a>
 	{/each}
-	<!-- <DmToggle /> -->
+	<DmToggle />
 
 </nav>
 
