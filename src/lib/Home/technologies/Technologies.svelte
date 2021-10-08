@@ -1,6 +1,6 @@
 <script>
 	import Section from '$lib/Core/Section.svelte';
-	import Heading from '$lib/decorations/Heading.svelte';
+	import Heading from '$lib/Decorations/Heading.svelte';
 	import Badge from './Badge.svelte';
 	import InfoContainer from './InfoContainer.svelte';
 	import BadgesData from '$lib/stores/techBadgesData.js'
