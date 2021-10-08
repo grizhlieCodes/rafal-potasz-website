@@ -10,7 +10,7 @@
 	import { crossfade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 	const [send, receive] = crossfade({
-		duration: d => Math.sqrt(d * 200),
+		duration: (d) => Math.sqrt(d * 200),
 
 		fallback(node, params) {
 			const style = getComputedStyle(node);
@@ -19,7 +19,7 @@
 			return {
 				duration: 600,
 				easing: quintOut,
-				css: t => `
+				css: (t) => `
 					transform: ${transform} scale(${t});
 					opacity: ${t}
 				`
@@ -73,13 +73,18 @@
 			on:updateFilter={updateFilter}
 			initialFilter={filter}
 			on:updateProjects={updateProjects} />
-		{#each localPortfolio as project, i (project.name)}
-			<div class="project-container" in:receive="{{key: project.name}}"
-			out:send="{{key: project.name}}" animate:flip={{duration: 200}}>
-				<PortfolioText {project} />
-				<PortfolioVideo />
-			</div>
-		{/each}
+		<div class="projects">
+			{#each localPortfolio as project, i (project.name)}
+				<div
+					class="project-container"
+					in:receive={{ key: project.name }}
+					out:send={{ key: project.name }}
+					animate:flip={{ duration: 200 }}>
+					<PortfolioText {project} />
+					<PortfolioVideo {project}/>
+				</div>
+			{/each}
+		</div>
 	</div>
 </Section>
 
@@ -93,6 +98,27 @@
 
 		@include mq(desktop) {
 			align-items: center;
+		}
+	}
+
+	.projects {
+		width: 100%;
+		@include flex(column nowrap, start, start);
+		gap: 5rem;
+
+		@include mq(desktop){
+			gap: 10rem;
+		}
+	}
+
+	.project-container {
+		@include flex(column nowrap, start, start);
+		width: 100%;
+		gap: 4rem;
+
+		@include mq(desktop){
+			// 
+			@include eflex(row nowrap, space-between, center);
 		}
 	}
 </style>
