@@ -8,7 +8,7 @@
 		technologiesHeight = 0,
 		sectionGap = 0,
 		philHeight,
-		allComplete = false,
+		// allComplete = false,
 		loaded;
 
 	onMount(() => {
@@ -23,10 +23,11 @@
 		heroHeight = returnElHeight('section.hero');
 		philosophyHeight = returnElHeight('section.philosophy')
 		technologiesHeight = returnElHeight('section.technologies')
+		console.log(philosophyHeight,technologiesHeight)
 
-		setTimeout(() => {
-			allComplete = true;
-		}, 500);
+		// setTimeout(() => {
+			// allComplete = true;
+		// }, 500);
 	};
 
 	const returnElHeight = (selector) => {
@@ -38,7 +39,11 @@
 		return elHeight;
 	};
 
-	
+	export function rerunLines()  {
+		setTimeout(() => {
+			updateHeights()
+		}, 150)
+	}
 
 </script>
 
@@ -62,6 +67,10 @@
 
 <style lang="scss">
 	@import '../../scss-styles/mixins';
+
+	div {
+		transition: height 250ms;
+	}
 
 	span.circle {
 		display: block;
