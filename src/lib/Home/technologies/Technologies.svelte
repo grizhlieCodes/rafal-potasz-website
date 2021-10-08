@@ -21,28 +21,19 @@
 	let lastClickedIndex = null,
 		badgeInfo = [];
 
-	const showInfo = (index) => {
-		if (lastClickedIndex) lastClickedIndex = index;
-
-		clearInfoFromData();
-		let clickedItem = { ...data[index] };
-		let tempData = [...data];
-		tempData.splice(index + 1, 0, { type: 'info', info: clickedItem.info });
-		data = tempData;
-	};
-
 	const updateLastClickedIndex = (e) => {
+		console.log('running')
 		let index = e.detail;
-		console.log(index, lastClickedIndex);
 		if (lastClickedIndex == index) {
 			lastClickedIndex = null;
 			badgeInfo = [];
-			return;
-		}
-		if (lastClickedIndex == null || lastClickedIndex != index) {
+		} else if (lastClickedIndex == null || lastClickedIndex != index)
+		{
 			lastClickedIndex = index;
 			badgeInfo = data[index].info;
 		}
+		console.log('running')
+		dispatch('recalculateLines')
 	};
 </script>
 
@@ -62,7 +53,7 @@
 					{text}
 					index={i}
 					{lastClickedIndex}
-					on:clickedBadge={updateLastClickedIndex} />
+					on:clickedBadge={updateLastClickedIndex}/>
 			{/each}
 			{#if badgeInfo.length >= 1}
 				<InfoContainer info={badgeInfo} />
@@ -83,6 +74,7 @@
 		width: 100%;
 		@include flex(column nowrap, start, start);
 		gap: 2.9rem;
+		position: relative;
 
 		// *:nth-child(2) {
 		// 	margin-top: 1rem;
@@ -96,13 +88,12 @@
 	p {
 		font-family: v(fira);
 		color: v(clr-text-faded);
-		font-size: fluid(desktop, 1.4, 1.65);
+		font-size: fluid(desktop, 1.5, 1.65);
 		max-width: 36rem;
 		text-align: left;
 		@include mq(desktop) {
 			text-align: center;
 		}
-		// font-weight:
 	}
 
 	.badges-container {
@@ -120,6 +111,33 @@
 		}
 		@include mq(desktop) {
 			justify-content: center;
+		}
+	}
+
+	img {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		transform: translate(63%, 4%) rotate(-27.5deg);
+		transition: right 250ms, left 250ms, transform 250ms;
+
+		@include mq(phone-wide){
+			transform: translate(57%, 8%) rotate(-18.5deg);
+		}
+		@include mq(phablet){
+			transform: translate(49%, 22%) rotate(-7.5deg);
+		}
+		@include mq(tablet){
+			transform: translate(52%, 22%) rotate(0.5deg);
+		}
+		@include mq(tablet-wide){
+			transform: translate(34%, 9%) rotate(-6.5deg);
+		}
+		@include mq(desktop){
+			transform: translate(-46%, 14%) rotate(15.5deg);
+			right: unset;
+			left: 0;
+			width: 34rem;
 		}
 	}
 </style>
