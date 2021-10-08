@@ -6,6 +6,13 @@
 	import Main from '$lib/Core/Main.svelte'
 import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
 import Technologies from '$lib/Home/technologies/Technologies.svelte';
+	import Portfolio from '$lib/Home/portfolio/Portfolio.svelte'
+
+	let recalculate
+
+	const recalculateLines = () => {
+		recalculate.rerunLines()
+	};
 
 </script>
 
@@ -23,10 +30,11 @@ import Technologies from '$lib/Home/technologies/Technologies.svelte';
 <Main>
 	<Hero />
 	<Philosophy />
-	<Technologies />
+	<Technologies on:recalculateLines={recalculateLines} />
+	<Portfolio />
 </Main>
 
-<Lines />
+<Lines bind:this={recalculate}/>
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
