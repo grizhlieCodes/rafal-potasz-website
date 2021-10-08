@@ -1,7 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
-	import Icon from '$lib/decorations/Icon.svelte';
+	import Icon from '$lib/Decorations/Icon.svelte';
 	let options = [
 		{
 			name: 'featured',
