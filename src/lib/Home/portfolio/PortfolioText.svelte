@@ -40,6 +40,10 @@
 		gap: 1.4rem;
 		font-family: v(fira);
 
+		@include mq(desktop){
+			flex: 0 0 34rem;
+		}
+
 		h3.project-name {
 			color: v(clr-text-focused);
 			font-size: fluid(desktop, 2.2, 3);
