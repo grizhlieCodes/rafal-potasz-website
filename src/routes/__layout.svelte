@@ -49,7 +49,6 @@
 
 	:global(body) {
 		width: 100%;
-		height: 200vh;
 		background-color: v(clr-body-bg);
 		// background-image: url('/images/shared/bg-light2.png');
 		background-repeat: repeat;
@@ -60,8 +59,10 @@
 	}
 
 	:global(div#svelte) {
+		min-height: 100vh;
 		overflow: hidden;
 		display: grid;
+		grid-auto-rows: min-content;
 		grid-template-columns: minmax(2.4rem, 4rem) minmax(32.7rem, 1fr) minmax(2.4rem, 4rem);
 		grid-template-areas:
 			'. header .'
