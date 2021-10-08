@@ -177,6 +177,25 @@
 	<svg {width} height={width} viewBox="0 0 392 438" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M390.951 0.500058L196 436.774L1.04929 0.500024L390.951 0.500058Z" />
 	</svg>
+{:else if name === 'tick'}
+	<svg {width} height={width} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+		<title>ok-icon</title>
+		<path
+			d="M5 14c.4 0 .778-.158 1.06-.443l9.648-9.833c.39-.395.39-1.033 0-1.428s-1.024-.395-1.414 0L5
+			11.772 1.707 8.296C1.317 7.9.684 7.9.293 8.296c-.39.395-.39 1.033 0 1.428l3.646
+			3.833c.283.285.658.443 1.06.443z"
+			fill="none"
+			fill-rule="evenodd" />
+	</svg>
+{:else if name === 'arrow-right'}
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width={width}>
+		<title>Right Arrow</title>
+		<g id="Right-3" data-name="Right">
+			<path
+				d="M32,16a.9994.9994,0,0,1-.3271.74l-11,10A1,1,0,0,1,19,26V21H1a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H19V6a1,1,0,0,1,1.6729-.74l11,10A.9994.9994,0,0,1,32,16Z"
+				style="none" />
+		</g>
+	</svg>
 {/if}
 
 <style lang="scss">
