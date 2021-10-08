@@ -78,6 +78,9 @@ html {
 			--clr-tech-badge-bg: var(--blue-800);
 			--clr-tech-badge-hover-bg: var(--blue-500);
 			--clr-tech-info-bg: var(--blue-700);
+
+			--clr-portfolio-filter-accent: var(--cyan-600);
+			--clr-portfolio-filter-active-tick: var(--blue-900);
 }
 
 body.light {
