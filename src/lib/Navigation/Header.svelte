@@ -23,7 +23,7 @@
 	{#if $size === 'mobile'}
 		<BurgerButton on:toggleMenu={toggleMobileNav} buttonActive={showMobileNavReactive} />
 		{#if showMobileNavReactive}
-			<MobileNav />
+			<MobileNav on:closeNavModal={toggleMobileNav}/>
 		{/if}
     {:else}
         <TabDesNav />
