@@ -17,24 +17,6 @@
 	<p>{text}</p>
 </div>
 
-<!-- 
-
-    1. Add a container
-    2. Style it
-    3. Position fixed
-    4. Function to move the container to wherever the mouse is
-    5. Possibly add sveltewindow and record where the mouse movement is? No.
-       Inefficient as every single badge would do this.
-
- -->
-<!-- {#if showInfo}
-	<div class="info-container" transition:slide={{duration: 250}}>
-		{#each info as par}
-			<p>{par}</p>
-		{/each}
-	</div>
-{/if} -->
-
 <style lang="scss">
 
 	@import '../../../scss-styles/mixins';
@@ -48,7 +30,7 @@
 		color: v(clr-text-focused);
 		font-family: v(fira);
 		@include flex(row nowrap, center, center);
-		font-size: fluid(desktop, 1.4, 1.63);
+		font-size: fluid(desktop, 1.5, 1.63);
 		gap: 0.8rem;
 		position: relative;
         transition: background 250ms, flex-grow 250ms;
@@ -72,7 +54,7 @@
 		}
 
 		p {
-			font-weight: 800;
+			font-weight: 700;
 		}
 
 		// .hoverable-overlay {
