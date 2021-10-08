@@ -6,28 +6,79 @@
 	import PortfolioVideo from './PortfolioVideo.svelte';
 	import PortfolioData from '$lib/stores/portfolio.js';
 
+	import { quintOut } from 'svelte/easing';
+	import { crossfade } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+	const [send, receive] = crossfade({
+		duration: d => Math.sqrt(d * 200),
+
+		fallback(node, params) {
+			const style = getComputedStyle(node);
+			const transform = style.transform === 'none' ? '' : style.transform;
+
+			return {
+				duration: 600,
+				easing: quintOut,
+				css: t => `
+					transform: ${transform} scale(${t});
+					opacity: ${t}
+				`
+			};
+		}
+	});
+
 	let filter = 'featured';
 	const updateFilter = (e) => {
 		filter = e.detail;
-		updateLocalPortfolio(e.detail)
+		// updateLocalPortfolio(e.detail)
 	};
 
-	const updateLocalPortfolio = (updatedFilter) => {
-		localPortfolio = localPortfolio.filter()
-	}
+	// const updateLocalPortfolio = (updatedFilter) => {
+	// 	localPortfolio = localPortfolio.filter()
+	// }
 
 	let localPortfolio = [...$PortfolioData];
-	
-	
+
+	const updateProjects = (e) => {
+		let data = e.detail;
+		const noFilter = data.length === 0;
+		const oneFilter = data.length === 1;
+		const multipleFilters = data.length >= 2;
+
+		if (noFilter) {
+			localPortfolio = [...$PortfolioData];
+			return;
+		}
+		if (oneFilter) {
+			localPortfolio = $PortfolioData.filter((p) => {
+				return p.type.includes(data[0]) && !p.type.includes('design');
+			});
+			return;
+		}
+		if (multipleFilters) {
+			let returnedData = $PortfolioData.filter((project) => {
+				const projectTags = project.type;
+				return data.every((filter) => projectTags.includes(filter));
+			});
+			localPortfolio = returnedData;
+			return;
+		}
+	};
 </script>
 
 <Section sectionClass="span-1220">
 	<div class="flex-container">
 		<Heading type="2" content="portfolio" />
-		<PortfolioFilter on:updateFilter={updateFilter} initialFilter={filter} />
-		{#each localPortfolio as project, i (project)}
-			<PortfolioText {project}/>
-			<PortfolioVideo />
+		<PortfolioFilter
+			on:updateFilter={updateFilter}
+			initialFilter={filter}
+			on:updateProjects={updateProjects} />
+		{#each localPortfolio as project, i (project.name)}
+			<div class="project-container" in:receive="{{key: project.name}}"
+			out:send="{{key: project.name}}" animate:flip={{duration: 200}}>
+				<PortfolioText {project} />
+				<PortfolioVideo />
+			</div>
 		{/each}
 	</div>
 </Section>

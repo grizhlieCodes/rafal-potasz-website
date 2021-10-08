@@ -6,39 +6,43 @@
 		{
 			name: 'featured',
 			text: 'Featured',
-			data: ''
+			filters: ['featured']
 		},
 		{
 			name: 'dev-only',
 			text: 'Dev Only',
-			data: ''
+			filters: ['dev']
 		},
 		{
 			name: 'dev-design',
 			text: 'Dev + Design',
-			data: ''
+			filters: ['dev', 'design']
 		},
 		{
 			name: 'all',
 			text: 'All',
-			data: ''
+			filters: []
 		}
 	];
 
 	export let initialFilter;
 	$: selectedFilter = initialFilter;
 
-	console.log(selectedFilter);
 
 	const dispatchFilter = (filter) => {
 		dispatch('updateFilter', filter);
 	};
 
 	$: dispatchFilter(selectedFilter);
+
+	const updateProjects = (chosenFilters) => {
+		const data = chosenFilters;
+		dispatch('updateProjects',data)
+	};
 </script>
 
 <div class="filters-container">
-	{#each options as { name, text }}
+	{#each options as { name, text, filters }}
 		<label for={name} class:active={selectedFilter === name}>
 			<input
 				type="radio"
@@ -46,7 +50,8 @@
 				{name}
 				value={name}
 				class="hidden"
-				bind:group={selectedFilter} />
+				bind:group={selectedFilter}
+				on:click={() => updateProjects(filters)} />
 			<div class="label-content">
 				<div class="radio-button" />
 				<p class="radio-description">{text}</p>
@@ -62,10 +67,10 @@
 		display: none;
 	}
 
-    .filters-container {
-        @include flex(row nowrap, start, center);
-        gap: 1rem;
-    }
+	.filters-container {
+		@include flex(row nowrap, start, center);
+		gap: 1rem;
+	}
 
 	label {
 		cursor: pointer;
@@ -76,11 +81,11 @@
 				border-color: v(clr-portfolio-filter-accent);
 			}
 
-            .label-content {
-                .radio-description {
-                    color: v(clr-portfolio-filter-accent)
-                }
-            }
+			.label-content {
+				.radio-description {
+					color: v(clr-portfolio-filter-accent);
+				}
+			}
 		}
 	}
 
@@ -92,7 +97,7 @@
 			font-size: fluid(desktop, 1.4, 1.55);
 			color: v(clr-text-focused);
 			font-weight: 700;
-            transition: color 250ms;
+			transition: color 250ms;
 		}
 
 		.radio-button {
