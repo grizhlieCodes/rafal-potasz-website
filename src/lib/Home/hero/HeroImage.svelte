@@ -40,7 +40,7 @@
 		<div class="{name} individual-img-container" use:moveOnScroll={5}>
 			<img
 				class={name}
-				src="/images/home/shared/hero-images/{name}.png"
+				src="static/images/home/shared/hero-images/{name}.png"
 				alt={name}
 				 />
 		</div>
