@@ -1,11 +1,10 @@
 <script>
-    import { capitaliseFirstLetter } from '$lib/scripts/helperFunctions';
+	import { capitaliseFirstLetter } from '$lib/scripts/helperFunctions';
 	import Icon from '$lib/Decorations/Icon.svelte';
-    import {getContext} from 'svelte';
-    import {slide} from 'svelte/transition'
+	import { getContext } from 'svelte';
+	import { slide } from 'svelte/transition';
 	export let project;
-    let size = getContext('size')
-
+	let size = getContext('size');
 
 	$: name = project.name;
 	$: subtitle = project.subtitle;
@@ -15,9 +14,9 @@
 <div class="text-container">
 	<h3 class="project-name">{capitaliseFirstLetter(name)}</h3>
 	<p class="subtitle">{subtitle}</p>
-    {#if $size !== 'mobile'}
-         <p class="description" transition:slide>{description[0]}</p>
-    {/if}
+	{#if $size !== 'mobile'}
+		<p class="description" transition:slide>{description[0]}</p>
+	{/if}
 	<a href="/" class="view-project-button">
 		<p>VIEW PROJECT</p>
 		<Icon name="arrow-right" width="1.4rem" />
@@ -40,7 +39,7 @@
 		gap: 1.4rem;
 		font-family: v(fira);
 
-		@include mq(desktop){
+		@include mq(desktop) {
 			flex: 0 0 34rem;
 		}
 
@@ -71,29 +70,31 @@
 				transform: scale(1.1, 1.1) translate(0.6rem, 0);
 			}
 
-			@keyframes heartbeat{
+			@keyframes heartbeat {
 				0% {
-					transform: scale(1,1)  translate(0, 0);
+					transform: scale(1, 1) translate(0, 0);
 				}
 				20% {
-					transform: scale(1.1,1.1)  translate(0.6rem, 0);
+					transform: scale(1.1, 1.1) translate(0.6rem, 0);
 				}
 				40% {
-					transform: scale(1,1);
+					transform: scale(1, 1);
 				}
 				60% {
-					transform: scale(1.1,1.1)  translate(0.6rem, 0);
+					transform: scale(1.1, 1.1) translate(0.6rem, 0);
 				}
 				100% {
-					transform: scale(1,1);
+					transform: scale(1, 1);
 				}
 			}
 
 			p {
 				font-size: fluid(desktop, 1.4, 1.6);
 			}
+		}
 
-
+		:global(a.view-project-button:hover svg) {
+			transform: scale(1.1, 1.1) translate(0.5rem, -0.1rem) rotate(180deg);
 		}
 	}
 </style>
