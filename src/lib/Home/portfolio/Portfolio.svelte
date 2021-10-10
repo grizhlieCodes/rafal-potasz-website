@@ -35,7 +35,7 @@
 		filter = e.detail;
 	};
 
-	let localPortfolio = [...$PortfolioData];
+	let localPortfolio = [...$PortfolioData].filter(p => p.type.includes('featured'));
 
 const dispatchRecalcLines = () => {
 	dispatch('recalculateLines')
@@ -99,9 +99,13 @@ const dispatchRecalcLines = () => {
 		width: 100%;
 		@include flex(column nowrap, start, start);
 		gap: 3rem;
+		transition: padding 250ms;
 		@include mq(desktop) {
 			align-items: center;
 			padding: 0 4rem;
+		}
+		@include mq(desktop-wide){
+			padding: 0;
 		}
 	}
 

@@ -1,5 +1,5 @@
 <script>
-	export let type = h2,
+	export let type = 2,
 		content = '',
 		content2 = '',
 		headingClass = '';

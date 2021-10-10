@@ -22,6 +22,7 @@
 		transition: color 400ms, background 400ms,opacity 400ms, transform 400ms;
 		font-family: v(fira);
 		text-align: center;
+		cursor: pointer;
 
 		&.primary {
 			background: v(clr-bg-accent-cyan);
