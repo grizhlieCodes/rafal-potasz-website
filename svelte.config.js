@@ -9,9 +9,9 @@ const config = {
 		prerender: {
 			crawl: true,
 			enabled: true,
-			force: true,
-			pages: ['*']
-		}
+			entries: ['*'],
+			onError: 'fail'
+		},
 	},
 	preprocess: preprocess()
 };
