@@ -7,19 +7,22 @@
 		philosophyHeight = 0,
 		technologiesHeight = 0,
 		portfolioHeight = 0,
+		formHeight = 0,
 		sectionGap = 0,
 		philHeight,
 		// allComplete = false,
 		loaded;
 
-	onMount(() => {
-		setTimeout(() => {
-			mounted = true;
-			window.addEventListener('load', () => (loaded = true));
-		}, 150)
-	});
+	// onMount(() => {
+	// 	setTimeout(() => {
+	// 		mounted = true;
+	// 		// window.addEventListener('load', () => {
+	// 		// 	console.log('loaded')
+	// 		// });
+	// 		console.log(mounted, loaded)
+	// 	}, 1000)
+	// });
 
-	$: if (mounted && loaded) updateHeights();
 
 	const updateHeights = () => {
 		headerHeight = returnElHeight('header');
@@ -27,6 +30,7 @@
 		philosophyHeight = returnElHeight('section.philosophy')
 		technologiesHeight = returnElHeight('section.technologies')
 		portfolioHeight = returnElHeight('section.portfolio') 
+		formHeight = returnElHeight('section.contact-form')
 	};
 
 	const returnElHeight = (selector) => {
@@ -37,16 +41,24 @@
 		sectionGap = mainGridGap
 		return elHeight;
 	};
+	$: if (loaded) updateHeights();
 
 	export function rerunLines()  {
 		setTimeout(() => {
 			updateHeights()
 		}, 150)
 	}
+	let scrolled = false
+	const calcLinesOnScroll = (e) => {
+		if(!scrolled){
+			updateHeights()
+		}
+		return
+	};
 
 </script>
 
-<svelte:window on:resize={updateHeights} />
+<svelte:window on:resize={updateHeights} on:scroll={calcLinesOnScroll} on:load={() => loaded = true}/>
 
 <div class="lines-container">
 	<div class="section first-section" style="height: {headerHeight}px;">
@@ -63,8 +75,12 @@
 		<Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/>
 	</div>
 	<div class="section fifth-section" style="height: {portfolioHeight}px; margin-bottom: {sectionGap};">
-		<Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/>
+		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
 		<span class="circle" />
+	</div>
+	<div class="section sixth-section" style="height: {formHeight}px; margin-bottom: {sectionGap};">
+		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
+		<!-- <span class="circle" /> -->
 	</div>
 </div>
 

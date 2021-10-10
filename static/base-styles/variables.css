@@ -82,6 +82,9 @@ html {
 
 			--clr-portfolio-filter-accent: var(--cyan-600);
 			--clr-portfolio-filter-active-tick: var(--blue-900);
+
+			--clr-form-bg: var(--blue-800);
+			--clr-form-input-bg: var(--blue-700);
 }
 
 body.light {
@@ -111,6 +114,10 @@ body.light {
 
 	/* Logo Colors */
 		--clr-text-logo-span: var(--black-30);
+
+		/* Form */
+		--clr-form-bg: var(--white-100);
+		--clr-form-input-bg: var(--white-93);
 }
 
 /* What do we need variables for? */

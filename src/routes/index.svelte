@@ -7,7 +7,7 @@
 import Philosophy from '$lib/Home/philosophy/Philosophy.svelte';
 import Technologies from '$lib/Home/technologies/Technologies.svelte';
 	import Portfolio from '$lib/Home/portfolio/Portfolio.svelte'
-
+	import ContactForm from '$lib/Home/contact-form/ContactForm.svelte';
 	let recalculate
 
 	const recalculateLines = () => {
@@ -32,6 +32,7 @@ import Technologies from '$lib/Home/technologies/Technologies.svelte';
 	<Philosophy />
 	<Technologies on:recalculateLines={recalculateLines} />
 	<Portfolio on:recalculateLines={recalculateLines}/>
+	<ContactForm />
 </Main>
 
 <Lines bind:this={recalculate}/>
