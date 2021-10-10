@@ -101,6 +101,7 @@ const dispatchRecalcLines = () => {
 		gap: 3rem;
 		@include mq(desktop) {
 			align-items: center;
+			padding: 0 4rem;
 		}
 	}
 
@@ -118,9 +119,39 @@ const dispatchRecalcLines = () => {
 		width: 100%;
 		gap: 2.7rem;
 		position: relative;
+
 		@include mq(desktop) {
 			@include eflex(row nowrap, space-between, center);
 		}
-		
+
+		&:nth-of-type(odd){
+			&::after {
+				left: 0;
+			}
+		}
+		&:nth-of-type(even){
+			&::after {
+				right: 0;
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 70vw;
+			height: 1px;
+			background: v(clr-line-bg);
+			bottom: -4rem;
+		}
+
+		@include mq(desktop){
+			&::after {
+				bottom: -5rem;
+			}
+		}
 	}
+
+
+
+
 </style>
