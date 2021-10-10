@@ -54,7 +54,7 @@
 		<Line direction="vertical" dimension="100vh" left="5%" />
 		<span class="circle" />
 	</div>
-	<div class="section first-section" style="height: {heroHeight}px; margin-bottom: {sectionWGap};">
+	<div class="section first-section" style="height: {heroHeight}px; margin-bottom: {sectionGap};">
 	</div>
 	<div class="section first-section" style="height: {philosophyHeight}px; margin-bottom: {sectionGap};">
 		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-20%"/>
