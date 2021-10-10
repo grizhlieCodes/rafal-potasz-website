@@ -31,7 +31,7 @@ import Technologies from '$lib/Home/technologies/Technologies.svelte';
 	<Hero />
 	<Philosophy />
 	<Technologies on:recalculateLines={recalculateLines} />
-	<Portfolio />
+	<Portfolio on:recalculateLines={recalculateLines}/>
 </Main>
 
 <Lines bind:this={recalculate}/>

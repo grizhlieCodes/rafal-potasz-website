@@ -70,6 +70,7 @@
 	.filters-container {
 		@include flex(row nowrap, start, center);
 		gap: 1rem;
+		margin-bottom: 6rem;
 	}
 
 	label {

@@ -65,7 +65,7 @@
 			gap: 0.95rem;
 			color: v(clr-text-accent-cyan);
 			transition: transform 250ms;
-			animation: heartbeat 1600ms linear infinite;
+			// animation: heartbeat 1600ms linear infinite;
 
 			&:hover {
 				transform: scale(1.1, 1.1) translate(0.6rem, 0);

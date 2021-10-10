@@ -75,6 +75,7 @@
 		@include flex(column nowrap, start, start);
 		gap: 2.9rem;
 		position: relative;
+		transition: gap 250ms;
 
 		// *:nth-child(2) {
 		// 	margin-top: 1rem;

@@ -1,4 +1,7 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
 	import Section from '$lib/Core/Section.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte';
 	import PortfolioFilter from './PortfolioFilter.svelte';
@@ -34,6 +37,10 @@
 
 	let localPortfolio = [...$PortfolioData];
 
+const dispatchRecalcLines = () => {
+	dispatch('recalculateLines')
+}
+
 	const updateProjects = (e) => {
 		let data = e.detail;
 		const noFilter = data.length === 0;
@@ -42,12 +49,14 @@
 
 		if (noFilter) {
 			localPortfolio = [...$PortfolioData];
+			dispatchRecalcLines()
 			return;
 		}
 		if (oneFilter) {
 			localPortfolio = $PortfolioData.filter((p) => {
 				return p.type.includes(data[0]) && !p.type.includes('design');
 			});
+			dispatchRecalcLines()
 			return;
 		}
 		if (multipleFilters) {
@@ -56,6 +65,7 @@
 				return data.every((filter) => projectTags.includes(filter));
 			});
 			localPortfolio = returnedData;
+			dispatchRecalcLines()
 			return;
 		}
 	};
@@ -97,7 +107,7 @@
 	.projects {
 		width: 100%;
 		@include flex(column nowrap, start, start);
-		gap: 5rem;
+		gap: 8rem;
 		@include mq(desktop) {
 			gap: 10rem;
 		}
@@ -106,9 +116,11 @@
 	.project-container {
 		@include flex(column nowrap, start, start);
 		width: 100%;
-		gap: 4rem;
+		gap: 2.7rem;
+		position: relative;
 		@include mq(desktop) {
 			@include eflex(row nowrap, space-between, center);
 		}
+		
 	}
 </style>
