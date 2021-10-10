@@ -11,6 +11,7 @@ const config = {
 			enabled: true,
 			force: true,
 			pages: ['*'],
+			onError: 'continue'
 		}
 	},
 	preprocess: preprocess()
