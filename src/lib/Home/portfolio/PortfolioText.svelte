@@ -53,8 +53,11 @@
 			font-size: fluid(desktop, 1.4, 1.6);
 		}
 		p.description {
+			font-family: v(roboto);
 			color: v(clr-text-focused);
 			font-size: fluid(desktop, 1.4, 1.6);
+			line-height: fluid(desktop, 1.5, 1.7);
+			margin-bottom: 1.5rem;
 		}
 
 		a.view-project-button {
@@ -62,14 +65,35 @@
 			gap: 0.95rem;
 			color: v(clr-text-accent-cyan);
 			transition: transform 250ms;
+			animation: heartbeat 1600ms linear infinite;
 
 			&:hover {
 				transform: scale(1.1, 1.1) translate(0.6rem, 0);
 			}
 
+			@keyframes heartbeat{
+				0% {
+					transform: scale(1,1)  translate(0, 0);
+				}
+				20% {
+					transform: scale(1.1,1.1)  translate(0.6rem, 0);
+				}
+				40% {
+					transform: scale(1,1);
+				}
+				60% {
+					transform: scale(1.1,1.1)  translate(0.6rem, 0);
+				}
+				100% {
+					transform: scale(1,1);
+				}
+			}
+
 			p {
 				font-size: fluid(desktop, 1.4, 1.6);
 			}
+
+
 		}
 	}
 </style>

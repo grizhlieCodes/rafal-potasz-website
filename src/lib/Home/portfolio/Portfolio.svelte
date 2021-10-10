@@ -30,12 +30,7 @@
 	let filter = 'featured';
 	const updateFilter = (e) => {
 		filter = e.detail;
-		// updateLocalPortfolio(e.detail)
 	};
-
-	// const updateLocalPortfolio = (updatedFilter) => {
-	// 	localPortfolio = localPortfolio.filter()
-	// }
 
 	let localPortfolio = [...$PortfolioData];
 
@@ -66,7 +61,7 @@
 	};
 </script>
 
-<Section sectionClass="span-1220">
+<Section sectionClass="portfolio span-1220">
 	<div class="flex-container">
 		<Heading type="2" content="portfolio" />
 		<PortfolioFilter
@@ -81,7 +76,7 @@
 					out:send={{ key: project.name }}
 					animate:flip={{ duration: 200 }}>
 					<PortfolioText {project} />
-					<PortfolioVideo {project}/>
+					<PortfolioVideo {project} />
 				</div>
 			{/each}
 		</div>
@@ -90,12 +85,10 @@
 
 <style lang="scss">
 	@import '../../../scss-styles/mixins';
-
 	.flex-container {
 		width: 100%;
 		@include flex(column nowrap, start, start);
 		gap: 3rem;
-
 		@include mq(desktop) {
 			align-items: center;
 		}
@@ -105,8 +98,7 @@
 		width: 100%;
 		@include flex(column nowrap, start, start);
 		gap: 5rem;
-
-		@include mq(desktop){
+		@include mq(desktop) {
 			gap: 10rem;
 		}
 	}
@@ -115,9 +107,7 @@
 		@include flex(column nowrap, start, start);
 		width: 100%;
 		gap: 4rem;
-
-		@include mq(desktop){
-			// 
+		@include mq(desktop) {
 			@include eflex(row nowrap, space-between, center);
 		}
 	}

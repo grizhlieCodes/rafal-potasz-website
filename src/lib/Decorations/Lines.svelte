@@ -6,14 +6,17 @@
 		heroHeight = 0,
 		philosophyHeight = 0,
 		technologiesHeight = 0,
+		portfolioHeight = 0,
 		sectionGap = 0,
 		philHeight,
 		// allComplete = false,
 		loaded;
 
 	onMount(() => {
-		mounted = true;
-		window.addEventListener('load', () => (loaded = true));
+		setTimeout(() => {
+			mounted = true;
+			window.addEventListener('load', () => (loaded = true));
+		}, 150)
 	});
 
 	$: if (mounted && loaded) updateHeights();
@@ -23,11 +26,7 @@
 		heroHeight = returnElHeight('section.hero');
 		philosophyHeight = returnElHeight('section.philosophy')
 		technologiesHeight = returnElHeight('section.technologies')
-		console.log(philosophyHeight,technologiesHeight)
-
-		// setTimeout(() => {
-			// allComplete = true;
-		// }, 500);
+		portfolioHeight = returnElHeight('section.portfolio') 
 	};
 
 	const returnElHeight = (selector) => {
