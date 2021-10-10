@@ -202,6 +202,6 @@
 	@import '../../scss-styles/mixins';
 
 	:global(svg, svg path) {
-		transition: fill 400ms;
+		transition: fill 400ms, transform 250ms;
 	}
 </style>
