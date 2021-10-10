@@ -10,8 +10,7 @@ const config = {
 			crawl: true,
 			enabled: true,
 			force: true,
-			pages: ['*'],
-			onError: 'continue'
+			pages: ['*']
 		}
 	},
 	preprocess: preprocess()
