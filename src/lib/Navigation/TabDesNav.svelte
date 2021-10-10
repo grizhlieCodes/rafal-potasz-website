@@ -25,7 +25,7 @@
 			<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
 		</a>
 	{/each}
-	<!-- <DmToggle /> -->
+	<DmToggle />
 
 </nav>
 
