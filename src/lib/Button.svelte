@@ -4,13 +4,16 @@
 
 {#if type === 'anchor'}
 	<a href={link} class={btnClass}>{content}</a>
-{:else}
+{:else if type === 'button'}
 	<button type="button" on:click class={btnClass}>{content}</button>
+{:else if type === 'submit'}
+	<button type="submit" on:click class={btnClass}>{content}</button>
 {/if}
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
-	a, button {
+	a,
+	button {
 		font-size: fluid(desktop, 1.6, 1.9);
 		font-weight: 700;
 		text-transform: uppercase;
@@ -19,7 +22,7 @@
 		outline: none;
 		border: none;
 		color: v(clr-text-btn);
-		transition: color 400ms, background 400ms,opacity 400ms, transform 400ms;
+		transition: color 400ms, background 400ms, opacity 400ms, transform 400ms;
 		font-family: v(fira);
 		text-align: center;
 		cursor: pointer;
