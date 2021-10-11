@@ -19,14 +19,14 @@
 </script>
 
 <header>
-	<Logo />
+	<Logo type="both"/>
 	{#if $size === 'mobile'}
 		<BurgerButton on:toggleMenu={toggleMobileNav} buttonActive={showMobileNavReactive} />
 		{#if showMobileNavReactive}
 			<MobileNav on:closeNavModal={toggleMobileNav}/>
 		{/if}
     {:else}
-        <TabDesNav />
+        <TabDesNav  location="header"/>
 	{/if}
 </header>
 
