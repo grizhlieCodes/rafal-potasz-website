@@ -10,8 +10,7 @@ const config = {
 			crawl: true,
 			enabled: true,
 			entries: ['*'],
-			onError: 'continue',
-			force: true
+			onError: 'continue'
 
 		},
 	},
