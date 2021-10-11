@@ -11,23 +11,42 @@
 		{ name: 'about', link: '/about' },
 		{ name: 'portfolio', link: '/portfolio' }
 	];
+
+	export let location;
 </script>
 
-<nav class="navigation">
-	{#each navData as { name, link }, i}
-		<a
-			href={link}
-			class="navigation__link"
-			class:active={path === link}
-			use:flyItem={['-20rem', 0.15, i]}>
-			<Icon {name} width="1.8rem" />
+{#if location === 'header'}
+	<nav class="navigation">
+		{#each navData as { name, link }, i}
+			<a
+				href={link}
+				class="navigation__link"
+				class:active={path === link}
+				use:flyItem={['-20rem', 0.15, i]}>
+				<Icon {name} width="1.8rem" />
 
-			<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
-		</a>
-	{/each}
-	<DmToggle />
+				<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
+			</a>
+		{/each}
+		<DmToggle />
 
-</nav>
+	</nav>
+{:else}
+	<nav class="navigation">
+		{#each navData as { name, link }, i}
+			<a
+				href={link}
+				class="navigation__link"
+				class:active={path === link}
+				use:flyItem={['-20rem', 0.15, i]}>
+				<Icon {name} width="1.8rem" />
+
+				<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
+			</a>
+		{/each}
+
+	</nav>
+{/if}
 
 <style lang="scss">
 	@import '../../scss-styles/mixins';
