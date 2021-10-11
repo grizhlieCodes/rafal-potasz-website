@@ -24,8 +24,7 @@
 				class="img__bottle"
 				src="/images/shared/message-in-bottle.png"
 				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
-			<form name="contact" method="POST" netlify netlify-honeypot="bot-field">
-				<input type="hidden" name="contact" value="1">
+			<form name="contact" method="POST" netlify>
 				<input type="text" name="name" placeholder="Name" />
 				<input type="email" name="email" placeholder="Email" />
 				<textarea name="message" id="message" cols="30" rows="3" placeholder="Message" />

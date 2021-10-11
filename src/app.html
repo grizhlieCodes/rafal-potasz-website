@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="/base-styles/reset.css">
-		<link rel="stylesheet" href="/base-styles/variables.css">
-		<link rel="stylesheet" href="/base-styles/fonts.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-		%svelte.head%
-	</head>
-	<body>
-		<div id="svelte">%svelte.body%</div>
-	</body>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/base-styles/reset.css">
+	<link rel="stylesheet" href="/base-styles/variables.css">
+	<link rel="stylesheet" href="/base-styles/fonts.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+	%svelte.head%
+</head>
+
+<body>
+	<div id="svelte">%svelte.body%</div>
+
+	<form name="test" netlify netlify-honeypot="bot-field" hidden>
+		<input type="text" name="name" />
+		<input type="email" name="email" />
+		<textarea name="message"></textarea>
+	</form>
+</body>
+
 </html>
