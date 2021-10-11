@@ -28,7 +28,7 @@
 				<input type="text" name="name" placeholder="Name" />
 				<input type="email" name="email" placeholder="Email" />
 				<textarea name="message" id="message" cols="30" rows="3" placeholder="Message" />
-				<Button type="submit" on:click={submitForm} btnClass="primary" content="SEND 🚀" />
+				<Button type="submit" btnClass="primary" content="SEND 🚀" />
 			</form>
 		</div>
 	</div>
