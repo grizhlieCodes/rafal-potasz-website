@@ -50,11 +50,13 @@ html {
         --clr-text-accent-cyan: var(--cyan-600);
         --clr-text-accent-red: var(--red-300);
         --clr-text-btn: var(--blue-800);
+		--clr-text-footer-copyright: var(--blue-500);
 
 	/* Background Colors */
         --clr-bg-accent-cyan: var(--cyan-600);
         --clr-bg-accent-red: var(--red-300);
 		--clr-body-bg: var(--blue-900);
+		--clr-footer-bg: var(--blue-800);
 
 	/* Misc Colors */
 		/* Lines Colors */
@@ -74,6 +76,8 @@ html {
             --clr-overlay-bg: var(--blue-900);
 		/* Logo Colors */
 			--clr-text-logo-span: var(--white-38);
+			--clr-text-logo-dark-focused: var(--white-93);
+			--clr-text-logo-dark-span: var(--white-38);
 
 		/* Tech Badge Colors */
 			--clr-tech-badge-bg: var(--blue-800);
