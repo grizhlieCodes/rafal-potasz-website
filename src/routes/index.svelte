@@ -1,7 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <script>
 	import portfolio from '$lib/stores/portfolio.js';
 	import Logo from '$lib/Navigation/Logo.svelte';

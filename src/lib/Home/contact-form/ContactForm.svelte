@@ -24,7 +24,10 @@
 				class="img__bottle"
 				src="/images/shared/message-in-bottle.png"
 				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
-			<form name="contact" method="POST" netlify>
+			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com">
+				<input type="hidden" name="_next" value="http://localhost:3000/about">
+				<input type="hidden" name="_captcha" value="false">
+				<input type="hidden" name="_template" value="table">
 				<input type="text" name="name" placeholder="Name" />
 				<input type="email" name="email" placeholder="Email" />
 				<textarea name="message" id="message" cols="30" rows="3" placeholder="Message" />

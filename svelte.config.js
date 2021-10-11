@@ -6,13 +6,6 @@ const config = {
 	kit: {
 		adapter: netlify(),
 		target: '#svelte',
-		prerender: {
-			crawl: true,
-			enabled: true,
-			entries: ['*'],
-			onError: 'continue'
-
-		},
 	},
 	preprocess: preprocess()
 };
