@@ -2,14 +2,14 @@
 	import { onMount } from 'svelte';
 	import Line from './Line.svelte';
 	let mounted = false,
-		headerHeight = 0,
-		heroHeight = 0,
-		philosophyHeight = 0,
-		technologiesHeight = 0,
-		portfolioHeight = 0,
-		formHeight = 0,
+		headerDimensions = {width: 0, marginBottom: 0},
+		heroDimensions = {width: 0, marginBottom: 0},
+		philosophyDimensions = {width: 0, marginBottom: 0},
+		technologiesDimensions = {width: 0, marginBottom: 0},
+		portfolioDimensions = {width: 0, marginBottom: 0},
+		formDimensions = {width: 0, marginBottom: 0},
+		philDimensions = {width: 0, marginBottom: 0},
 		sectionGap = 0,
-		philHeight,
 		// allComplete = false,
 		loaded;
 
@@ -23,64 +23,75 @@
 	// 	}, 1000)
 	// });
 
-
-	const updateHeights = () => {
-		headerHeight = returnElHeight('header');
-		heroHeight = returnElHeight('section.hero');
-		philosophyHeight = returnElHeight('section.philosophy')
-		technologiesHeight = returnElHeight('section.technologies')
-		portfolioHeight = returnElHeight('section.portfolio') 
-		formHeight = returnElHeight('section.contact-form')
+	const updateDimensions = () => {
+		headerDimensions = returnElDimensions('header')
+		heroDimensions = returnElDimensions('section.hero')
+		philosophyDimensions = returnElDimensions('section.philosophy')
+		technologiesDimensions = returnElDimensions('section.technologies')
+		portfolioDimensions = returnElDimensions('section.portfolio')
+		formDimensions = returnElDimensions('section.contact-form')
 	};
 
-	const returnElHeight = (selector) => {
+	const returnElDimensions = (selector) => {
 		const el = document.querySelector(`${selector}`);
 		const elHeight = el.clientHeight;
-		const main = document.querySelector('main')
-		const mainGridGap = `${window.getComputedStyle(main).getPropertyValue('row-gap')}`
-		sectionGap = mainGridGap
-		return elHeight;
+		const elMarginBottom = parseInt(window.getComputedStyle(el).getPropertyValue('margin-bottom'));
+		const main = document.querySelector('main');
+		const mainGridGap = parseInt(window.getComputedStyle(main).getPropertyValue('row-gap'));
+		console.log(elMarginBottom, mainGridGap)
+		sectionGap = mainGridGap;
+		return {height: elHeight, marginBottom: elMarginBottom + mainGridGap};
 	};
-	$: if (loaded) updateHeights();
+	$: if (loaded) updateDimensions();
 
-	export function rerunLines()  {
+	export function rerunLines() {
 		setTimeout(() => {
-			updateHeights()
-		}, 150)
+			updateDimensions();
+		}, 150);
 	}
-	let scrolled = false
+	let scrolled = false;
 	const calcLinesOnScroll = (e) => {
-		if(!scrolled){
-			updateHeights()
+		if (!scrolled) {
+			updateDimensions();
 		}
-		return
+		return;
 	};
-
 </script>
 
-<svelte:window on:resize={updateHeights} on:scroll={calcLinesOnScroll} on:load={() => loaded = true}/>
+<svelte:window
+	on:resize={updateDimensions}
+	on:scroll={calcLinesOnScroll}
+	on:load={() => (loaded = true)} />
 
 <div class="lines-container">
-	<div class="section first-section" style="height: {headerHeight}px;">
+	<div class="section first-section" style="height: {headerDimensions.height}px;">
 		<Line direction="horizontal" dimension="100vw" top="20%" />
 		<Line direction="vertical" dimension="100vh" left="5%" />
 		<span class="circle" />
 	</div>
-	<div class="section second-section" style="height: {heroHeight}px; margin-bottom: {sectionGap};">
+	<div
+		class="section second-section"
+		style="height: {heroDimensions.height}px; margin-bottom: {heroDimensions.marginBottom}px;" />
+	<div
+		class="section third-section"
+		style="height: {philosophyDimensions.height}px; margin-bottom: {philosophyDimensions.marginBottom}px;">
+		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-20%" />
 	</div>
-	<div class="section third-section" style="height: {philosophyHeight}px; margin-bottom: {sectionGap};">
-		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-20%"/>
+	<div
+		class="section fourth-section"
+		style="height: {technologiesDimensions.height}px; margin-bottom: {technologiesDimensions.marginBottom}px;">
+		<Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%" />
 	</div>
-	<div class="section fourth-section" style="height: {technologiesHeight}px; margin-bottom: {sectionGap};">
-		<Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/>
-	</div>
-	<div class="section fifth-section" style="height: {portfolioHeight}px; margin-bottom: {sectionGap};">
+	<div
+		class="section fifth-section"
+		style="height: {portfolioDimensions.height}px; margin-bottom: {portfolioDimensions.marginBottom}px;">
 		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
 		<span class="circle" />
 	</div>
-	<div class="section sixth-section" style="height: {formHeight}px; margin-bottom: {sectionGap};">
+	<div class="section sixth-section" style="height: {formDimensions.marginBottom}px; margin-bottom: {formDimensions.height}px;">
 		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
 		<!-- <span class="circle" /> -->
+		<span class="square" style="height: {formDimensions.height}px; width: {formDimensions.height}px;" />
 	</div>
 </div>
 
@@ -91,23 +102,31 @@
 		transition: height 250ms;
 	}
 
-	span.circle {
+	span {
 		display: block;
 		position: absolute;
+		aspect-ratio: 1;
+		border: 1px solid v(clr-line-bg);
+		background: transparent;
+	}
+	span.circle {
 		width: 90%;
 		max-width: 100rem;
-		aspect-ratio: 1;
-		background: transparent;
 		border-radius: 50%;
-		border: 1px solid v(clr-line-bg);
 		transform: translate(-50%, -50%);
+	}
+
+	span.square {
+		left: 50%;
+		transform: translate(-50%, 7%) rotate(45deg);
 	}
 
 	.fifth-section {
 		span.circle {
-			max-width: unset;
+			max-width: 60%;
 			transform: translate(50%, 0%);
-
+			right: 0;
+			top: 0;
 		}
 	}
 
