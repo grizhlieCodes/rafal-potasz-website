@@ -1,8 +1,10 @@
 <script>
-    export let sectionClass
+    export let sectionClass, marginBottom = 0
+
+	$: margin = marginBottom === 0 ? 0 : `${marginBottom}rem`
 </script>
 
-<section class="{sectionClass}">
+<section class="{sectionClass}" style="margin-bottom: {margin};">
 
     <slot />
 
