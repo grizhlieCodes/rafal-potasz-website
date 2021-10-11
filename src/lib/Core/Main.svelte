@@ -1,8 +1,8 @@
 <script>
-
+	export let marginBottom = 0
 </script>
 
-<main>
+<main style="margin-bottom: {marginBottom}rem;">
 	<slot />
 </main>
 

@@ -15,7 +15,7 @@
 	};
 </script>
 
-<Main>
+<Main marginBottom="10">
 	<Hero />
 	<Philosophy />
 	<Technologies on:recalculateLines={recalculateLines} />
