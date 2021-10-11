@@ -7,13 +7,13 @@
 			content: 'my work 👆',
 			btnClass: 'primary',
 			type: 'anchor',
-			link: '/portfolio'
+			link: '#portfolio-section'
 		},
 		{
 			content: 'say hello 📧',
 			btnClass: 'secondary',
 			type: 'anchor',
-			link: '/portfolio'
+			link: '#contact-section'
 		}
 	];
 </script>

@@ -8,7 +8,7 @@
 	};
 </script>
 
-<Section sectionClass="contact-form span-900">
+<Section sectionClass="contact-form span-900" id="contact-section">
 	<div class="flex-container">
 		<Heading type="2" content="SAY HELLO!" />
 		<p>

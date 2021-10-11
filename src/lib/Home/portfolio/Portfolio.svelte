@@ -71,7 +71,7 @@ const dispatchRecalcLines = () => {
 	};
 </script>
 
-<Section sectionClass="portfolio span-1220" marginBottom="15">
+<Section sectionClass="portfolio span-1220" marginBottom="15" id="portfolio-section">
 	<div class="flex-container">
 		<Heading type="2" content="portfolio" />
 		<PortfolioFilter

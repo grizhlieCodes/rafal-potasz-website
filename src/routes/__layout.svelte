@@ -47,15 +47,19 @@
 <style lang="scss">
 	@import '../scss-styles/mixins';
 
+	:global(html){
+		scroll-behavior: smooth;
+	}
+
 	:global(body) {
 		width: 100%;
 		background-color: v(clr-body-bg);
-		// background-image: url('/images/shared/bg-light2.png');
+		background-image: url('/images/shared/bg-light2.png');
 		background-repeat: repeat;
 	}
 
 	:global(body.dark) {
-		// background-image: url('/images/shared/bg-dark.png');
+		background-image: url('/images/shared/bg-dark.png');
 	}
 
 	:global(div#svelte) {
