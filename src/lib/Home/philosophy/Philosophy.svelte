@@ -66,7 +66,7 @@
 		</p>
 		<Button {...btnData} />
 		<img class="philosophy__nietzsche-img"
-			src="static/images/home/{$size}/nietzsche.png"
+			src="/images/home/{$size}/nietzsche.png"
 			alt="Portrait of Frederich Nietzsche with his usual contemplating look." />
 		<div class="bg-triangle normal">
 			<Icon name="triangle" width="50rem" />

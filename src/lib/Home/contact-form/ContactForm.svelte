@@ -18,11 +18,11 @@
 		<div class="form-container">
 			<img
 				class="img__rafal"
-				src="static/images/shared/rafal-smiling-arthurs-peak.png"
+				src="/images/shared/rafal-smiling-arthurs-peak.png"
 				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
 			<img
 				class="img__bottle"
-				src="static/images/shared/message-in-bottle.png"
+				src="/images/shared/message-in-bottle.png"
 				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
 			<form name="contact" method="POST" netlify netlify-honeypot="bot-field">
 				<input type="text" name="name" placeholder="Name" />

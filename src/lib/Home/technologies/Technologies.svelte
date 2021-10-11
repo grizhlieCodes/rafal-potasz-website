@@ -63,7 +63,7 @@
 			<p class="click-disclaimer">👆 on a badge to read my thoughts</p>
 		{/if}
 
-		<img src="static/images/home/{$size}/tesla.png" alt="">
+		<img src="/images/home/{$size}/tesla.png" alt="">
 	</div>
 </Section>
 

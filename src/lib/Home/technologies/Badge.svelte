@@ -13,7 +13,7 @@
 <div class="badge {name}" on:click={() => dispatch('clickedBadge', index)} class:active={index === lastClickedIndexReactive}>
 	<!-- <div class="hoverable-overlay" /> -->
 
-	<img src="static/images/home/shared/tech-logos/{name}.png" alt="{name} svg icon" />
+	<img src="/images/home/shared/tech-logos/{name}.png" alt="{name} svg icon" />
 	<p>{text}</p>
 </div>
 
