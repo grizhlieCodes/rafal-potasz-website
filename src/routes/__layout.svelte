@@ -3,6 +3,7 @@
 	import { setContext, onMount } from 'svelte';
 	import Header from '$lib/Navigation/Header.svelte';
 	import Overlay from '$lib/Decorations/Overlay.svelte';
+	import Footer from '$lib/footer/Footer.svelte';
 	import { calcRealSize } from '$lib/scripts/helperFunctions.js';
 
 	let windowWidth,
@@ -43,6 +44,7 @@
 
 <Header on:toggleMenu={toggleMenu} {showMobileNav} />
 <slot />
+<Footer />
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
