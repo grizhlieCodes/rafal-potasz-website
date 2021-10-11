@@ -12,8 +12,7 @@
 	<div class="flex-container">
 		<Heading type="2" content="SAY HELLO!" />
 		<p>
-			Whether you want to hire me or discuss a project, contact me below. I'll be happy to hear from
-			you 😁.
+			Whether you want to hire me or discuss a project, contact me below and I'll get back to you within 48 hours.
 		</p>
 		<div class="form-container">
 			<img
@@ -25,7 +24,7 @@
 				src="/images/shared/message-in-bottle.png"
 				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
 			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com">
-				<input type="hidden" name="_next" value="http://localhost:3000/about">
+				<input type="hidden" name="_next" value="http://www.rafalpotasz.com/about">
 				<input type="hidden" name="_captcha" value="false">
 				<input type="hidden" name="_template" value="table">
 				<input type="text" name="name" placeholder="Name" />
@@ -55,6 +54,7 @@
 			font-size: fluid(desktop, 1.4, 1.65);
 			margin-bottom: 4rem;
 			max-width: 35rem;
+			line-height: fluid(desktop, 1.65, 1.85);
 
 			@include mq(desktop) {
 				text-align: center;
