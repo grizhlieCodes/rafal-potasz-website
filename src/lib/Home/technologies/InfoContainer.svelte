@@ -18,7 +18,7 @@
 		background: v(clr-tech-info-bg);
 		z-index: v(z-index-priority);
 		padding: 3rem 4rem;
-		color: v(clr-text-focused);
+		color: v(clr-text-tech-badge);
 		font-family: v(fira);
 		font-size: fluid(desktop, 1.4, 1.65);
 		flex: 1 0 100%;

@@ -27,7 +27,7 @@
 		@include px(fluid(desktop, 1, 2.1));
 		@include py(fluid(desktop, 0.95, 1.13));
 		background: v(clr-tech-badge-bg);
-		color: v(clr-text-focused);
+		color: v(clr-text-tech-badge);
 		font-family: v(fira);
 		@include flex(row nowrap, center, center);
 		font-size: fluid(desktop, 1.5, 1.63);

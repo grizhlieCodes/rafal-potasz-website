@@ -83,6 +83,7 @@ html {
 			--clr-tech-badge-bg: var(--blue-800);
 			--clr-tech-badge-hover-bg: var(--blue-500);
 			--clr-tech-info-bg: var(--blue-700);
+			--clr-text-tech-badge: var(--white-93);
 
 			--clr-portfolio-filter-accent: var(--cyan-600);
 			--clr-portfolio-filter-active-tick: var(--blue-900);
@@ -101,7 +102,7 @@ body.light {
 		--clr-body-bg: var(--white-97);
 
 	/* Misc colr for lines */
-		--clr-line-bg: var(--white-90);
+		--clr-line-bg: var(--white-86);
 
     /* Misc colors changed for light mode */
 		--clr-burger-btn-bg: var(--blue-700);
@@ -122,6 +123,11 @@ body.light {
 		/* Form */
 		--clr-form-bg: var(--white-100);
 		--clr-form-input-bg: var(--white-93);
+
+		/* Tech Badge Colors */
+		--clr-tech-badge-bg: var(--blue-500);
+		--clr-tech-badge-hover-bg: var(--blue-700);
+		--clr-tech-info-bg: var(--blue-500);
 }
 
 /* What do we need variables for? */

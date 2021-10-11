@@ -60,7 +60,7 @@
 			{/if}
 		</div>
 		{#if badgeInfo.length === 0}
-			<p class="click-disclaimer">👆 on a badge to read my thoughts</p>
+			<p class="click-disclaimer"> <span>👆</span> on a badge to read my thoughts</p>
 		{/if}
 
 		<img src="/images/home/{$size}/tesla.png" alt="">
@@ -88,14 +88,34 @@
 
 	p {
 		font-family: v(fira);
-		color: v(clr-text-faded);
+		color: v(clr-text-focused);
 		font-size: fluid(desktop, 1.5, 1.65);
 		max-width: 36rem;
 		text-align: left;
 		@include mq(desktop) {
 			text-align: center;
 		}
+
+		&.click-disclaimer {
+			@include flex(row nowrap, start, start);
+			gap: 0.5rem;
+
+			span {
+				display: block;
+				animation: pointup infinite 500ms alternate-reverse linear;
+			}
+		}
+		@keyframes pointup{
+			from {
+				transform: translate(0, 0rem);
+			}
+			to {
+				transform: translate(0, -0.5rem);
+			}
+		}
 	}
+
+
 
 	.badges-container {
 		@include flex(row wrap, start, center);
