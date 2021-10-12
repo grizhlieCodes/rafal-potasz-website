@@ -13,16 +13,6 @@
 		// allComplete = false,
 		loaded;
 
-	// onMount(() => {
-	// 	setTimeout(() => {
-	// 		mounted = true;
-	// 		// window.addEventListener('load', () => {
-	// 		// 	console.log('loaded')
-	// 		// });
-	// 		console.log(mounted, loaded)
-	// 	}, 1000)
-	// });
-
 	const updateDimensions = () => {
 		headerDimensions = returnElDimensions('header')
 		heroDimensions = returnElDimensions('section.hero')
@@ -38,7 +28,6 @@
 		const elMarginBottom = parseInt(window.getComputedStyle(el).getPropertyValue('margin-bottom'));
 		const main = document.querySelector('main');
 		const mainGridGap = parseInt(window.getComputedStyle(main).getPropertyValue('row-gap'));
-		console.log(elMarginBottom, mainGridGap)
 		sectionGap = mainGridGap;
 		return {height: elHeight, marginBottom: elMarginBottom + mainGridGap};
 	};

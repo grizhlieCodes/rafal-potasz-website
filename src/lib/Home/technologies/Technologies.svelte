@@ -22,7 +22,6 @@
 		badgeInfo = [];
 
 	const updateLastClickedIndex = (e) => {
-		console.log('running')
 		let index = e.detail;
 		if (lastClickedIndex == index) {
 			lastClickedIndex = null;
@@ -32,7 +31,6 @@
 			lastClickedIndex = index;
 			badgeInfo = data[index].info;
 		}
-		console.log('running')
 		dispatch('recalculateLines')
 	};
 </script>
