@@ -140,10 +140,10 @@
 			transform: translate(52%, 22%) rotate(0.5deg);
 		}
 		@include mq(tablet-wide){
-			transform: translate(34%, 9%) rotate(-6.5deg);
+			transform: translate(34%, 9%) rotate(0deg);
 		}
 		@include mq(desktop){
-			transform: translate(-46%, 14%) rotate(15.5deg);
+			transform: translate(-46%, 14%);
 			right: unset;
 			left: 0;
 			width: 34rem;
