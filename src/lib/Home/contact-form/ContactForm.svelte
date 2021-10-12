@@ -6,13 +6,39 @@
 	const submitForm = (e) => {
 		e.preventDefault();
 	};
+
+	const isNotEmpty = (string) => {
+		return string.trim().length >= 1;
+	};
+
+	const validateEmail = (email) => {
+		let emailValidRegex = /^\S+@\S+$/;
+		return emailValidRegex.test(email);
+	}
+
+	let name = '',
+		email = '',
+		message = '',
+		disabled = true;
+
+	$: nameValid = isNotEmpty(name);
+	$: emailValid = isNotEmpty(email) && validateEmail(email);
+	$: messageValid = isNotEmpty(message);
+	$: allInputsValid = nameValid && emailValid && messageValid;
+
+	const validateForm = () => {
+		if (allInputsValid) {
+			disabled = false;
+		}
+	};
 </script>
 
 <Section sectionClass="contact-form span-900" id="contact-section">
 	<div class="flex-container">
 		<Heading type="2" content="SAY HELLO!" />
 		<p>
-			Whether you want to hire me or discuss a project, contact me below and I'll get back to you within 48 hours.
+			Whether you want to hire me or discuss a project, contact me below and I'll get back to you
+			within 48 hours.
 		</p>
 		<div class="form-container">
 			<img
@@ -24,13 +50,30 @@
 				src="/images/shared/message-in-bottle.png"
 				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
 			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com">
-				<input type="hidden" name="_next" value="http://www.rafalpotasz.com/about">
+				<input type="hidden" name="_next" value="http://www.rafalpotasz.com/about" />
 				<!-- <input type="hidden" name="_captcha" value="false"> -->
-				<input type="hidden" name="_template" value="table">
-				<input type="text" name="name" placeholder="Name" />
-				<input type="email" name="email" placeholder="Email" />
-				<textarea name="message" id="message" cols="30" rows="3" placeholder="Message" />
-				<Button type="submit" btnClass="primary" content="SEND 🚀" />
+				<input type="hidden" name="_template" value="table" />
+				<input
+					type="text"
+					name="name"
+					placeholder="Name *"
+					bind:value={name}
+					on:input={validateForm} />
+				<input
+					type="email"
+					name="email"
+					placeholder="Email *"
+					bind:value={email}
+					on:input={validateForm} />
+				<textarea
+					name="message"
+					id="message"
+					cols="30"
+					rows="3"
+					placeholder="Message *"
+					bind:value={message}
+					on:input={validateForm} />
+				<Button {disabled} type="submit" btnClass="primary" content="SEND 🚀" />
 			</form>
 		</div>
 	</div>
