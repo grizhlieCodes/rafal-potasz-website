@@ -5,6 +5,7 @@
 	import Overlay from '$lib/Decorations/Overlay.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 	import { calcRealSize } from '$lib/scripts/helperFunctions.js';
+	import darkMode from '$lib/stores/darkmode.js'
 
 	let windowWidth,
 		scrollbarWidth,
@@ -36,7 +37,7 @@
 	}
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} />
+<svelte:window bind:innerWidth={windowWidth} on:load={() => darkMode.checkDarkmode()}/>
 
 {#if showOverlay}
 	<Overlay on:closeModal={closeActiveModal} />

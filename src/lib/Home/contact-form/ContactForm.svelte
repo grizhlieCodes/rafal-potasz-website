@@ -112,8 +112,7 @@
 
 				input:-webkit-autofill,
 				input:-webkit-autofill:focus,
-				input:-webkit-autofill:hover input:-webkit-autofill {
-					border: none;
+				input:-webkit-autofill:hover {
 					-webkit-text-fill-color: v(clr-text-focused);
 					-webkit-box-shadow: 0 0 0 1000px v(clr-form-input-bg) inset;
 				}
