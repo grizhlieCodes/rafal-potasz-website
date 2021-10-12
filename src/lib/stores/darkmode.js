@@ -35,6 +35,6 @@ const customDarkmode = {
     } 
 }
 
-
+customDarkmode.checkDarkmode()
 
 export default customDarkmode

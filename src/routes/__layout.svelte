@@ -56,8 +56,11 @@
 	:global(body) {
 		width: 100%;
 		background-color: v(clr-body-bg);
-		background-image: url('/images/shared/bg-light2.png');
 		background-repeat: repeat;
+	}
+
+	:global(body.light){
+		background-image: url('/images/shared/bg-light2.png');
 	}
 
 	:global(body.dark) {
