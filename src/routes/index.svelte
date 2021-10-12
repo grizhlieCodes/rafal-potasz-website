@@ -8,10 +8,10 @@
 	import Technologies from '$lib/Home/technologies/Technologies.svelte';
 	import Portfolio from '$lib/Home/portfolio/Portfolio.svelte';
 	import ContactForm from '$lib/Home/contact-form/ContactForm.svelte';
-	let recalculate;
+	let linesComp;
 
 	const recalculateLines = () => {
-		recalculate.rerunLines();
+		linesComp.rerunLines();
 	};
 </script>
 
@@ -23,7 +23,7 @@
 	<ContactForm />
 </Main>
 
-<Lines bind:this={recalculate} />
+<Lines bind:this={linesComp} />
 
 <style lang="scss">
 	@import '../scss-styles/mixins';

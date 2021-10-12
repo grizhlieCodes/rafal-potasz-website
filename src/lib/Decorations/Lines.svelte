@@ -2,24 +2,23 @@
 	import { onMount } from 'svelte';
 	import Line from './Line.svelte';
 	let mounted = false,
-		headerDimensions = {width: 0, marginBottom: 0},
-		heroDimensions = {width: 0, marginBottom: 0},
-		philosophyDimensions = {width: 0, marginBottom: 0},
-		technologiesDimensions = {width: 0, marginBottom: 0},
-		portfolioDimensions = {width: 0, marginBottom: 0},
-		formDimensions = {width: 0, marginBottom: 0},
-		philDimensions = {width: 0, marginBottom: 0},
+		headerDimensions = { width: 0, marginBottom: 0 },
+		heroDimensions = { width: 0, marginBottom: 0 },
+		philosophyDimensions = { width: 0, marginBottom: 0 },
+		technologiesDimensions = { width: 0, marginBottom: 0 },
+		portfolioDimensions = { width: 0, marginBottom: 0 },
+		formDimensions = { width: 0, marginBottom: 0 },
+		philDimensions = { width: 0, marginBottom: 0 },
 		sectionGap = 0,
-		// allComplete = false,
 		loaded;
 
 	const updateDimensions = () => {
-		headerDimensions = returnElDimensions('header')
-		heroDimensions = returnElDimensions('section.hero')
-		philosophyDimensions = returnElDimensions('section.philosophy')
-		technologiesDimensions = returnElDimensions('section.technologies')
-		portfolioDimensions = returnElDimensions('section.portfolio')
-		formDimensions = returnElDimensions('section.contact-form')
+		headerDimensions = returnElDimensions('header');
+		heroDimensions = returnElDimensions('section.hero');
+		philosophyDimensions = returnElDimensions('section.philosophy');
+		technologiesDimensions = returnElDimensions('section.technologies');
+		portfolioDimensions = returnElDimensions('section.portfolio');
+		formDimensions = returnElDimensions('section.contact-form');
 	};
 
 	const returnElDimensions = (selector) => {
@@ -29,7 +28,7 @@
 		const main = document.querySelector('main');
 		const mainGridGap = parseInt(window.getComputedStyle(main).getPropertyValue('row-gap'));
 		sectionGap = mainGridGap;
-		return {height: elHeight, marginBottom: elMarginBottom + mainGridGap};
+		return { height: elHeight, marginBottom: elMarginBottom + mainGridGap };
 	};
 	$: if (loaded) updateDimensions();
 
@@ -77,10 +76,14 @@
 		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
 		<span class="circle" />
 	</div>
-	<div class="section sixth-section" style="height: {formDimensions.marginBottom}px; margin-bottom: {formDimensions.height}px;">
+	<div
+		class="section sixth-section"
+		style="height: {formDimensions.marginBottom}px; margin-bottom: {formDimensions.height}px;">
 		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
 		<!-- <span class="circle" /> -->
-		<span class="square" style="height: {formDimensions.height}px; width: {formDimensions.height}px;" />
+		<span
+			class="square"
+			style="height: {formDimensions.height}px; width: {formDimensions.height}px;" />
 	</div>
 </div>
 
