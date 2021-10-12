@@ -8,16 +8,6 @@
 	const dispatch = createEventDispatcher();
 	let data = $BadgesData, size = getContext('size')
 
-	const removeInfo = () => {
-		let tempData = [...data];
-		tempData.splice(2, 1);
-		data = tempData;
-	};
-
-	const clearInfoFromData = () => {
-		data = data.filter((d) => d.type === 'badge');
-	};
-
 	let lastClickedIndex = null,
 		badgeInfo = [];
 
