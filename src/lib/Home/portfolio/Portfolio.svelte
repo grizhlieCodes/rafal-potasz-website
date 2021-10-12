@@ -8,10 +8,12 @@
 	import PortfolioText from './PortfolioText.svelte';
 	import PortfolioVideo from './PortfolioVideo.svelte';
 	import PortfolioData from '$lib/stores/portfolio.js';
+	import {repositionToProjects} from '$lib/scripts/portfolioHelpers.js'
 
 	import { quintOut } from 'svelte/easing';
 	import { crossfade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
+	import { getRawBody } from '@sveltejs/kit/node';
 	const [send, receive] = crossfade({
 		duration: (d) => Math.sqrt(d * 200),
 
@@ -35,11 +37,11 @@
 		filter = e.detail;
 	};
 
-	let localPortfolio = [...$PortfolioData].filter(p => p.type.includes('featured'));
+	let localPortfolio = [...$PortfolioData].filter((p) => p.type.includes('featured'));
 
-const dispatchRecalcLines = () => {
-	dispatch('recalculateLines')
-}
+	const dispatchRecalcLines = () => {
+		dispatch('recalculateLines');
+	};
 
 	const updateProjects = (e) => {
 		let data = e.detail;
@@ -49,14 +51,16 @@ const dispatchRecalcLines = () => {
 
 		if (noFilter) {
 			localPortfolio = [...$PortfolioData];
-			dispatchRecalcLines()
+			dispatchRecalcLines();
+			repositionToProjects();
 			return;
 		}
 		if (oneFilter) {
 			localPortfolio = $PortfolioData.filter((p) => {
 				return p.type.includes(data[0]) && !p.type.includes('design');
 			});
-			dispatchRecalcLines()
+			dispatchRecalcLines();
+			repositionToProjects();
 			return;
 		}
 		if (multipleFilters) {
@@ -65,10 +69,13 @@ const dispatchRecalcLines = () => {
 				return data.every((filter) => projectTags.includes(filter));
 			});
 			localPortfolio = returnedData;
-			dispatchRecalcLines()
+			dispatchRecalcLines();
+			repositionToProjects();
 			return;
 		}
 	};
+	// let portfolioSectionHeight;
+	
 </script>
 
 <Section sectionClass="portfolio span-1220" marginBottom="15" id="portfolio-section">
@@ -104,7 +111,7 @@ const dispatchRecalcLines = () => {
 			align-items: center;
 			padding: 0 4rem;
 		}
-		@include mq(desktop-wide){
+		@include mq(desktop-wide) {
 			padding: 0;
 		}
 	}
@@ -128,12 +135,12 @@ const dispatchRecalcLines = () => {
 			@include eflex(row nowrap, space-between, center);
 		}
 
-		&:nth-of-type(odd){
+		&:nth-of-type(odd) {
 			&::after {
 				left: 0;
 			}
 		}
-		&:nth-of-type(even){
+		&:nth-of-type(even) {
 			&::after {
 				right: 0;
 			}
@@ -148,14 +155,10 @@ const dispatchRecalcLines = () => {
 			bottom: -4rem;
 		}
 
-		@include mq(desktop){
+		@include mq(desktop) {
 			&::after {
 				bottom: -5rem;
 			}
 		}
 	}
-
-
-
-
 </style>
