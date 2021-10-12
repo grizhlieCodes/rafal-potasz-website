@@ -5,11 +5,15 @@
 	import InfoContainer from './InfoContainer.svelte';
 	import BadgesData from '$lib/stores/techBadgesData.js'
 	import {getContext, createEventDispatcher } from 'svelte'
+import Philosophy from '../philosophy/Philosophy.svelte';
 	const dispatch = createEventDispatcher();
 	let data = $BadgesData, size = getContext('size')
 
+
 	let lastClickedIndex = null,
 		badgeInfo = [];
+
+	
 
 	const updateLastClickedIndex = (e) => {
 		let index = e.detail;
@@ -18,8 +22,11 @@
 			badgeInfo = [];
 		} else if (lastClickedIndex == null || lastClickedIndex != index)
 		{
-			lastClickedIndex = index;
-			badgeInfo = data[index].info;
+			badgeInfo = []
+			setTimeout(() => {
+				lastClickedIndex = index;
+				badgeInfo = data[index].info;
+			},400)
 		}
 		dispatch('recalculateLines')
 	};

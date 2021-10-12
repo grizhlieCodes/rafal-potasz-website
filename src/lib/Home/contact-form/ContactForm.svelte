@@ -44,11 +44,11 @@
 			<img
 				class="img__rafal"
 				src="/images/shared/rafal-smiling-arthurs-peak.png"
-				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
+				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" loading="lazy"/>
 			<img
 				class="img__bottle"
 				src="/images/shared/message-in-bottle.png"
-				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
+				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" loading="lazy"/>
 			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com">
 				<input type="hidden" name="_next" value="http://www.rafalpotasz.com/about" />
 				<!-- <input type="hidden" name="_captcha" value="false"> -->
