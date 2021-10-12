@@ -16,7 +16,6 @@
 	let timeoutCounter = 0
 
 	const countedTimeout = () => {
-		console.log('running')
 		setHeroImgHeight(container)
 		timeoutCounter++
 		setTimeout(() => {
