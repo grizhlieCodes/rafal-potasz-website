@@ -58,7 +58,7 @@ import Philosophy from '../philosophy/Philosophy.svelte';
 			<p class="click-disclaimer"> <span>👆</span> on a badge to read my thoughts</p>
 		{/if}
 
-		<img src="/images/home/{$size}/tesla.png" alt="">
+		<img src="/images/home/{$size}/tesla.png" alt="Nicola Tesla in black and white" loading="lazy">
 	</div>
 </Section>
 

@@ -73,7 +73,7 @@
 		<img
 			class="philosophy__nietzsche-img"
 			src="/images/home/{$size}/nietzsche.png"
-			alt="Portrait of Frederich Nietzsche with his usual contemplating look." />
+			alt="Portrait of Frederich Nietzsche with his usual contemplating look." loading="lazy"/>
 		<div class="bg-triangle normal">
 			<Icon name="triangle" width="50rem" />
 		</div>

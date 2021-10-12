@@ -12,8 +12,7 @@
 			<Icon name="logo" width="3.9rem" />
 		</div>
 		<p class="logo-container__logo-text">
-			rafal
-			<span>potasz</span>
+			rafal<span>potasz</span>
 		</p>
 	</a>
 {:else}
@@ -22,8 +21,7 @@
 			<Icon name="logo" width="3.9rem" />
 		</div>
 		<p class="logo-container__logo-text">
-			rafal
-			<span>potasz</span>
+			rafal<span>potasz</span>
 		</p>
 	</a>
 {/if}
