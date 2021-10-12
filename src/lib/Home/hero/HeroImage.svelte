@@ -16,13 +16,14 @@
 	let timeoutCounter = 0
 
 	const countedTimeout = () => {
+		console.log('running')
 		setHeroImgHeight(container)
 		timeoutCounter++
 		setTimeout(() => {
-			if(timeoutCounter !== 5){
+			if(timeoutCounter < 5){
 				setHeroImgHeight(container)
 			}
-		},600)
+		},	1000)
 	}
 
 	onMount(() => {
@@ -31,7 +32,7 @@
 
 </script>
 
-<svelte:window on:resize={() => setHeroImgHeight(container)} />
+<svelte:window on:resize={() => setHeroImgHeight(container)} on:load={() => setHeroImgHeight(container)}/>
 
 <div class="hero-img-container" bind:this={container}>
 	<div class="backdrop" />
