@@ -167,6 +167,10 @@
 			line-height: 2rem;
 			margin-bottom: 2rem;
 
+			@include mq(phablet) {
+				max-width: 48.7rem;
+			}
+
 			span {
 				display: block;
 				&.bold {
