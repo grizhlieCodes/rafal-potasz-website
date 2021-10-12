@@ -1,13 +1,13 @@
 <script>
-	export let link, content, type, btnClass;
+	export let link, content, type, btnClass, disabled;
 </script>
 
 {#if type === 'anchor'}
 	<a href={link} class={btnClass}>{content}</a>
 {:else if type === 'button'}
-	<button type="button" on:click class={btnClass}>{content}</button>
+	<button type="button" on:click class={btnClass} {disabled}>{content}</button>
 {:else if type === 'submit'}
-	<button type="submit" on:click class={btnClass}>{content}</button>
+	<button type="submit" on:click class={btnClass} {disabled}>{content}</button>
 {/if}
 
 <style lang="scss">
@@ -27,6 +27,11 @@
 		text-align: center;
 		cursor: pointer;
 
+		&:disabled {
+			opacity: 0.2;
+			cursor: not-allowed;
+		}
+
 		&.primary {
 			background: v(clr-bg-accent-cyan);
 		}
@@ -35,7 +40,7 @@
 			background: v(clr-bg-accent-red);
 		}
 
-		&:hover {
+		&:hover:not(:disabled) {
 			opacity: 0.8;
 			transform: scale(1.1);
 		}
