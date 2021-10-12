@@ -2,7 +2,7 @@
 	import Section from '$lib/Core/Section.svelte';
 	import Button from '$lib/Button.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte';
-	import Icon from '$lib/Decorations/Icon.svelte'
+	import Icon from '$lib/Decorations/Icon.svelte';
 	import { getContext } from 'svelte';
 
 	let size = getContext('size');
@@ -28,10 +28,15 @@
 			textClass: 'bold'
 		},
 		{
+			content: 'I help others where I can, either by listening or advising them.',
+			textClass: 'normal'
+		},
+		{
 			content:
 				'I give it my all and always seek to improve by perpetually remaining a student of what I do.',
 			textClass: 'normal'
 		},
+
 		{
 			content: 'I always seek to do everything systemically and scalably.',
 			textClass: 'normal'
@@ -65,7 +70,8 @@
 			{/each}
 		</p>
 		<Button {...btnData} />
-		<img class="philosophy__nietzsche-img"
+		<img
+			class="philosophy__nietzsche-img"
 			src="/images/home/{$size}/nietzsche.png"
 			alt="Portrait of Frederich Nietzsche with his usual contemplating look." />
 		<div class="bg-triangle normal">
@@ -77,7 +83,7 @@
 <style lang="scss">
 	@import '../../../scss-styles/mixins';
 
-	:global(body.light){
+	:global(body.light) {
 		img.philosophy__nietzsche-img {
 			border-radius: 50%;
 			mix-blend-mode: unset;
@@ -98,8 +104,8 @@
 
 			&.normal {
 				left: 50%;
-			transform: translate(-50%, 0%);
-			top: -5rem;
+				transform: translate(-50%, 0%);
+				top: -5rem;
 			}
 
 			&.right {
@@ -109,10 +115,9 @@
 			}
 		}
 
-		:global(.bg-triangle svg path){
+		:global(.bg-triangle svg path) {
 			stroke: v(clr-line-bg);
 		}
-
 
 		@include mq(desktop) {
 			align-items: center;
@@ -123,7 +128,7 @@
 			position: absolute;
 			right: 0;
 			bottom: 0;
-			transform: translate(75%, 0%);
+			transform: translate(65%, 0%);
 			z-index: v(z-index-bg);
 			mix-blend-mode: lighten;
 			width: 25rem;
@@ -142,7 +147,7 @@
 
 			@include mq(tablet-wide) {
 				width: 30rem;
-				transform: translate(0%, -50%);
+				transform: translate(41%, -50%);
 			}
 		}
 
@@ -156,7 +161,7 @@
 		}
 
 		p.main-text {
-			max-width: 48.7rem;
+			max-width: 22.7rem;
 			color: v(clr-text-focused);
 			font-size: fluid(desktop, 1.4, 1.65);
 			line-height: 2rem;
