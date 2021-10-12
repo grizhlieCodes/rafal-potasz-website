@@ -16,7 +16,7 @@
 </script>
 
 {#if location === 'header'}
-	<nav class="navigation">
+	<nav class="navigation header">
 		{#each navData as { name, link }, i}
 			<a
 				href={link}
@@ -32,7 +32,7 @@
 
 	</nav>
 {:else}
-	<nav class="navigation">
+	<nav class="navigation footer">
 		{#each navData as { name, link }, i}
 			<a
 				href={link}
@@ -55,6 +55,10 @@
 		z-index: v(z-index-priority);
 		@include flex(row nowrap, start, start);
 		gap: 3rem;
+
+		&.footer {
+			z-index: 0;
+		}
 	}
 
 	a.navigation__link {
