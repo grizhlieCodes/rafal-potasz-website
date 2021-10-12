@@ -35,7 +35,7 @@
 	export function rerunLines() {
 		setTimeout(() => {
 			updateDimensions();
-		}, 150);
+		}, 300);
 	}
 	let scrolled = false;
 	const calcLinesOnScroll = (e) => {
