@@ -63,7 +63,7 @@
 	<div
 		class="section third-section"
 		style="height: {philosophyDimensions.height}px; margin-bottom: {philosophyDimensions.marginBottom}px;">
-		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-20%" />
+		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-7%" />
 	</div>
 	<div
 		class="section fourth-section"
