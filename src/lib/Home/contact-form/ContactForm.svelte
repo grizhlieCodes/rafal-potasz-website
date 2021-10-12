@@ -25,7 +25,7 @@
 				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" />
 			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com">
 				<input type="hidden" name="_next" value="http://www.rafalpotasz.com/about">
-				<input type="hidden" name="_captcha" value="false">
+				<!-- <input type="hidden" name="_captcha" value="false"> -->
 				<input type="hidden" name="_template" value="table">
 				<input type="text" name="name" placeholder="Name" />
 				<input type="email" name="email" placeholder="Email" />
