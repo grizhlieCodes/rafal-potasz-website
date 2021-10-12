@@ -1,11 +1,24 @@
+<script context="module">
+	export const load = async ({ page }) => ({
+		props: {
+			key: page.path
+		}
+	});
+</script>
+
 <script>
+	export let key;
+	$: console.log(key);
+
 	import { writable } from 'svelte/store';
 	import { setContext, onMount } from 'svelte';
 	import Header from '$lib/Navigation/Header.svelte';
 	import Overlay from '$lib/Decorations/Overlay.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 	import { calcRealSize } from '$lib/scripts/helperFunctions.js';
-	import darkMode from '$lib/stores/darkmode.js'
+	import darkMode from '$lib/stores/darkmode.js';
+	import LoadingSpinner from '$lib/Decorations/LoadingSpinner.svelte'
+	import { fade } from 'svelte/transition';
 
 	let windowWidth,
 		scrollbarWidth,
@@ -25,32 +38,50 @@
 	});
 
 	const toggleMenu = () => {
-		showOverlay = !showOverlay
-		showMobileNav = !showMobileNav
+		showOverlay = !showOverlay;
+		showMobileNav = !showMobileNav;
 	};
 
 	const closeActiveModal = () => {
-		if(showMobileNav){
-			showOverlay = !showOverlay
-			showMobileNav = !showMobileNav
+		if (showMobileNav) {
+			showOverlay = !showOverlay;
+			showMobileNav = !showMobileNav;
 		}
-	}
+	};
+
+	let showTransition = true;
+	let previousKey = '';
+	const transitionPage = (newKey) => {
+		if (previousKey != newKey) {
+			previousKey = newKey;
+			showTransition = true;
+		}
+		setTimeout(() => {
+			showTransition = false;
+		}, 1500);
+	};
+
+	$: transitionPage(key);
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} on:load={() => darkMode.checkDarkmode()}/>
+<svelte:window bind:innerWidth={windowWidth} on:load={() => darkMode.checkDarkmode()} />
 
 {#if showOverlay}
 	<Overlay on:closeModal={closeActiveModal} />
 {/if}
 
+{#if showTransition}
+	<LoadingSpinner />
+{/if}
 <Header on:toggleMenu={toggleMenu} {showMobileNav} />
 <slot />
 <Footer />
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
+	
 
-	:global(html){
+	:global(html) {
 		scroll-behavior: smooth;
 	}
 
@@ -60,7 +91,7 @@
 		background-repeat: repeat;
 	}
 
-	:global(body.light){
+	:global(body.light) {
 		background-image: url('/images/shared/bg-light2.png');
 	}
 
@@ -95,4 +126,5 @@
 				'footer footer footer footer footer';
 		}
 	}
+
 </style>
