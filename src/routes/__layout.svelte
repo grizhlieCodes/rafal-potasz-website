@@ -58,7 +58,7 @@
 		}
 		setTimeout(() => {
 			showTransition = false;
-		}, 1500);
+		}, 1000);
 	};
 
 	$: transitionPage(key);
