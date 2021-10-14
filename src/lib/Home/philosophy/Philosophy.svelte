@@ -90,7 +90,7 @@
 </script>
 
 <Section sectionClass="philosophy span-1220">
-	<div class="flex-container" use:flyChildren={['section.philosophy .flex-container > *', 5, 0, 0.1, true]}>
+	<div class="flex-container" use:flyChildren={['section.philosophy .flex-container > *:not(img)', 5, 0, 0.1, true]}>
 		<Heading content="my philosophy" type="2" />
 		<p class="tags"  data-direction="right">
 			{#each tags as tag}

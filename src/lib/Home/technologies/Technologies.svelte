@@ -30,7 +30,7 @@
 	<div class="flex-container">
 		<div
 			class="top"
-			use:flyChildren={['section.technologies .flex-container .top > * ', 5, 0, 0.1, true]}>
+			use:flyChildren={['section.technologies .flex-container .top > *:not(img)', 5, 0, 0.1, true]}>
 			<Heading type="2" content="Technologies" />
 			<p data-direction="right">
 				I focus on learning concepts and systems. I will forget syntax, I might forget defenitions,

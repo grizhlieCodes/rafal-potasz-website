@@ -1,5 +1,5 @@
 // Fly single item from left or right
-const duration = 1.5
+const duration = 0.75
 
 function removeStyles(){
     let targets = this.targets()
