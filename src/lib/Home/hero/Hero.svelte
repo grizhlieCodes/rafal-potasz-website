@@ -1,4 +1,5 @@
 <script>
+
 	import HeroImage from './HeroImage.svelte';
 	import HeroText from './HeroText.svelte';
 	import Section from '$lib/Core/Section.svelte';
@@ -7,7 +8,7 @@
 	let size = getContext('size');
 </script>
 
-<Section sectionClass="hero span-900">
+<Section sectionClass="hero span-1220" >
 	<div class="flex-container">
 		<HeroImage />
 		<HeroText />
@@ -19,6 +20,7 @@
 
 	.flex-container {
 		width: 100%;
+		max-width: 111rem;
 		@include flex(column nowrap, start, center);
 		gap: 6rem;
 
