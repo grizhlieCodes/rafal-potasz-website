@@ -8,12 +8,11 @@
 	import PortfolioText from './PortfolioText.svelte';
 	import PortfolioVideo from './PortfolioVideo.svelte';
 	import PortfolioData from '$lib/stores/portfolio.js';
-	import {repositionToProjects} from '$lib/scripts/portfolioHelpers.js'
-
+	import { repositionToProjects } from '$lib/scripts/portfolioHelpers.js';
+	import { flyChildren } from '$lib/scripts/animations.js';
 	import { quintOut } from 'svelte/easing';
 	import { crossfade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
-	import { getRawBody } from '@sveltejs/kit/node';
 	const [send, receive] = crossfade({
 		duration: (d) => Math.sqrt(d * 200),
 
@@ -43,6 +42,12 @@
 		dispatch('recalculateLines');
 	};
 
+	const refreshScrollTrigger = () => {
+		setTimeout(() => {
+			ScrollTrigger.refresh();
+		}, 500);
+	};
+
 	const updateProjects = (e) => {
 		let data = e.detail;
 		const noFilter = data.length === 0;
@@ -51,17 +56,11 @@
 
 		if (noFilter) {
 			localPortfolio = [...$PortfolioData];
-			dispatchRecalcLines();
-			repositionToProjects();
-			return;
 		}
 		if (oneFilter) {
 			localPortfolio = $PortfolioData.filter((p) => {
 				return p.type.includes(data[0]) && !p.type.includes('design');
 			});
-			dispatchRecalcLines();
-			repositionToProjects();
-			return;
 		}
 		if (multipleFilters) {
 			let returnedData = $PortfolioData.filter((project) => {
@@ -69,23 +68,26 @@
 				return data.every((filter) => projectTags.includes(filter));
 			});
 			localPortfolio = returnedData;
-			dispatchRecalcLines();
-			repositionToProjects();
-			return;
 		}
+		dispatchRecalcLines();
+		repositionToProjects();
+		refreshScrollTrigger();
 	};
 	// let portfolioSectionHeight;
-	
 </script>
 
 <Section sectionClass="portfolio span-1220" marginBottom="15" id="portfolio-section">
-	<div class="flex-container">
+	<div
+		class="flex-container"
+		use:flyChildren={['section.portfolio .flex-container > *', 5, 0, 0.1, true]}>
 		<Heading type="2" content="portfolio" />
 		<PortfolioFilter
 			on:updateFilter={updateFilter}
 			initialFilter={filter}
 			on:updateProjects={updateProjects} />
-		<div class="projects">
+		<div
+			class="projects"
+			use:flyChildren={['section.portfolio .projects .project-container > *', 15, 0, 0.2, true]}>
 			{#each localPortfolio as project, i (project.name)}
 				<div
 					class="project-container"
