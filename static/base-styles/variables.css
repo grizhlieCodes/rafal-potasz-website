@@ -7,10 +7,10 @@ html {
 	--blue-800: hsl(213, 13%, 13%);
 	--blue-900: hsl(214, 14%, 10%);
 
-	--cyan-200: #7edbd4;
-	--cyan-500: #4ecdc4;
-	--cyan-600: #24e1d4;
-	--cyan-700: #27a69d;
+	--cyan-200: hsl(175, 56%, 68%);
+	--cyan-500: hsl(176, 56%, 55%);
+	--cyan-600: hsl(176, 76%, 51%);
+	--cyan-700: hsl(176, 62%, 40%);
 
 	--red-100: hsl(0, 100%, 79%);
 	--red-300: hsl(0, 100%, 71%);
@@ -129,6 +129,9 @@ body.light {
 		--clr-tech-badge-bg: var(--blue-500);
 		--clr-tech-badge-hover-bg: var(--blue-700);
 		--clr-tech-info-bg: var(--blue-500);
+
+	/* Filter Colors */
+	--clr-portfolio-filter-accent: var(--cyan-700)
 }
 
 /* What do we need variables for? */
