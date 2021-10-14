@@ -13,7 +13,7 @@
 	@import '../../../scss-styles/mixins';
 
 	.info-container {
-		width: max-content;
+		width: auto;
 		@include flex(column nowrap, start, start);
 		background: v(clr-tech-info-bg);
 		z-index: v(z-index-priority);

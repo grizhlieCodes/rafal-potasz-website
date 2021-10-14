@@ -26,7 +26,7 @@
 			href={link}
 			class="navigation__link"
 			class:active={path === link}
-			use:flyItem={['-20rem', 0.15, i]} on:click={closeNavModal}>
+			use:flyItem={[20, 0, 0.1, i]} on:click={closeNavModal} data-direction="left">
 			<Icon {name} width="2.89rem" />
 			<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
 		</a>

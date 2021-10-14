@@ -11,7 +11,7 @@
 	$: description = project.description;
 </script>
 
-<div class="text-container">
+<div class="text-container" data-direction="left">
 	<h3 class="project-name">{capitaliseFirstLetter(name)}</h3>
 	<p class="subtitle">{subtitle}</p>
 	{#if $size !== 'mobile'}

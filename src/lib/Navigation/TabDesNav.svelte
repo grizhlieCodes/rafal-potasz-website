@@ -22,7 +22,7 @@
 				href={link}
 				class="navigation__link"
 				class:active={path === link}
-				use:flyItem={['-20rem', 0.15, i]}>
+				 use:flyItem={[5, 0, 0.2, i]}  data-direction="left">
 				<Icon {name} width="1.8rem" />
 
 				<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>

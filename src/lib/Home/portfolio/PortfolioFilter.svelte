@@ -41,7 +41,7 @@
 	};
 </script>
 
-<div class="filters-container">
+<div class="filters-container" data-direction="right">
 	{#each options as { name, text, filters }}
 		<label for={name} class:active={selectedFilter === name}>
 			<input

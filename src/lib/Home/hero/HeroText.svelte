@@ -1,4 +1,5 @@
 <script>
+	import {flyChildren} from '$lib/scripts/animations.js';
 	import Button from '$lib/Button.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte'
 
@@ -18,13 +19,14 @@
 	];
 </script>
 
-<div class="hero-text-container">
+<div class="hero-text-container" 	
+use:flyChildren={['section.hero .hero-text-container > *', 5,0,0]}>
 	<Heading content="No-nonsense" content2="web developer" type="1" />
-	<p>
+	<p data-direction="right">
 		Hello 👋, I'm Rafal, a self-taught front-end web developer with an eye for design, obsessively
-		learning towards becoming full-stack.
+		learning towards mastery of front-end design and development.
 	</p>
-	<div class="hero-text-container__cta-container">
+	<div class="hero-text-container__cta-container"  data-direction="left">
 		{#each buttons as data}
 			<Button {...data} />
 		{/each}
@@ -63,6 +65,10 @@
 				flex-grow: 1;
 				width: auto;
 				max-width: 34rem;
+			}
+
+			@include mq(desktop){
+				max-width: 40rem;
 			}
 		}
 

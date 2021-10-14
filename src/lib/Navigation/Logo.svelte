@@ -7,7 +7,7 @@
 </script>
 
 {#if location === 'header'}
-	<a href="/" class="logo-container {logoClass}" use:flyItem={'-20rem'}>
+	<a href="/" class="logo-container {logoClass}" use:flyItem={[20, 0, 0, 0]}>
 		<div class="logo-container__logo-img-container">
 			<Icon name="logo" width="3.9rem" />
 		</div>
@@ -16,7 +16,7 @@
 		</p>
 	</a>
 {:else}
-	<a href="/" class="logo-container {logoClass} footer" use:flyItem={'-20rem'}>
+	<a href="/" class="logo-container {logoClass} footer" use:flyItem={[20, 0, 0, 0]}>
 		<div class="logo-container__logo-img-container">
 			<Icon name="logo" width="3.9rem" />
 		</div>

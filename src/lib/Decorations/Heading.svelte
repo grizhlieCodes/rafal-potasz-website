@@ -2,11 +2,12 @@
 	export let type = 2,
 		content = '',
 		content2 = '',
-		headingClass = '';
+		headingClass = '',
+		direction = 'left';
 </script>
 
 {#if type === '1'}
-	<h1 class={headingClass}>
+	<h1 class={headingClass} data-direction={direction}>
 		{content}
 		{#if content2 !== ''}
 			<br />
@@ -14,7 +15,7 @@
 		{/if}
 	</h1>
 {:else if type === '2'}
-	<h2 class={headingClass}>{content}</h2>
+	<h2 class={headingClass} data-direction={direction}>{content}</h2>
 {/if}
 
 <style lang="scss">

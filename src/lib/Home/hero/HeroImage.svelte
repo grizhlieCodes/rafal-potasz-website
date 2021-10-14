@@ -2,6 +2,7 @@
 	import { moveOnScroll } from '$lib/scripts/animations.js';
 	import { setHeroImgHeight } from '$lib/scripts/helperFunctions.js';
 	import {onMount} from 'svelte';
+	import {flyItem} from '$lib/scripts/animations.js';
 
 	let imageNames = [
 		{ name: 'rafal'},
@@ -31,9 +32,8 @@
 
 </script>
 
-<svelte:window on:resize={() => setHeroImgHeight(container)} on:load={() => setHeroImgHeight(container)}/>
-
-<div class="hero-img-container" bind:this={container}>
+<svelte:window on:resize={() => setHeroImgHeight(container)} />
+<div class="hero-img-container" bind:this={container} use:flyItem={[5, 0, 0, 0, true]} on:load={() => setHeroImgHeight(container)} data-direction="right">
 	<div class="backdrop" />
 	<div class="images-container">
 		{#each imageNames as { name }}

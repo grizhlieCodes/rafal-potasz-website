@@ -1,33 +1,38 @@
 // Fly single item from left or right
+const duration = 1.5
 
-// gsap.registerPlugin(ScrollTrigger);
-export const flyItem = (node, [direction, delay = 0, index = 0]) => {
+function removeStyles(){
+    let targets = this.targets()
+    targets.forEach(target => {
+        target.style.removeProperty('opacity')
+        target.style.removeProperty('transform')
+    })
+}
+
+
+export const flyItem = (node, [x = 0, y = 0, delay = 0, index = 0, isLeftRight = true]) => {
+    const directionData = node.dataset.direction
+    const leftRight = directionData === 'right' ? '' : '-';
+    // console.log(node, directionData, leftRight)
     gsap.from(node, {
         scrollTrigger: {
-            trigger: node,
+            trigger: node
         },
-        x: direction,
-        duration: 0.15,
+        x: `${leftRight}${x}rem`,
+        y: `${y}rem`,
         opacity: 0,
-        delay: delay * index
+        duration: duration,
+        delay: delay * index,
     })
 }
 
-//Fly multiple items with a delay
-export const flyMultipleItems = (node, direction, itemNode) => {
-    let items = [...node.querySelectorAll("a")]
+export const flyChildren = (node, [selector, x = 0, y = 0, delay = 0, isLeftRight = true]) => {
+    let items = [...document.querySelectorAll(`${selector}`)]
     items.forEach((item, index) => {
-        gsap.from(item, {
-            scrollTrigger: {
-                trigger: item,
-                markers: 1,
-            },
-            x: direction,
-            duration: 0.5,
-            delay: 0.5 + (index * 0.5)
-        })
+        flyItem(item, [x, y, delay, index, isLeftRight])
     })
 }
+
 
 export const moveOnScroll = (node, distance) => {
     const nodeClass = node.classList[0]
@@ -37,9 +42,11 @@ export const moveOnScroll = (node, distance) => {
     const left = `-${value}rem`
     const right = `${value}rem`
     const startVal = '-50%'
+
     if (nodeClass === 'rafal') {
         return
     }
+
     if (nodeClass === 'computer') {
         gsap.to(node, {
             scrollTrigger: {
@@ -52,6 +59,7 @@ export const moveOnScroll = (node, distance) => {
         })
         return
     }
+
     if (nodeClass === 'eagle') {
         gsap.to(node, {
             scrollTrigger: {
@@ -66,6 +74,7 @@ export const moveOnScroll = (node, distance) => {
         })
         return
     }
+
     if (nodeClass === 'book') {
         gsap.to(node, {
             scrollTrigger: {
@@ -79,6 +88,7 @@ export const moveOnScroll = (node, distance) => {
         })
         return
     }
+
     if (nodeClass === 'watch') {
         gsap.to(node, {
             scrollTrigger: {
@@ -91,6 +101,7 @@ export const moveOnScroll = (node, distance) => {
         })
         return
     }
+
     if (nodeClass === 'rust') {
         gsap.to(node, {
             scrollTrigger: {
@@ -104,6 +115,7 @@ export const moveOnScroll = (node, distance) => {
         })
         return
     }
+
     if (nodeClass === 'statue') {
         gsap.to(node, {
             scrollTrigger: {
@@ -118,4 +130,5 @@ export const moveOnScroll = (node, distance) => {
         })
         return
     }
+
 }

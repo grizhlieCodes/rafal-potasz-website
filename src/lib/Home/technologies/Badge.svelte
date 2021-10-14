@@ -10,7 +10,7 @@
 </script>
 
 
-<div class="badge {name}" on:click={() => dispatch('clickedBadge', index)} class:active={index === lastClickedIndexReactive}>
+<div class="badge {name}" on:click={() => dispatch('clickedBadge', index)} class:active={index === lastClickedIndexReactive} data-direction="right">
 	<!-- <div class="hoverable-overlay" /> -->
 
 	<img src="/images/home/shared/tech-logos/{name}.png" alt="{name} svg icon" loading="lazy"/>

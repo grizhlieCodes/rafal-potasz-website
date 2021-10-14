@@ -2,6 +2,7 @@
 	import Section from '$lib/Core/Section.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte';
 	import Button from '$lib/Button.svelte';
+	import {flyChildren} from '$lib/scripts/animations.js';
 
 	const submitForm = (e) => {
 		e.preventDefault();
@@ -29,27 +30,29 @@
 	const validateForm = () => {
 		if (allInputsValid) {
 			disabled = false;
+		} else {
+			disabled = true;
 		}
 	};
 </script>
 
 <Section sectionClass="contact-form span-900" id="contact-section">
-	<div class="flex-container">
+	<div class="flex-container" use:flyChildren={['section.contact-form .flex-container > *:is(h2, .contact-form__description )', 5, 0, 0.1, true]}>
 		<Heading type="2" content="SAY HELLO!" />
-		<p>
+		<p class="contact-form__description">
 			Whether you want to hire me or discuss a project, contact me below and I'll get back to you
 			within 48 hours.
 		</p>
-		<div class="form-container">
+		<div class="form-container" use:flyChildren={['section.contact-form .form-container > *', 5, 0, 0.1, true]}>
 			<img
 				class="img__rafal"
 				src="/images/shared/rafal-smiling-arthurs-peak.png"
-				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" loading="lazy"/>
+				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" loading="lazy" data-direction="left"/>
 			<img
 				class="img__bottle"
 				src="/images/shared/message-in-bottle.png"
-				alt="Rafal, the website owner, smiling whilst standing on arthurs peak in scotland" loading="lazy"/>
-			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com">
+				alt="Message in a bottle, laying on a sandy beach." loading="lazy" data-direction="right"/>
+			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com" data-direction="right">
 				<input type="hidden" name="_next" value="http://www.rafalpotasz.com/about" />
 				<!-- <input type="hidden" name="_captcha" value="false"> -->
 				<input type="hidden" name="_template" value="table" />
