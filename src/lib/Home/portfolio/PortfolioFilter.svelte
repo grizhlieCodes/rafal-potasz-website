@@ -37,7 +37,7 @@
 
 	const updateProjects = (chosenFilters) => {
 		const data = chosenFilters;
-		dispatch('updateProjects',data)
+		dispatch('updateProjects', data)
 	};
 </script>
 

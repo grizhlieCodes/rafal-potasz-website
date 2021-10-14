@@ -9,11 +9,9 @@ function removeStyles(){
     })
 }
 
-
-export const flyItem = (node, [x = 0, y = 0, delay = 0, index = 0, isLeftRight = true]) => {
+export const flyItem = (node, [x = 0, y = 0, delay = 0, index = 0]) => {
     const directionData = node.dataset.direction
     const leftRight = directionData === 'right' ? '' : '-';
-    // console.log(node, directionData, leftRight)
     gsap.from(node, {
         scrollTrigger: {
             trigger: node
@@ -23,13 +21,16 @@ export const flyItem = (node, [x = 0, y = 0, delay = 0, index = 0, isLeftRight =
         opacity: 0,
         duration: duration,
         delay: delay * index,
+        onComplete: removeStyles
     })
 }
 
-export const flyChildren = (node, [selector, x = 0, y = 0, delay = 0, isLeftRight = true]) => {
+
+
+export const flyChildren = (node, [selector, x = 0, y = 0, delay = 0]) => {
     let items = [...document.querySelectorAll(`${selector}`)]
     items.forEach((item, index) => {
-        flyItem(item, [x, y, delay, index, isLeftRight])
+        flyItem(item, [x, y, delay, index])
     })
 }
 

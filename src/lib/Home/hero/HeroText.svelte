@@ -1,5 +1,5 @@
 <script>
-	import {flyChildren} from '$lib/scripts/animations.js';
+	import { flyChildren } from '$lib/scripts/animations.js';
 	import Button from '$lib/Button.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte'
 
@@ -20,7 +20,7 @@
 </script>
 
 <div class="hero-text-container" 	
-use:flyChildren={['section.hero .hero-text-container > *', 5,0,0]}>
+use:flyChildren={['section.hero .hero-text-container > *', 5, 0, 0]}>
 	<Heading content="No-nonsense" content2="web developer" type="1" />
 	<p data-direction="right">
 		Hello 👋, I'm Rafal, a self-taught front-end web developer with an eye for design, obsessively
