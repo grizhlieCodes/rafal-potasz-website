@@ -3,6 +3,7 @@
 	import Button from '$lib/Button.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte';
 	import Icon from '$lib/Decorations/Icon.svelte';
+	import {flyChildren} from '$lib/scripts/animations.js'
 	import { getContext } from 'svelte';
 
 	let size = getContext('size');
@@ -23,48 +24,80 @@
 	];
 
 	let mainText = [
+		// {
+		// 	content: 'I approach my work in an identical way to approaching my life.',
+		// 	textClass: 'bold'
+		// },
 		{
-			content: 'I approach my work in an identical way to approaching my life.',
-			textClass: 'bold'
-		},
-		{
-			content: 'I help others where I can, either by listening or advising them.',
+			content: 'You will find me to be a helpful collegue and an attentive listener.',
 			textClass: 'normal'
 		},
 		{
 			content:
-				'I give it my all and always seek to improve by perpetually remaining a student of what I do.',
+				'You will find that I always seek to improve by remaining a student of what I do.',
 			textClass: 'normal'
 		},
 
 		{
-			content: 'I always seek to do everything systemically and scalably.',
+			content: 'You will notice that I like to create systems and always try improving my understanding and implementation of scalability.',
 			textClass: 'normal'
 		},
 		{
-			content: 'I seek to simplify and aim for effectiveness over mere eye-candy.',
+			content: 'You will work with someone who seeks the best result, effectiveness and pragmaticism over mere eye candy.',
 			textClass: 'normal'
 		},
 		{
-			content: 'I remain resourceful and always find my way in a new challenge.',
+			content: 'You will find me resourceful, curious and honest.',
 			textClass: 'normal'
 		},
 		{
-			content: "I never do anything that doesn't match my long-term vision.",
+			content: "You will find that I think backwards, starting with the end in mind and reverse-engineering a solution.",
 			textClass: 'normal'
 		}
 	];
+	// let mainText = [
+	// 	{
+	// 		content: 'I approach my work in an identical way to approaching my life.',
+	// 		textClass: 'bold'
+	// 	},
+	// 	{
+	// 		content: 'I help others where I can, either by listening to or advising & teaching them.',
+	// 		textClass: 'normal'
+	// 	},
+	// 	{
+	// 		content:
+	// 			'I give it my all and always seek to improve by perpetually remaining a student of what I do.',
+	// 		textClass: 'normal'
+	// 	},
+
+	// 	{
+	// 		content: 'I always seek to do everything systemically and scalably.',
+	// 		textClass: 'normal'
+	// 	},
+	// 	{
+	// 		content: 'I seek to simplify and aim for effectiveness of the result over mere eye-candy.',
+	// 		textClass: 'normal'
+	// 	},
+	// 	{
+	// 		content: 'I always remain resourceful and always find my way in a new challenge.',
+	// 		textClass: 'normal'
+	// 	},
+	// 	{
+	// 		content: "I never do anything that doesn't match my long-term vision.",
+	// 		textClass: 'normal'
+	// 	}
+	// ];
 </script>
 
 <Section sectionClass="philosophy span-1220">
-	<div class="flex-container">
+	<div class="flex-container" use:flyChildren={['section.philosophy .flex-container > *', 5, 0, 0.1, true]}>
 		<Heading content="my philosophy" type="2" />
-		<p class="tags">
+		<p class="tags"  data-direction="right">
 			{#each tags as tag}
 				<span>#{tag}</span>
 			{/each}
 		</p>
-		<p class="main-text">
+		<p class="main-text" data-direction="left">
 			{#each mainText as { content, textClass }}
 				<span class={textClass}>{content}</span>
 			{/each}
@@ -73,8 +106,8 @@
 		<img
 			class="philosophy__nietzsche-img"
 			src="/images/home/{$size}/nietzsche.png"
-			alt="Portrait of Frederich Nietzsche with his usual contemplating look." loading="lazy"/>
-		<div class="bg-triangle normal">
+			alt="Portrait of Frederich Nietzsche with his usual contemplating look." loading="lazy" data-direction="right"/>
+		<div class="bg-triangle normal"  data-direction="left">
 			<Icon name="triangle" width="50rem" />
 		</div>
 	</div>
