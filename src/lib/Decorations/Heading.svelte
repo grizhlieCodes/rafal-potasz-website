@@ -3,7 +3,8 @@
 		content = '',
 		content2 = '',
 		headingClass = '',
-		direction = 'left';
+		direction = 'left',
+		extraStyling;
 </script>
 
 {#if type === '1'}
@@ -16,12 +17,14 @@
 	</h1>
 {:else if type === '2'}
 	<h2 class={headingClass} data-direction={direction}>{content}</h2>
+{:else if type === '3'}
+	<h3 class={headingClass} data-direction={direction} style="{extraStyling}">{content}</h3>
 {/if}
 
 <style lang="scss">
 	@import '../../scss-styles/mixins';
 
-	:is(h1, h2) {
+	:is(h1, h2, h3) {
 		font-family: v(fira);
 		font-weight: 700;
 		color: v(clr-text-heading);
@@ -38,4 +41,10 @@
         line-height: fluid(desktop, 2.5, 4);
         text-transform: uppercase;
     }
+
+	h3 {
+		font-size: fluid(desktop, 2, 2.5);
+		line-height: fluid(desktop, 2, 2.5);
+		text-transform: uppercase;
+	}
 </style>

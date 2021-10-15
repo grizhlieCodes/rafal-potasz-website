@@ -1,10 +1,11 @@
 <script>
-    export let sectionClass, marginBottom = 0, id = ''
+    export let sectionClass, marginBottom = 0, marginTop = 0, id = '', extraStyling = ""
+	$: marginBot = marginBottom === 0 ? 0 : `${marginBottom}rem`
+	$: marginTopp = marginTop === 0 ? 0 : `${marginTop}rem`
 
-	$: margin = marginBottom === 0 ? 0 : `${marginBottom}rem`
 </script>
 
-<section class="{sectionClass}" style="margin-bottom: {margin};" {id}>
+<section class="{sectionClass}" style="margin-bottom: {marginBot}; margin-top: {marginTopp}; {extraStyling}" {id}>
 
     <slot />
 
@@ -28,6 +29,11 @@
 
 		@include mq(tablet){
 			--padding: 4rem;
+		}
+
+		&.top-borders:nth-child(even){
+			border-top: 1px v(clr-line-bg) solid;
+			border-bottom: 1px v(clr-line-bg) solid;
 		}
 	}
 
