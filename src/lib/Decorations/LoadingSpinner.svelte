@@ -2,7 +2,7 @@
     import {fade} from 'svelte/transition';
 </script>
 
-<div class="transition" transition:fade>
+<div class="transition" out:fade>
 	<div class="lds-roller">
 		<div />
 		<div />
