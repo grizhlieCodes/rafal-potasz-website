@@ -1,8 +1,8 @@
 <script>
-	export let marginBottom = 0
+	export let marginBottom = 0, extraStyling = "", mainClass = "";
 </script>
 
-<main style="margin-bottom: {marginBottom}rem;">
+<main class="{mainClass}" style="margin-bottom: {marginBottom}rem; {extraStyling}">
 	<slot />
 </main>
 
@@ -13,9 +13,10 @@
 		width: 100%;
 		grid-area: main;
 		display: grid;
-		grid-template-columns: minmax(2.4rem, 4rem) minmax(32.7rem, 1fr) minmax(2.4rem, 4rem);
+		grid-template-columns: 2.4rem minmax(28rem, 1fr) 2.4rem;
 		grid-template-areas: 'col1 col2 col3';
         row-gap: 12rem;
+		position: relative;
 
 		@include mq(tablet) {
 			grid-template-columns: minmax(4rem, 1fr) 1fr minmax(70rem, 90rem) 1fr minmax(4rem, 1fr);
@@ -49,6 +50,16 @@
         @include mq(tablet){
             grid-column: col1 / col5;
         }
+	}
+
+	main.about::before{
+		content: '';
+		left: 50%;
+		position: absolute;
+		height: 100%;
+		z-index: v(z-index-behind-bg);
+		width: 1px;
+		background: v(clr-line-bg);
 	}
 
 </style>

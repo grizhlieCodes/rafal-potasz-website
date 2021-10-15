@@ -17,7 +17,7 @@
 	import Footer from '$lib/footer/Footer.svelte';
 	import { calcRealSize } from '$lib/scripts/helperFunctions.js';
 	import darkMode from '$lib/stores/darkmode.js';
-	import LoadingSpinner from '$lib/Decorations/LoadingSpinner.svelte'
+	import LoadingSpinner from '$lib/Decorations/LoadingSpinner.svelte';
 	import { fade } from 'svelte/transition';
 
 	let windowWidth,
@@ -58,7 +58,7 @@
 		}
 		setTimeout(() => {
 			showTransition = false;
-		}, 250);
+		}, 500);
 	};
 
 	$: transitionPage(key);
@@ -73,13 +73,13 @@
 {#if showTransition}
 	<LoadingSpinner />
 {/if}
+
 <Header on:toggleMenu={toggleMenu} {showMobileNav} />
 <slot />
 <Footer />
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
-	
 
 	:global(html) {
 		scroll-behavior: smooth;
@@ -104,7 +104,7 @@
 		overflow: hidden;
 		display: grid;
 		grid-auto-rows: min-content;
-		grid-template-columns: minmax(2.4rem, 4rem) minmax(32.7rem, 1fr) minmax(2.4rem, 4rem);
+		grid-template-columns: 2.4rem minmax(28rem, 1fr) 2.4rem;
 		grid-template-areas:
 			'. header .'
 			'main main main'
@@ -126,5 +126,4 @@
 				'footer footer footer footer footer';
 		}
 	}
-
 </style>
