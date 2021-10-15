@@ -200,8 +200,16 @@
 			line-height: 2rem;
 			margin-bottom: 2rem;
 
+			@include mq(mobile-wide) {
+				max-width: 33.5rem;
+			}
 			@include mq(phablet) {
+				max-width: 43rem;
+			}
+			
+			@include mq(tablet-small){
 				max-width: 48.7rem;
+
 			}
 
 			span {
