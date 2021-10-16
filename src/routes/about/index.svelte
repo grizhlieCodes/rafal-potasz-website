@@ -98,7 +98,7 @@
 	.flex-container {
 		width: 100%;
 		@include flex(column-reverse nowrap, center, center);
-		gap: 3.5rem;
+		row-gap: 3.5rem;
 
 		.text-container {
 			@include flex(column nowrap, start, center);
@@ -132,7 +132,7 @@
 
 		@include mq(tablet){
 			@include eflex(row nowrap, space-between, center);
-			gap: 0;
+			row-gap: 0;
 		}
 	}
 	p, li, span {
