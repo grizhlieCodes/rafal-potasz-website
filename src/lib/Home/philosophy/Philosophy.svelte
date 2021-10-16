@@ -22,14 +22,14 @@
 		'effective ',
 		'intuitive '
 	];
-
+	
 	let mainText = [
 		// {
 		// 	content: 'I approach my work in an identical way to approaching my life.',
 		// 	textClass: 'bold'
 		// },
 		{
-			content: 'You will find me to be a helpful collegue and an attentive listener.',
+			content: 'You will find me to be a helpful colleague and an attentive listener.',
 			textClass: 'normal'
 		},
 		{
