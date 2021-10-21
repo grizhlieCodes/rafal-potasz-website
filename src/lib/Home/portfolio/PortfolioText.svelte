@@ -1,5 +1,5 @@
 <script>
-	import { capitaliseFirstLetter } from '$lib/scripts/helperFunctions';
+	import { capitaliseFirstLetter, displayDate } from '$lib/scripts/helperFunctions';
 	import Icon from '$lib/Decorations/Icon.svelte';
 	import { getContext } from 'svelte';
 	import { slide } from 'svelte/transition';
@@ -9,18 +9,24 @@
 	$: name = project.name;
 	$: subtitle = project.subtitle;
 	$: description = project.description;
+	$: date = displayDate(project.dateStamp)
 </script>
 
 <div class="text-container" data-direction="left">
 	<h3 class="project-name">{capitaliseFirstLetter(name)}</h3>
+	<p class="date">{date}</p>
 	<p class="subtitle">{subtitle}</p>
 	{#if $size !== 'mobile'}
-		<p class="description" transition:slide>{description[0]}</p>
+		<div class="description-container">
+			{#each description as par}
+				<p class="description" transition:slide>{par}</p>
+			{/each}
+		</div>
 	{/if}
-	<a href="/" class="view-project-button">
+	<!-- <a href="/portfolio/{name}" class="view-project-button">
 		<p>VIEW PROJECT</p>
 		<Icon name="arrow-right" width="1.4rem" />
-	</a>
+	</a> -->
 </div>
 
 <style lang="scss">
@@ -47,7 +53,13 @@
 			color: v(clr-text-focused);
 			font-size: fluid(desktop, 2.2, 3);
 		}
+		p.date {
+			font-family: v(mono);
+			color: v(clr-text-faded);
+			font-size: fluid(desktop, 1.2, 1.4);
+		}
 		p.subtitle {
+			font-family: v(roboto);
 			color: v(clr-text-faded);
 			font-size: fluid(desktop, 1.4, 1.6);
 		}

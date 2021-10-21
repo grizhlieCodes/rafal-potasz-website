@@ -1,11 +1,12 @@
 <script>
 	export let project;
+	import VideoOnly from './VideoOnly.svelte';
 
 	$: vimeoEmbed = project.vimeoEmbed;
 	$: name = project.name;
 </script>
 
-<div class="video-container" data-direction="right">
+<!-- <div class="video-container" data-direction="right">
     <div style="padding:56.25% 0 0 0;position:relative;">
         <iframe
             src="https://player.vimeo.com/video/{vimeoEmbed}&color=ffffff&title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&autopause=0&background=1"
@@ -15,7 +16,20 @@
             title={name} 
 			loading="lazy"/>
     </div>
-</div>
+</div> -->
+
+<VideoOnly>
+
+	<iframe
+		src="https://player.vimeo.com/video/{vimeoEmbed}&color=ffffff&title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&autopause=0&background=1"
+		
+		frameborder="0"
+		allow="autoplay"
+		title={name}
+		loading="lazy" />
+
+</VideoOnly>
+<!-- 775, 443 -->
 
 <style lang="scss">
 	@import '../../../scss-styles/mixins';
@@ -27,12 +41,17 @@
 		border: 0.2rem solid v(clr-text-focused);
 
 		@include mq(desktop) {
-            max-width: 77.5rem;
+			max-width: 77.5rem;
 		}
 	}
 	iframe {
 		pointer-events: none;
 	}
-</style>
 
-<!-- 775, 443 -->
+	iframe {
+		pointer-events: none;
+		width: 150%;
+		height: 100%;
+		position: relative;
+	}
+</style>

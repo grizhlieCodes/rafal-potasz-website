@@ -24,3 +24,11 @@ export const setHeroImgHeight = (container) => {
     const firstImageHeight = firstImage.getBoundingClientRect().height;
     container.style.height = firstImageHeight + 'px';
 }
+
+export const displayDate = (date) => {
+    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',]
+    let day = date.getDate().toString().length < 2 ? "0" + date.getDate().toString() : date.getDate()
+    let month = months[date.getMonth()]
+    let year = date.getFullYear()
+    return `${day}-${month}-${year}`
+}
