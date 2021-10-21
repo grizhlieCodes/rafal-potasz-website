@@ -52,7 +52,7 @@
 				class="img__bottle"
 				src="/images/shared/message-in-bottle.png"
 				alt="Message in a bottle, laying on a sandy beach." loading="lazy" data-direction="right"/>
-			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com" data-direction="right">
+			<form name="contact" method="POST" action="https://formsubmit.co/rafal.potasz@gmail.com" data-direction="right" enctype="multipart/form-data">
 				<input type="hidden" name="_next" value="http://www.rafalpotasz.com/about" />
 				<!-- <input type="hidden" name="_captcha" value="false"> -->
 				<input type="hidden" name="_template" value="table" />
