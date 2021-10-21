@@ -1,9 +1,12 @@
 <script>
-	export let name, width, fillCol, svgPathCol = "";
+	export let name, width, svgCol = "", svgPathCol = "";
+
+	$: bothEmpty = svgCol === "" && svgPathCol === ""
+	$: colorVariable = !bothEmpty ? svgCol : svgPathCol
 </script>
 
 {#if name === 'logo'}
-	<svg class="logo s-gTLmg6Hqck1H" viewBox="0 0 67 67" aria-labelledby="title desc" {width}>
+	<svg class="logo s-gTLmg6Hqck1H" viewBox="0 0 67 67" aria-labelledby="title desc" {width}   class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<title>logo icon</title>
 		<desc>An icon of a shadowy silhuette of a bearded man wearing glasses</desc>
 		<g transform="matrix(1,0,0,1,-35984,-1992)">
@@ -91,7 +94,7 @@
 		</g>
 	</svg>
 {:else if name === 'home'}
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {width} class="nav-icon">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {width} class="nav-icon"  class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<title>home icon</title>
 		<desc>An icon of a home</desc>
 		<path
@@ -101,7 +104,7 @@
 		<path d="M15,12.5a.5.5,0,0,0,0-1H9a.5.5,0,0,0,0,1Z" />
 	</svg>
 {:else if name === 'about'}
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {width} class="nav-icon">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {width} class="nav-icon"  class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<title>about icon</title>
 		<desc>An icon of a smiling face inside of a rectangle with rounded edges</desc>
 		<circle cx="14.186" cy="12.729" r="0.75" />
@@ -120,7 +123,7 @@
 			d="M3.3,24H8a.5.5,0,0,0,0-1H3.3A2.305,2.305,0,0,1,1,20.7V16.088a.5.5,0,1,0-1,0V20.7A3.306,3.306,0,0,0,3.3,24Z" />
 	</svg>
 {:else if name === 'portfolio'}
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {width} class="nav-icon">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {width} class="nav-icon"  class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<title>portfolio icon</title>
 		<desc>Differently sized rounded rectangles contained within an invisible square silhuette</desc>
 		<path
@@ -139,7 +142,7 @@
 		height={width}
 		viewBox="0 0 24 24"
 		{width}
-		fill="#000000">
+		fill="#000000"  class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<rect fill="none" height="24" width="24" />
 		<path
 			d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19
@@ -154,7 +157,7 @@
 		height={width}
 		viewBox="0 0 24 24"
 		{width}
-		fill="#000000">
+		fill="#000000"  class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<rect fill="none" height="24" width="24" />
 		<path
 			d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9
@@ -174,11 +177,11 @@
 			c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z" />
 	</svg>
 {:else if name === 'triangle'}
-	<svg {width} height={width} viewBox="0 0 392 438" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg {width} height={width} viewBox="0 0 392 438" fill="none" xmlns="http://www.w3.org/2000/svg" class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<path d="M390.951 0.500058L196 436.774L1.04929 0.500024L390.951 0.500058Z" />
 	</svg>
 {:else if name === 'tick'}
-	<svg {width} height={width} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+	<svg {width} height={width} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="--fill-col: var(--{colorVariable});" >
 		<title>ok-icon</title>
 		<path
 			d="M5 14c.4 0 .778-.158 1.06-.443l9.648-9.833c.39-.395.39-1.033 0-1.428s-1.024-.395-1.414 0L5
@@ -188,7 +191,7 @@
 			fill-rule="evenodd" />
 	</svg>
 {:else if name === 'arrow-right'}
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {width}>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {width}  class:svgCol={svgCol !== ""} style="--fill-col: var(--{colorVariable});" >
 		<title>Right Arrow</title>
 		<g id="Right-3" data-name="Right">
 			<path
@@ -202,7 +205,7 @@
 		{width}
 		height={width}
 		viewVox="0 0 32 32"
-		style="--fill-col: var(--{svgPathCol});" class:colPath={svgPathCol !== ""}>
+		style="--fill-col: var(--{colorVariable});"  class:svgPathCol={svgPathCol !== ""}  class:svgCol={svgCol !== ""}>
 		<path
 			fill="#2B414D"
 			d="M15.999 0c-8.836 0-16 7.164-16 16 0 8.837 7.164 16 16 16s16-7.163
@@ -223,7 +226,7 @@
 		{width}
 		height={width}
 		viewBox="0 0 24 24"
-		style="--fill-col: var(--{fillCol});">
+		style="--fill-col: var(--{colorVariable});"  class:svgCol={svgCol !== ""}>
 		<path d="M0 0h24v24H0V0z" fill="none" />
 		<path
 			d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14
@@ -251,11 +254,11 @@
 		transition: fill 400ms, transform 250ms;
 	}
 
-	svg {
+	svg.svgCol {
 		fill: v(fill-col);
 	}
 
-	svg.colPath path {
+	svg.svgPathCol path {
 		fill: v(svg-path-col);
 	}
 </style>
