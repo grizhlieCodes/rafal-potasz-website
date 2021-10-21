@@ -92,6 +92,10 @@ html {
 
 			--clr-form-bg: var(--blue-800);
 			--clr-form-input-bg: var(--blue-700);
+
+			--clr-icon-bg-primary: var(--cyan-600);
+			--clr-icon-bg-secondary: var(--cyan-700);
+
 }
 
 body.light {
