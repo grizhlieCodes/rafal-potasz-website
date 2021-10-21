@@ -2,7 +2,6 @@
 	import { headData } from './headData.js';
 	export let key;
 	let data = headData(key);
-    console.log(data)
 </script>
 
 <svelte:head>
