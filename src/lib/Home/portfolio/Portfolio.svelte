@@ -7,7 +7,9 @@
 	import PortfolioFilter from './PortfolioFilter.svelte';
 	import PortfolioText from './PortfolioText.svelte';
 	import PortfolioVideo from './PortfolioVideo.svelte';
-	import PortfolioData from '$lib/stores/portfolio.js';
+	// import PortfolioData from '$lib/stores/portfolio.js';
+	import PortfolioDataFile from '$lib/data/portfolio.js'
+	let PortfolioData = PortfolioDataFile()
 	import { repositionToProjects } from '$lib/scripts/portfolioHelpers.js';
 	import { flyChildren } from '$lib/scripts/animations.js';
 	import { quintOut } from 'svelte/easing';
@@ -36,7 +38,7 @@
 		filter = e.detail;
 	};
 
-	let localPortfolio = [...$PortfolioData].filter((p) => p.type.includes('featured'));
+	let localPortfolio = [...PortfolioData].filter((p) => p.type.includes('featured'));
 
 	const dispatchRecalcLines = () => {
 		dispatch('recalculateLines');
@@ -55,15 +57,15 @@
 		const multipleFilters = data.length >= 2;
 
 		if (noFilter) {
-			localPortfolio = [...$PortfolioData];
+			localPortfolio = [...PortfolioData];
 		}
 		if (oneFilter) {
-			localPortfolio = $PortfolioData.filter((p) => {
+			localPortfolio = PortfolioData.filter((p) => {
 				return p.type.includes(data[0]) && !p.type.includes('design');
 			});
 		}
 		if (multipleFilters) {
-			let returnedData = $PortfolioData.filter((project) => {
+			let returnedData = PortfolioData.filter((project) => {
 				const projectTags = project.type;
 				return data.every((filter) => projectTags.includes(filter));
 			});

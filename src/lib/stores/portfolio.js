@@ -10,7 +10,7 @@ let portfolioData = [
         github: 'https://github.com/grizhlieCodes/audioPhileEcommerceSvelteKitTailwind',
         website: 'https://audiophile-webstore-grizhlie.netlify.app/',
         vimeoEmbed: '617031842?h=94a860f3fb',
-        tags: ['Frontend Development', 'HTML', 'SCSS', 'JS', 'Tailwind', 'Sveltekit', 'Frontend Mentor']
+        tags: ['Frontend', 'HTML', 'SCSS', 'JS', 'Tailwind', 'Sveltekit', 'Frontend Mentor']
     },
     {
         name: "invoice-app",
@@ -21,7 +21,7 @@ let portfolioData = [
         github: 'https://github.com/grizhlieCodes/invoiceAppSvelte',
         website: 'https://grizhlie-invoice-app-frontend-mentor.netlify.app/',
         vimeoEmbed: '617112109?h=18b93cbebf',
-        tags: ['Frontend Development', 'HTML', 'SCSS', 'JS', 'Firebase', 'Svelte', 'Frontend Mentor']
+        tags: ['Fullstack', 'HTML', 'SCSS', 'JS', 'Firebase', 'Svelte', 'Frontend Mentor']
     },
     {
         name: "job-listing",
@@ -32,7 +32,7 @@ let portfolioData = [
         github: 'https://github.com/grizhlieCodes/filtered-job-listings',
         website: 'https://grizhlie-filtered-job-listing.netlify.app/',
         vimeoEmbed: '617112071?h=1ed9c1ef9b',
-        tags: ['Frontend Development', 'HTML', 'SCSS', 'JS', 'Svelte', 'Frontend Mentor']
+        tags: ['Frontend', 'HTML', 'SCSS', 'JS', 'Svelte', 'Frontend Mentor']
     },
     {
         name: "galleria",
@@ -43,7 +43,7 @@ let portfolioData = [
         github: 'https://github.com/grizhlieCodes/galleria-slideshow-site',
         website: 'https://grizhlie-galleria-slideshow-site.netlify.app/',
         vimeoEmbed: '617133954?h=ce6853e356',
-        tags: ['Frontend Development', 'HTML', 'SCSS', 'JS', 'Svelte', 'Frontend Mentor']
+        tags: ['Frontend', 'HTML', 'SCSS', 'JS', 'Svelte', 'Frontend Mentor']
     },
     {
         name: "designo",
@@ -54,7 +54,7 @@ let portfolioData = [
         github: 'https://github.com/grizhlieCodes/designo',
         website: 'https://designo-website-grizhliecodes.netlify.app/',
         vimeoEmbed: '617133776?h=126e4105f1',
-        tags: ['Frontend Development', 'HTML', 'SCSS', 'JS', 'Frontend Mentor']
+        tags: ['Frontend', 'HTML', 'SCSS', 'JS', 'Frontend Mentor']
     },
     {
         name: "antara",
@@ -65,10 +65,10 @@ let portfolioData = [
         github: '',
         website: 'https://www.antaraltd.co.uk/',
         vimeoEmbed: '617133607?h=437358b760',
-        tags: ['Frontend Development', 'HTML', 'SCSS', 'JS', 'Frontend Mentor']
+        tags: ['Frontend', 'HTML', 'SCSS', 'JS', 'Frontend Mentor']
     }
 ];
 
 const portfolio = readable(portfolioData)
 
-export default portfolio
+export default `portfolio`
