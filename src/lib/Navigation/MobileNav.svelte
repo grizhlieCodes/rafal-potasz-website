@@ -12,7 +12,7 @@
 	let navData = [
 		{ name: 'home', link: '/' },
 		{ name: 'about', link: '/about' },
-		{ name: 'portfolio', link: '/portfolio' }
+		{ name: 'portfolio', link: '/#portfolio-section' }
 	];
 
 	const closeNavModal = () => {
