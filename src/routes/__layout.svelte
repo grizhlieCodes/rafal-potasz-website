@@ -19,6 +19,7 @@
 	import darkMode from '$lib/stores/darkmode.js';
 	import LoadingSpinner from '$lib/Decorations/LoadingSpinner.svelte';
 	import { fade } from 'svelte/transition';
+	import Head from '$lib/data/Head.svelte'
 
 	let windowWidth,
 		scrollbarWidth,
@@ -65,6 +66,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} on:load={() => darkMode.checkDarkmode()} />
+<Head {key}/>
 
 {#if showOverlay}
 	<Overlay on:closeModal={closeActiveModal} />
