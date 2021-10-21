@@ -8,7 +8,7 @@
 
 <script>
 	export let key;
-	$: console.log(key);
+	// $: console.log(key);
 
 	import { writable } from 'svelte/store';
 	import { setContext, onMount } from 'svelte';
