@@ -27,11 +27,11 @@
 	{/if}
 	<div class="links-container">
 		<a href="{github}" class="link"  target="_blank">
-			<Icon name="github" width="32" svgPathCol="clr-icon-bg-primary"/>
+			<Icon name="github" width="32" svgCol="clr-icon-bg-primary" svgPathCol="clr-icon-bg-primary"/>
 			<p>Github</p>
 		</a>
 		<a href="{website}" class="link" target="_blank"> 
-			<Icon name="link" width="32" fillCol="clr-icon-bg-secondary" svgPathCol="none"/>
+			<Icon name="link" width="32" svgCol="clr-icon-bg-secondary"/>
 			<p>Visit Website</p>
 		</a>
 	</div>
