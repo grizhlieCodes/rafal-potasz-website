@@ -10,6 +10,8 @@
 	$: subtitle = project.subtitle;
 	$: description = project.description;
 	$: date = displayDate(project.dateStamp)
+	$: github = project.github
+	$: website = project.website
 </script>
 
 <div class="text-container" data-direction="left">
@@ -23,6 +25,16 @@
 			{/each}
 		</div>
 	{/if}
+	<div class="links-container">
+		<a href="{github}" class="link"  target="_blank">
+			<Icon name="github" width="32" svgPathCol="clr-icon-bg-primary"/>
+			<p>Github</p>
+		</a>
+		<a href="{website}" class="link" target="_blank"> 
+			<Icon name="link" width="32" fillCol="clr-icon-bg-secondary" svgPathCol="none"/>
+			<p>Visit Website</p>
+		</a>
+	</div>
 	<!-- <a href="/portfolio/{name}" class="view-project-button">
 		<p>VIEW PROJECT</p>
 		<Icon name="arrow-right" width="1.4rem" />
@@ -32,13 +44,13 @@
 <style lang="scss">
 	@import '../../../scss-styles/mixins';
 
-	:global(.view-project-button svg path) {
-		fill: v(clr-text-accent-cyan);
-	}
+	// :global(.view-project-button svg path) {
+	// 	fill: v(clr-text-accent-cyan);
+	// }
 
-	:global(.view-project-button svg) {
-		transform: translateY(-0.1rem);
-	}
+	// :global(.view-project-button svg) {
+	// 	transform: translateY(-0.1rem);
+	// }
 
 	.text-container {
 		@include flex(column nowrap, start, start);
@@ -71,42 +83,63 @@
 			margin-bottom: 1.5rem;
 		}
 
-		a.view-project-button {
+		// a.view-project-button {
+		// 	@include flex(row nowrap, start, center);
+		// 	gap: 0.95rem;
+		// 	color: v(clr-text-accent-cyan);
+		// 	transition: transform 250ms;
+		// 	// animation: heartbeat 1600ms linear infinite;
+
+		// 	&:hover {
+		// 		transform: scale(1.1, 1.1) translate(0.6rem, 0);
+		// 	}
+
+		// 	@keyframes heartbeat {
+		// 		0% {
+		// 			transform: scale(1, 1) translate(0, 0);
+		// 		}
+		// 		20% {
+		// 			transform: scale(1.1, 1.1) translate(0.6rem, 0);
+		// 		}
+		// 		40% {
+		// 			transform: scale(1, 1);
+		// 		}
+		// 		60% {
+		// 			transform: scale(1.1, 1.1) translate(0.6rem, 0);
+		// 		}
+		// 		100% {
+		// 			transform: scale(1, 1);
+		// 		}
+		// 	}
+
+		// 	p {
+		// 		font-size: fluid(desktop, 1.4, 1.6);
+		// 	}
+		// }
+
+		// :global(a.view-project-button:hover svg) {
+		// 	transform: scale(1.1, 1.1) translate(0.5rem, -0.1rem) rotate(180deg);
+		// }
+
+		.links-container {
 			@include flex(row nowrap, start, center);
-			gap: 0.95rem;
-			color: v(clr-text-accent-cyan);
-			transition: transform 250ms;
-			// animation: heartbeat 1600ms linear infinite;
+			gap: 3rem;
 
-			&:hover {
-				transform: scale(1.1, 1.1) translate(0.6rem, 0);
-			}
+			a {
+				@include flex(row nowrap, start, center);
+				gap: 1.2rem;
+				transition: transform 250ms;
 
-			@keyframes heartbeat {
-				0% {
-					transform: scale(1, 1) translate(0, 0);
+				&:hover {
+					transform: scale(1.2);
 				}
-				20% {
-					transform: scale(1.1, 1.1) translate(0.6rem, 0);
-				}
-				40% {
-					transform: scale(1, 1);
-				}
-				60% {
-					transform: scale(1.1, 1.1) translate(0.6rem, 0);
-				}
-				100% {
-					transform: scale(1, 1);
+
+				p {
+					font-family: v(roboto);
+					font-size: fluid(desktop, 1.4, 1.6);
+					color: v(clr-text-last);
 				}
 			}
-
-			p {
-				font-size: fluid(desktop, 1.4, 1.6);
-			}
-		}
-
-		:global(a.view-project-button:hover svg) {
-			transform: scale(1.1, 1.1) translate(0.5rem, -0.1rem) rotate(180deg);
 		}
 	}
 </style>
