@@ -1,5 +1,5 @@
 <script>
-	export let name, width;
+	export let name, width, fillCol, svgPathCol = "";
 </script>
 
 {#if name === 'logo'}
@@ -188,7 +188,7 @@
 			fill-rule="evenodd" />
 	</svg>
 {:else if name === 'arrow-right'}
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width={width}>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {width}>
 		<title>Right Arrow</title>
 		<g id="Right-3" data-name="Right">
 			<path
@@ -196,6 +196,52 @@
 				style="none" />
 		</g>
 	</svg>
+{:else if name === 'github'}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		{width}
+		height={width}
+		viewVox="0 0 32 32"
+		style="--fill-col: var(--{svgPathCol});" class:colPath={svgPathCol !== ""}>
+		<path
+			fill="#2B414D"
+			d="M15.999 0c-8.836 0-16 7.164-16 16 0 8.837 7.164 16 16 16s16-7.163
+			16-16c0-8.836-7.164-16-16-16zm4.482
+			28.189c-.092-1.252-.195-2.803-.201-3.431-.04-.482-.092-1.708-1.256-2.491 4.621-.387 6.82-2.941
+			6.978-6.316.132-1.922-.632-3.612-1.989-4.976.069-1.459-.044-3.188-.138-3.948-1.042-.3-3.472.983-4.151
+			1.532-1.432-.556-4.937-.751-7.067 0-1.51-1.062-3.229-1.718-4.166-1.535-.865 1.917-.309
+			3.729-.14 3.945-1.114 1.018-2.668 2.271-2.246 4.896.677 3.849 3.385 5.925 7.745
+			6.433-.93.19-1.087.884-1.165 1.185-2.928
+			1.208-3.765-.746-4.135-1.255-1.229-1.521-2.332-1.08-2.4-1.056-.066.024-.116.12-.109.166.062.328.731.661.764.688.907.676
+			1.243 1.897 1.45 2.245 1.301 2.139 4.325 1.252 4.354 1.27.002.187-.021 1.761-.039
+			2.986-5.514-1.506-9.571-6.536-9.571-12.527 0-7.18 5.82-13 13-13s13 5.82 13 13c0 5.603-3.55
+			10.362-8.518 12.189z" />
+	</svg>
+{:else if name === 'link'}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		{width}
+		height={width}
+		viewBox="0 0 24 24"
+		style="--fill-col: var(--{fillCol});">
+		<path d="M0 0h24v24H0V0z" fill="none" />
+		<path
+			d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14
+			3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+	</svg>
+	<!-- 
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		height="24px"
+		viewBox="0 0 24 24"
+		width="24px"
+		fill="#000000">
+		<path d="M0 0h24v24H0V0z" fill="none" />
+		<path
+			d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14
+			3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+	</svg> -->
+
 {/if}
 
 <style lang="scss">
@@ -203,5 +249,13 @@
 
 	:global(svg, svg path) {
 		transition: fill 400ms, transform 250ms;
+	}
+
+	svg {
+		fill: v(fill-col);
+	}
+
+	svg.colPath path {
+		fill: v(svg-path-col);
 	}
 </style>
