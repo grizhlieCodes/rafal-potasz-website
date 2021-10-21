@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import Main from '$lib/Core/Main.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte';
