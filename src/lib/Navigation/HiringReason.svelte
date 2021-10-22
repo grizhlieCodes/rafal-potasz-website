@@ -57,6 +57,10 @@
 		place-items: center;
         background: transparent;
 
+        @include mq(desktop) {
+            grid: 1fr / 1fr 1fr;
+        }
+
 		button {
 			width: 100%;
 			height: 100%;
