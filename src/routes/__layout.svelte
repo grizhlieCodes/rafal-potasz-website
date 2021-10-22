@@ -18,8 +18,10 @@
 	import { calcRealSize } from '$lib/scripts/helperFunctions.js';
 	import darkMode from '$lib/stores/darkmode.js';
 	import LoadingSpinner from '$lib/Decorations/LoadingSpinner.svelte';
+	import HiringReason from '$lib/Navigation/HiringReason.svelte';
+	import hiringChoiceStore from '$lib/stores/hiringChoice.js'
 	import { fade } from 'svelte/transition';
-	import Head from '$lib/data/Head.svelte'
+	import Head from '$lib/data/Head.svelte';
 
 	let windowWidth,
 		scrollbarWidth,
@@ -65,22 +67,32 @@
 	};
 
 	$: transitionPage(key);
+
+	$: console.log($hiringChoiceStore)
+
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} on:load={() => darkMode.checkDarkmode()} />
-<Head {key}/>
+<svelte:window bind:innerWidth={windowWidth} on:load={() => {darkMode.checkDarkmode(); hiringChoiceStore.checkSessionStorage()}} />
 
-{#if showOverlay}
-	<Overlay on:closeModal={closeActiveModal} />
+<Head {key} />
+
+{#if $hiringChoiceStore === ''}
+	<HiringReason />
+	<!-- content here -->
+{:else}
+	{#if showOverlay}
+		<Overlay on:closeModal={closeActiveModal} />
+	{/if}
+
+	{#if showTransition}
+		<LoadingSpinner />
+	{/if}
+
+	<Header on:toggleMenu={toggleMenu} {showMobileNav} />
+	<slot />
+	<Footer />
+	<!-- else content here -->
 {/if}
-
-{#if showTransition}
-	<LoadingSpinner />
-{/if}
-
-<Header on:toggleMenu={toggleMenu} {showMobileNav} />
-<slot />
-<Footer />
 
 <style lang="scss">
 	@import '../scss-styles/mixins';
