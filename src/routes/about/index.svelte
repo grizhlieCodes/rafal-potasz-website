@@ -26,6 +26,10 @@
 	</Section>
 	<Section sectionClass="about__start span-900 top-borders" extraStyling="padding-top: 7.5rem; padding-bottom: 7.5rem">
 		<div class="flex-container">
+			<div class="img-container">
+				<img src="/images/about/shared/rafal-head-up.png" alt="Portait of Rafal looking sideways towards the light.">
+			</div>
+
 			<div class="text-container">
 				<Heading type="3" content="Why did I start learning web dev?" extraStyling="max-width: 37rem;" />
 				<p>
@@ -46,13 +50,15 @@
 					2 finance jobs. What was an interest quickly became an obsession.
 				</p>
 			</div>
-			<div class="img-container">
-				<img src="/images/about/shared/rafal-head-up.png" alt="Portait of Rafal looking sideways towards the light.">
-			</div>
+
 		</div>
 	</Section>
 	<Section sectionClass="about__offer span-900 top-borders" extraStyling="padding-top: 7.5rem; padding-bottom: 7.5rem">
 		<div class="flex-container">
+
+			<div class="img-container">
+				<img src="/images/about/shared/rafal-head-down.png" alt="Portait of Rafal looking sideways towards the light.">
+			</div>
 			<div class="text-container">
 				<Heading type="3" content="COOL story nerd, what CAN YOU ACTUALLY OFFER ME?"  extraStyling="max-width: 37rem;" />
 				<p>
@@ -74,9 +80,7 @@
 					which includes/d stakeholder management (build bridges instead of burning them).
 				</p>
 			</div>
-			<div class="img-container">
-				<img src="/images/about/shared/rafal-head-down.png" alt="Portait of Rafal looking sideways towards the light.">
-			</div>
+
 
 		</div>
 	</Section>
@@ -101,7 +105,7 @@
 
 	.flex-container {
 		width: 100%;
-		@include flex(column-reverse nowrap, center, center);
+		@include flex(column nowrap, center, center);
 		row-gap: 3.5rem;
 
 		.text-container {
