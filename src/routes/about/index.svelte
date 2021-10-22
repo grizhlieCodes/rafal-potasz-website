@@ -27,7 +27,7 @@
 	<Section sectionClass="about__start span-900 top-borders" extraStyling="padding-top: 7.5rem; padding-bottom: 7.5rem">
 		<div class="flex-container">
 			<div class="img-container">
-				<img src="/images/about/shared/rafal-head-up.png" alt="Portait of Rafal looking sideways towards the light.">
+				<img src="/images/about/shared/rafal-head-up.png" alt="Portait of Rafal looking sideways towards the light." class="flip">
 			</div>
 
 			<div class="text-container">
@@ -57,7 +57,7 @@
 		<div class="flex-container">
 
 			<div class="img-container">
-				<img src="/images/about/shared/rafal-head-down.png" alt="Portait of Rafal looking sideways towards the light.">
+				<img src="/images/about/shared/rafal-amsterdam.png" alt="Portait of Rafal looking sideways towards the light." >
 			</div>
 			<div class="text-container">
 				<Heading type="3" content="COOL story nerd, what CAN YOU ACTUALLY OFFER ME?"  extraStyling="max-width: 37rem;" />
@@ -102,6 +102,10 @@
 
 <style lang="scss">
 	@import '../../scss-styles/mixins';
+
+	.flip {
+		transform: scaleX(-1);
+	}
 
 	.flex-container {
 		width: 100%;
