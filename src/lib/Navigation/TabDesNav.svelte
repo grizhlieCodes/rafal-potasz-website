@@ -6,6 +6,7 @@
 	$: path = $page.path;
 	import { capitaliseFirstLetter } from '$lib/scripts/helperFunctions.js';
 	import Icon from '$lib/Decorations/Icon.svelte';
+	import { createEventDispatcher } from 'svelte';
 	let navData = [
 		{ name: 'home', link: '/' },
 		{ name: 'about', link: '/about' },
@@ -13,6 +14,7 @@
 	];
 
 	export let location;
+
 </script>
 
 {#if location === 'header'}
@@ -24,6 +26,7 @@
 				class:active={path === link}
 				use:flyItem={[5, 0, 0.2, i]}  data-direction="left" 
 				sveltekit:prefetch
+				
 				 >
 				<Icon {name} width="1.8rem"/>
 

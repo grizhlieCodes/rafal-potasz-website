@@ -18,6 +18,7 @@
 	const closeNavModal = () => {
 		dispatch('closeNavModal')
 	};
+
 </script>
 
 <nav class="navigation" out:fly={{ duration: 250, x: -100 }}>
@@ -27,7 +28,7 @@
 			class="navigation__link"
 			class:active={path === link}
 			use:flyItem={[20, 0, 0.1, i]} on:click={closeNavModal} data-direction="left"
-			sveltekit:prefetch>
+			sveltekit:prefetch >
 			<Icon {name} width="2.89rem" />
 			<p class="navigation__link-text">{capitaliseFirstLetter(name)}</p>
 		</a>

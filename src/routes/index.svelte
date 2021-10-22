@@ -12,11 +12,32 @@
 	import Technologies from '$lib/Home/technologies/Technologies.svelte';
 	import Portfolio from '$lib/Home/portfolio/Portfolio.svelte';
 	import ContactForm from '$lib/Home/contact-form/ContactForm.svelte';
+	import { onMount } from 'svelte';
 	let linesComp;
 
 	const recalculateLines = () => {
 		linesComp.rerunLines();
 	};
+	
+	let mounted = false;
+
+	onMount(() => {
+		mounted = true
+	});
+
+	const scrollToPortfolio = () => {
+		const href = window.location.href
+		if(href.includes('#portfolio-section')){
+			setTimeout(() => {
+				const portfolioSection = document.querySelector('#portfolio-section');
+				window.scrollTo(0, portfolioSection.offsetTop);
+			}, 600);
+		}
+	};
+
+	$: if(mounted){
+		scrollToPortfolio()
+	}
 </script>
 
 <Main marginBottom="10">
