@@ -9,7 +9,8 @@
                 "Click here if you're interested in",
                 "employing",
                 "me."
-            ]
+            ],
+            description: "If you're interested in hiring me as a front-end web developer, with an eye for design."
         },
         {
             choice: 'hire',
@@ -17,7 +18,8 @@
                 "Click here if you're interested in",
                 "hiring",
                 "me."
-            ]
+            ],
+            description: "If you want to own a website that you and your clients/viewers will love."
         }
     ]
 
@@ -30,9 +32,14 @@
 </script>
 
 <div class="interest-choice">
-    {#each data as {choice, text}}
+    {#each data as {choice, text, description}}
          <button on:click={() => handleClick(choice)}>
-             <p>{text[0]} <span>{text[1]}</span> {text[2]}</p>
+            <div class="text-container">
+                <p>{text[0]} <span>{text[1]}</span> {text[2]}</p>
+                <p class="description">
+                    {description}
+                </p>
+            </div>
          </button>
     {/each}
 </div>
@@ -61,6 +68,18 @@
             opacity: 0.5;
             transition: background 250ms, opacity 250ms, color 250ms;
 
+            .text-container {
+                @include flex(column nowrap, center, center);
+                gap: 2rem;
+
+                p.description {
+                    font-size: fluid(desktop, 1.8, 2.2);
+                    color: v(clr-text-faded);
+                    line-height: fluid(desktop, 1.8, 2.2);
+                    font-weight: 500; 
+                }
+            }
+
 			&:hover {
                 background: transparent;
                 opacity: 1;
@@ -69,6 +88,10 @@
                     color: v(clr-text-accent-cyan);
                 }
 			}
+
+            p.description {
+                // position:
+            }
 		}
 
 		p {

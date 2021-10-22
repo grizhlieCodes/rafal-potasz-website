@@ -1,7 +1,8 @@
 <script>
-	export let type = 2,
+	export let type = '2',
 		content = '',
 		content2 = '',
+		content3 = '',
 		headingClass = '',
 		direction = 'left',
 		extraStyling;
@@ -19,6 +20,12 @@
 	<h2 class={headingClass} data-direction={direction}>{content}</h2>
 {:else if type === '3'}
 	<h3 class={headingClass} data-direction={direction} style="{extraStyling}">{content}</h3>
+{:else if type === '1-hire'}
+	<h1 class={headingClass}>
+		{content} <br/>
+		<span>{content2}</span> <br/>
+		{content3}
+	</h1>
 {/if}
 
 <style lang="scss">
@@ -34,6 +41,10 @@
 	h1 {
 		font-size: fluid(desktop, 3.5, 5.5);
 		line-height: fluid(desktop, 3.5, 5.5);
+
+		&.hire-header span  {
+			color: v(clr-text-accent-red);
+		}
 	}
 
     h2 {

@@ -4,6 +4,7 @@
 	import HeroText from './HeroText.svelte';
 	import Section from '$lib/Core/Section.svelte';
 	import { getContext } from 'svelte';
+	
 
 	let size = getContext('size');
 </script>

@@ -1,9 +1,10 @@
 <script>
 	import { flyChildren } from '$lib/scripts/animations.js';
 	import Button from '$lib/Button.svelte';
-	import Heading from '$lib/Decorations/Heading.svelte'
+	import Heading from '$lib/Decorations/Heading.svelte';
+	import hiringChoiceStore from '$lib/stores/hiringChoice.js';
 
-	let buttons = [
+	let buttonsEmploy = [
 		{
 			content: 'my work 👆',
 			btnClass: 'primary',
@@ -17,21 +18,51 @@
 			link: '#contact-section'
 		}
 	];
+	let buttonsHire = [
+		{
+			content: 'book discovery call 🔎',
+			btnClass: 'primary',
+			type: 'anchor',
+			link: '#contact-section'
+		},
+		{
+			content: 'about me 🗿',
+			btnClass: 'secondary',
+			type: 'anchor',
+			link: '/about'
+		}
+	];
 </script>
 
-<div class="hero-text-container" 	
-use:flyChildren={['section.hero .hero-text-container > *', 5, 0, 0]}>
-	<Heading content="No-nonsense" content2="web developer" type="1" />
-	<p data-direction="right">
-		Hello 👋, I'm Rafal, a self-taught front-end web developer with an eye for design, obsessively
-		learning towards mastery of front-end design and development.
-	</p>
-	<div class="hero-text-container__cta-container"  data-direction="left">
-		{#each buttons as data}
-			<Button {...data} />
-		{/each}
+{#if $hiringChoiceStore === 'hire'}
+	<div
+		class="hero-text-container"
+		use:flyChildren={['section.hero .hero-text-container > *', 5, 0, 0]}>
+		<Heading content="Websites for" content2="Passionate" content3="People" type="1-hire" headingClass="hire-header" />
+		<p data-direction="right">
+			Hello 👋, I'm Rafal. I'm all about building beautifully elegant websites that you and your clients will love.
+		<div class="hero-text-container__cta-container" data-direction="left">
+			{#each buttonsHire as data}
+				<Button {...data} />
+			{/each}
+		</div>
 	</div>
-</div>
+{:else}
+	<div
+		class="hero-text-container"
+		use:flyChildren={['section.hero .hero-text-container > *', 5, 0, 0]}>
+		<Heading content="No-nonsense" content2="web developer" type="1" />
+		<p data-direction="right">
+			Hello 👋, I'm Rafal, a self-taught front-end web developer with an eye for design, obsessively
+			learning towards mastery of front-end design and development.
+		</p>
+		<div class="hero-text-container__cta-container" data-direction="left">
+			{#each buttonsEmploy as data}
+				<Button {...data} />
+			{/each}
+		</div>
+	</div>
+{/if}
 
 <style lang="scss">
 	@import '../../../scss-styles/mixins';
@@ -49,7 +80,6 @@ use:flyChildren={['section.hero .hero-text-container > *', 5, 0, 0]}>
 		}
 
 		h1 {
-
 		}
 
 		p {
@@ -67,7 +97,7 @@ use:flyChildren={['section.hero .hero-text-container > *', 5, 0, 0]}>
 				max-width: 34rem;
 			}
 
-			@include mq(desktop){
+			@include mq(desktop) {
 				max-width: 40rem;
 			}
 		}
