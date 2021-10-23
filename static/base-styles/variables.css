@@ -96,6 +96,11 @@ html {
 			--clr-icon-bg-primary: var(--cyan-600);
 			--clr-icon-bg-secondary: var(--cyan-700);
 
+			--clr-works-card-bg: var(--blue-900);
+			--clr-works-card-red-accent: var(--red-500);
+			--clr-works-card-cyan-accent: var(--cyan-600);
+			
+
 }
 
 body.light {
