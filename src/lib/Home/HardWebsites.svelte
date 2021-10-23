@@ -3,6 +3,7 @@
 	import Heading from '$lib/Decorations/Heading.svelte';
     import {getContext} from 'svelte'
     import {flyChildren} from '$lib/scripts/animations.js'
+    import Icon from '$lib/Decorations/Icon.svelte'
     let size = getContext('size')
 </script>
 
@@ -15,17 +16,43 @@
         <p data-direction="left" >If you have already considered, or even researched, making a website you will undoubtedly have found that it's more difficult that it might seem in the beginning.</p>
         <p data-direction="right" >How do you pick the right website name? How do you build it, Squarespace, Webflow, a web developer? Where do you host it?</p>
         <p data-direction="left" >How do you stick everything together and actually launch the entire thing online?</p>
+        <div class="bg-triangle normal"  data-direction="left">
+            <Icon name="triangle" width="35rem" />
+        </div>
 	</div>
 </Section>
 
 <style lang="scss">
 	@import '../../scss-styles/mixins';
 
+    :global(.bg-triangle svg path){
+        stroke: v(clr-line-bg);
+    }
+
 	.flex-container {
 		@include flex(column nowrap, start, start);
 		width: 100%;
 		height: auto;
 		gap: 1.5rem;
+        position: relative;
+
+        .bg-triangle {
+			position: absolute;
+			z-index: v(z-index-behind-bg);
+            // top: 0;
+
+			&.normal {
+				left: 50%;
+				transform: translate(-50%, 0%);
+				top: -5rem;
+			}
+
+			&.right {
+				top: -5rem;
+				right: 0;
+				transform: rotate(180deg) translate(70%, 15%);
+			}
+		}
 
         p:nth-of-type(1){
             margin-top: 1.7rem;

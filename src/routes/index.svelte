@@ -14,12 +14,18 @@
 	import HardWebsites from '$lib/Home/HardWebsites.svelte'
 	import HowItWorks from '$lib/Home/HowItWorks.svelte'
 	import DarkMode from '$lib/stores/darkmode.js'
+	import HireLines from '$lib/Decorations/HireLines.svelte'
 	import { onMount } from 'svelte';
 	
-	let linesComp;
+	let employLinesComp;
+	let hireLinesComp;
 
 	const recalculateLines = () => {
-		linesComp.rerunLines();
+		if($hiringChoiceStore === 'employ'){
+			employLinesComp.rerunLines();
+		} else {
+			hireLinesComp.rerunLines();
+		}
 	};
 
 	let mounted = false;
@@ -59,8 +65,9 @@
 </Main>
 
 {#if $hiringChoiceStore === 'employ'}
-	 <EmployLines bind:this={linesComp} />
+	 <EmployLines bind:this={employLinesComp} />
 {:else}
+		<HireLines bind:this={hireLinesComp} />
 {/if}
 
 <style lang="scss">
