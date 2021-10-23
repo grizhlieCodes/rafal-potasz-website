@@ -2,6 +2,7 @@
 	import Section from '$lib/Core/Section.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte';
 	import { getContext } from 'svelte';
+	import {flyChildren} from '$lib/scripts/animations.js'
 	let size = getContext('size');
 	let cardsData = [
 		{
@@ -31,9 +32,9 @@
 </script>
 
 <Section sectionClass="how-it-works-section span-1220">
-	<div class="flex-container">
+	<div class="flex-container" use:flyChildren={['section.how-it-works-section .flex-container > *:not(.cards-container)', 5, 0, 0.1]}>
 		<Heading type="2" content="how it works" />
-		<div class="cards-container">
+		<div class="cards-container"  use:flyChildren={['section.how-it-works-section .flex-container .cards-container > *', 5, 0, 0.1]}>
 			{#each cardsData as { title, name, content, alt }}
 				<div class="card">
 					<img src="/images/home/shared/how-i-help/{name}.png" {alt} class="card-img" />

@@ -2,18 +2,19 @@
 	import Section from '$lib/Core/Section.svelte';
 	import Heading from '$lib/Decorations/Heading.svelte';
     import {getContext} from 'svelte'
+    import {flyChildren} from '$lib/scripts/animations.js'
     let size = getContext('size')
 </script>
 
 <Section sectionClass="websites-hard-section span-1220">
-	<div class="flex-container">
+	<div class="flex-container" use:flyChildren={['section.websites-hard-section .flex-container *', 5, 0, 0.1]}>
 		<Heading content="websites are hard" type="2" />
         {#if $size === 'desktop'}
-             <div class="triangle" />
+             <div class="triangle" data-direction="right" />
         {/if}
-        <p>If you have already considered, or even researched, making a website you will undoubtedly have found that it's more difficult that it might seem in the beginning.</p>
-        <p>How do you pick the right website name? How do you build it, Squarespace, Webflow, a web developer? Where do you host it?</p>
-        <p>How do you stick everything together and actually launch the entire thing online?</p>
+        <p data-direction="left" >If you have already considered, or even researched, making a website you will undoubtedly have found that it's more difficult that it might seem in the beginning.</p>
+        <p data-direction="right" >How do you pick the right website name? How do you build it, Squarespace, Webflow, a web developer? Where do you host it?</p>
+        <p data-direction="left" >How do you stick everything together and actually launch the entire thing online?</p>
 	</div>
 </Section>
 
