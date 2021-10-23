@@ -20,6 +20,8 @@
 	<h2 class={headingClass} data-direction={direction}>{content}</h2>
 {:else if type === '3'}
 	<h3 class={headingClass} data-direction={direction} style="{extraStyling}">{content}</h3>
+{:else if type === '4'}
+	<h4 class={headingClass} data-direction={direction} style="{extraStyling}">{content}</h4>
 {:else if type === '1-hire'}
 	<h1 class={headingClass}>
 		{content} <br/>
@@ -31,7 +33,7 @@
 <style lang="scss">
 	@import '../../scss-styles/mixins';
 
-	:is(h1, h2, h3) {
+	:is(h1, h2, h3, h4) {
 		font-family: v(fira);
 		font-weight: 700;
 		color: v(clr-text-heading);
@@ -57,5 +59,9 @@
 		font-size: fluid(desktop, 2, 2.5);
 		line-height: fluid(desktop, 2, 2.5);
 		text-transform: uppercase;
+	}
+	h4 {
+		font-size: fluid(desktop, 1.7, 2);
+		font-weight: 500;
 	}
 </style>
