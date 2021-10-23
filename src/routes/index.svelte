@@ -13,7 +13,9 @@
 	import hiringChoiceStore from '$lib/stores/hiringChoice.js';
 	import HardWebsites from '$lib/Home/HardWebsites.svelte'
 	import HowItWorks from '$lib/Home/HowItWorks.svelte'
+	import DarkMode from '$lib/stores/darkmode.js'
 	import { onMount } from 'svelte';
+	
 	let linesComp;
 
 	const recalculateLines = () => {
@@ -24,6 +26,7 @@
 
 	onMount(() => {
 		mounted = true;
+		DarkMode.checkDarkmode()
 	});
 
 	const scrollToPortfolio = () => {
