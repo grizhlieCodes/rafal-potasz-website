@@ -10,7 +10,7 @@
 <Section sectionClass="isnt-you span-1220">
 	<div
 		class="flex-container"
-		use:flyChildren={['section.websites-hard-section .flex-container *', 5, 0, 0.1]}>
+		use:flyChildren={['section.isnt-you .flex-container *', 5, 0, 0.4]}>
 		<Heading content="it just" content2="isn't you" type="2-special" />
 		<div class="triangle" data-direction="right" />
 		<p data-direction="left">You might have tried to or at least considered doing it yourself.</p>
