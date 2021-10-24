@@ -56,6 +56,7 @@
 		grid: 1fr 1fr / 1fr;
 		place-items: center;
         background: transparent;
+        padding: 5rem 0;
 
         @include mq(desktop) {
             grid: 1fr / 1fr 1fr;
