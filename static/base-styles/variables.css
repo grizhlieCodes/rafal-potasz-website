@@ -51,6 +51,7 @@ html {
         --clr-text-last: var(--white-38);
         --clr-text-accent-cyan: var(--cyan-600);
         --clr-text-accent-red: var(--red-300);
+        --clr-text-accent-red-strong: var(--red-500);
         --clr-text-btn: var(--blue-800);
 		--clr-text-footer-copyright: var(--blue-500);
 

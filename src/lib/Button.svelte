@@ -1,13 +1,13 @@
 <script>
-	export let link, content, type, btnClass, disabled;
+	export let link, content, type, btnClass, disabled, extraContent = "";
 </script>
 
 {#if type === 'anchor'}
-	<a href={link} class={btnClass}>{content}</a>
+	<a href={link} class={btnClass} style={extraContent}>{content}</a>
 {:else if type === 'button'}
-	<button type="button" on:click class={btnClass} {disabled}>{content}</button>
+	<button type="button" on:click class={btnClass} {disabled} style={extraContent}>{content}</button>
 {:else if type === 'submit'}
-	<button type="submit" on:click class={btnClass} {disabled}>{content}</button>
+	<button type="submit" on:click class={btnClass} {disabled} style={extraContent}>{content}</button>
 {/if}
 
 <style lang="scss">

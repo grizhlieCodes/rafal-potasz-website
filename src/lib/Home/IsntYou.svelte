@@ -7,26 +7,28 @@
 	let size = getContext('size');
 </script>
 
-<Section sectionClass="websites-hard-section span-1220">
+<Section sectionClass="isnt-you span-1220">
 	<div
 		class="flex-container"
 		use:flyChildren={['section.websites-hard-section .flex-container *', 5, 0, 0.1]}>
-		<Heading content="websites are hard" type="2" />
+		<Heading content="it just" content2="isn't you" type="2-special" />
 		<div class="triangle" data-direction="right" />
+		<p data-direction="left">You might have tried to or at least considered doing it yourself.</p>
+		<p data-direction="right">
+			But more often than not the results do not fill you with excitement and joy as the website
+			does not reflect who you really are, what you're all about - it doesn't capture your essence,
+			your uniqueness.
+		</p>
 		<p data-direction="left">
-			If you have already considered, or even researched, making a website you will undoubtedly have
-			found that it's more difficult that it might seem in the beginning.
+			And these are the building blocks of what makes people come to
+			<span>you</span>
+			. And you know that a website is a great way for you to digitally make a great first
+			impression.
 		</p>
 		<p data-direction="right">
-			How do you pick the right website name? How do you build it, Squarespace, Webflow, a web
-			developer? Where do you host it?
+			<i>It can be better.</i>
 		</p>
-		<p data-direction="left">
-			How do you stick everything together and actually launch the entire thing online?
-		</p>
-		<div class="bg-triangle normal" data-direction="left">
-			<Icon name="triangle" width="36rem" />
-		</div>
+
 	</div>
 </Section>
 
@@ -43,33 +45,15 @@
 		height: auto;
 		gap: 1.5rem;
 		position: relative;
-
 		p {
 			text-align: center;
-		}
-
-		.bg-triangle {
-			position: absolute;
-			z-index: v(z-index-behind-bg);
-			// top: 0;
-
-			&.normal {
-				left: 50%;
-				transform: translate(-50%, 0%);
-				top: -5rem;
-			}
-			&.right {
-				top: -5rem;
-				right: 0;
-				transform: rotate(180deg) translate(70%, 15%);
-			}
 		}
 	}
 
 	.triangle {
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
-		border-top: 20px solid v(clr-text-accent-cyan);
+		border-top: 20px solid v(clr-text-accent-red-strong);
         margin: 1.7rem 0;
 	}
 
@@ -81,5 +65,10 @@
 		color: v(clr-text-focused);
 		font-size: fluid(desktop, 1.5, 1.65);
 		line-height: fluid(desktop, 1.6, 1.9);
+
+		span {
+			color: v(clr-text-accent-cyan);
+			font-weight: 600;
+		}
 	}
 </style>

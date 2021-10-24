@@ -12,7 +12,9 @@
 	import ContactForm from '$lib/Home/contact-form/ContactForm.svelte';
 	import hiringChoiceStore from '$lib/stores/hiringChoice.js';
 	import HardWebsites from '$lib/Home/HardWebsites.svelte'
+	import IsntYou from '$lib/Home/IsntYou.svelte'
 	import HowItWorks from '$lib/Home/HowItWorks.svelte'
+	import DiveDeep from '$lib/Home/DiveDeep.svelte'
 	import DarkMode from '$lib/stores/darkmode.js'
 	import HireLines from '$lib/Decorations/HireLines.svelte'
 	import { onMount } from 'svelte';
@@ -58,7 +60,12 @@
 	{:else}
 		<!-- else content here -->\
 		<HardWebsites />
+
+		<IsntYou />
+		
 		<HowItWorks />
+		
+		<DiveDeep />
 	{/if}
 	<Portfolio on:recalculateLines={recalculateLines} />
 	<ContactForm />

@@ -18,6 +18,8 @@
 	</h1>
 {:else if type === '2'}
 	<h2 class={headingClass} data-direction={direction}>{content}</h2>
+{:else if type === '2-special'}
+	<h2 class={headingClass} data-direction={direction}> {content} <span>{content2}</span> </h2>
 {:else if type === '3'}
 	<h3 class={headingClass} data-direction={direction} style="{extraStyling}">{content}</h3>
 {:else if type === '4'}
@@ -53,6 +55,10 @@
         font-size: fluid(desktop, 2.5, 4);
         line-height: fluid(desktop, 2.5, 4);
         text-transform: uppercase;
+
+		span {
+			color: v(clr-text-accent-red-strong);
+		}
     }
 
 	h3 {

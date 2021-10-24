@@ -5,10 +5,11 @@
 		headerDimensions = { width: 0, marginBottom: 0 },
 		heroDimensions = { width: 0, marginBottom: 0 },
 		websitesHardDimensions = { width: 0, marginBottom: 0 },
+		isntYouDimensions = { width: 0, marginBottom: 0 },
 		howWorksDimensions = { width: 0, marginBottom: 0 },
+		diveDeepDimensions = { width: 0, marginBottom: 0 },
 		portfolioDimensions = { width: 0, marginBottom: 0 },
 		formDimensions = { width: 0, marginBottom: 0 },
-		philDimensions = { width: 0, marginBottom: 0 },
 		sectionGap = 0,
 		loaded;
 
@@ -16,7 +17,9 @@
 		headerDimensions = returnElDimensions('header');
 		heroDimensions = returnElDimensions('section.hero');
 		websitesHardDimensions = returnElDimensions('section.websites-hard-section');
+		isntYouDimensions = returnElDimensions('section.isnt-you');
 		howWorksDimensions = returnElDimensions('section.how-it-works-section');
+		diveDeepDimensions = returnElDimensions('section.dive-deep');
 		portfolioDimensions = returnElDimensions('section.portfolio');
 		formDimensions = returnElDimensions('section.contact-form');
 	};
@@ -65,19 +68,31 @@
 		style="height: {websitesHardDimensions.height}px; margin-bottom: {websitesHardDimensions.marginBottom}px;">
 		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-15%" />
 	</div>
+
 	<div
 		class="section fourth-section"
+		style="height: {isntYouDimensions.height}px; margin-bottom: {isntYouDimensions.marginBottom}px;">
+		<Line direction="horizontal" dimension="70vw" right="0%" bottom="-12%" />
+	</div>
+
+	<div
+		class="section fifth-section"
 		style="height: {howWorksDimensions.height}px; margin-bottom: {howWorksDimensions.marginBottom}px;">
+		<Line direction="horizontal" dimension="70vw" left="0%" bottom="-10%" />
+	</div>
+	<div
+		class="section sixth-section"
+		style="height: {diveDeepDimensions.height}px; margin-bottom: {diveDeepDimensions.marginBottom}px;">
 		<Line direction="horizontal" dimension="70vw" right="0%" bottom="-5%" />
 	</div>
 	<div
-		class="section fifth-section"
+		class="section seventh-section"
 		style="height: {portfolioDimensions.height}px; margin-bottom: {portfolioDimensions.marginBottom}px;">
 		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
 		<span class="circle" />
 	</div>
 	<div
-		class="section sixth-section"
+		class="section eighth-section"
 		style="height: {formDimensions.marginBottom}px; margin-bottom: {formDimensions.height}px;">
 		<!-- <Line direction="horizontal" dimension="70vw" right="0%" bottom="-20%"/> -->
 		<!-- <span class="circle" /> -->

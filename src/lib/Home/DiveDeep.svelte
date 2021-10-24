@@ -3,30 +3,38 @@
 	import Heading from '$lib/Decorations/Heading.svelte';
 	import { getContext } from 'svelte';
 	import { flyChildren } from '$lib/scripts/animations.js';
-	import Icon from '$lib/Decorations/Icon.svelte';
-	let size = getContext('size');
+	import Button from '$lib/Button.svelte';
+
+	const buttonData = {
+		content: 'book discovery call 🔎',
+		btnClass: 'primary',
+		type: 'anchor',
+		link: '#contact-section',
+		extraContent: "margin-top: 4rem;"
+	};
 </script>
 
-<Section sectionClass="websites-hard-section span-1220">
+<Section sectionClass="dive-deep span-1220">
 	<div
 		class="flex-container"
 		use:flyChildren={['section.websites-hard-section .flex-container *', 5, 0, 0.1]}>
-		<Heading content="websites are hard" type="2" />
+		<Heading content="i dive deep" type="2" />
 		<div class="triangle" data-direction="right" />
 		<p data-direction="left">
-			If you have already considered, or even researched, making a website you will undoubtedly have
-			found that it's more difficult that it might seem in the beginning.
+			I approach every project as a unique problem that requires a unique solution - I'm not into
+			templates or quick fixes and you can bet your ass that I am passionate and serious about what
+			I do.
 		</p>
 		<p data-direction="right">
-			How do you pick the right website name? How do you build it, Squarespace, Webflow, a web
-			developer? Where do you host it?
+			I improve daily and take my work seriously. I don't pretend to have all the solutions
+			initially but I do come up with them ultimately because I am great at what I do: distilling a
+			precise problem and delivering a precise solution.
 		</p>
-		<p data-direction="left">
-			How do you stick everything together and actually launch the entire thing online?
-		</p>
-		<div class="bg-triangle normal" data-direction="left">
-			<Icon name="triangle" width="36rem" />
-		</div>
+		<p data-direction="left">Just thought I'd share a few words about who you'll work with.</p>
+		<!-- <div class="button-container"> -->
+			<Button
+				{...buttonData} />
+		<!-- </div> -->
 	</div>
 </Section>
 
@@ -48,21 +56,8 @@
 			text-align: center;
 		}
 
-		.bg-triangle {
-			position: absolute;
-			z-index: v(z-index-behind-bg);
-			// top: 0;
-
-			&.normal {
-				left: 50%;
-				transform: translate(-50%, 0%);
-				top: -5rem;
-			}
-			&.right {
-				top: -5rem;
-				right: 0;
-				transform: rotate(180deg) translate(70%, 15%);
-			}
+		.button-container {
+			margin-top: 4rem;
 		}
 	}
 
@@ -70,7 +65,7 @@
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
 		border-top: 20px solid v(clr-text-accent-cyan);
-        margin: 1.7rem 0;
+		margin: 1.7rem 0;
 	}
 
 	p {
