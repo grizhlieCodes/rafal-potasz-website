@@ -10,20 +10,15 @@
 <Section sectionClass="isnt-you span-1220">
 	<div
 		class="flex-container"
-		use:flyChildren={['section.isnt-you .flex-container *', 5, 0, 0.4]}>
-		<Heading content="it just" content2="isn't you" type="2-special" />
+		use:flyChildren={['section.isnt-you .flex-container *', 5, 0, 0.1]}>
+		<Heading content="you might be" content2="missing out" type="2-special" />
 		<div class="triangle" data-direction="right" />
-		<p data-direction="left">You might have tried to or at least considered doing it yourself.</p>
+		<p data-direction="left">When we fail to capture our unoqueness and essence within our website it could yield an unavoidable outcome: someone else will steal customers/attention from you as they've succeeded at standing out.</p>
 		<p data-direction="right">
-			But more often than not the results do not fill you with excitement and joy as the website
-			does not reflect who you really are, what you're all about - it doesn't capture your essence,
-			your uniqueness.
+			It is my observation that whilst a lot of developers make good websites, they struggle capturing the essence and uniqueness of their clients.
 		</p>
 		<p data-direction="left">
-			And these are the building blocks of what makes people come to
-			<span>you</span>
-			. And you know that a website is a great way for you to digitally make a great first
-			impression.
+			This results in <span>generic websites</span> that simply can't champion the perspectives and spirit of their owners.
 		</p>
 		<p data-direction="right">
 			<i>It can be better.</i>
