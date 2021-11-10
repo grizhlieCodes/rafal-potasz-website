@@ -32,9 +32,9 @@
 </script>
 
 <Section sectionClass="how-it-works-section span-1220">
-	<div class="flex-container" use:flyChildren={['section.how-it-works-section .flex-container > *:not(.cards-container)', 5, 0, 0.1]}>
+	<div class="flex-container" use:flyChildren={['section.how-it-works-section .flex-container > *:not(.cards-container)', 5, 0, 0]}>
 		<Heading type="2" content="how it works" />
-		<div class="cards-container"  use:flyChildren={['section.how-it-works-section .flex-container .cards-container > *', 5, 0, 0.1]}>
+		<div class="cards-container"  use:flyChildren={['section.how-it-works-section .flex-container .cards-container > *', 5, 0, 0]}>
 			{#each cardsData as { title, name, content, alt }}
 				<div class="card">
 					<img src="/images/home/shared/how-i-help/{name}.png" {alt} class="card-img" />

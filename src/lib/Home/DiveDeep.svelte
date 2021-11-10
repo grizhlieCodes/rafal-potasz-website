@@ -17,7 +17,7 @@
 <Section sectionClass="dive-deep span-1220">
 	<div
 		class="flex-container"
-		use:flyChildren={['section.dive-deep .flex-container *', 5, 0, 0.4]}>
+		use:flyChildren={['section.dive-deep .flex-container *', 5, 0, 0]}>
 		<Heading content="i dive deep" type="2" />
 		<div class="triangle" data-direction="right" />
 		<p data-direction="left">

@@ -74,7 +74,7 @@
 {#if $hiringChoiceStore === 'employ'}
 	 <EmployLines bind:this={employLinesComp} />
 {:else}
-		<HireLines bind:this={hireLinesComp} />
+	<HireLines bind:this={hireLinesComp} />
 {/if}
 
 <style lang="scss">
