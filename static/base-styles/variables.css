@@ -142,7 +142,11 @@ body.light {
 		--clr-tech-info-bg: var(--blue-500);
 
 	/* Filter Colors */
-	--clr-portfolio-filter-accent: var(--cyan-700)
+	--clr-portfolio-filter-accent: var(--cyan-700);
+
+	--clr-works-card-bg: var(--white-97);
+	--clr-works-card-red-accent: var(--red-300);
+	--clr-works-card-cyan-accent: var(--cyan-700);
 }
 
 /* What do we need variables for? */
