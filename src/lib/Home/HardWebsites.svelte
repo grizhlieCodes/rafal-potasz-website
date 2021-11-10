@@ -10,7 +10,11 @@
 <Section sectionClass="websites-hard-section span-1220">
 	<div
 		class="flex-container"
+<<<<<<< HEAD
 		use:flyChildren={['section.websites-hard-section .flex-container *', 5, 0, 0]}>
+=======
+		use:flyChildren={['section.websites-hard-section .flex-container *', 5, 0, 0.1]}>
+>>>>>>> 81a38544b8a5317dc8b5fc096340f1ca00727d66
 		<Heading content="websites are hard" type="2" />
 		<div class="triangle" data-direction="right" />
 		<p data-direction="left">
