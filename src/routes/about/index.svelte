@@ -112,8 +112,8 @@
 					I use my character trait of distiling information to a singular vision for the benefit of my clients. I narrow down the exact need and provide an exact solution.
 				</p>
 				<p>
-					<strong>Honest fucking guy.</strong>
-					Wasn't sure how else to word it. I just want to make it painfully clear that I will only accept to work with someone if I truly believe I can help them. If the project is truly outside of my reach, my personal ethics simply won't allow me to accept the job. Am I'm a realistic at heart - knowing what I can and can't do is somewhat of a personal expertise. 
+					<strong>Straight shooter.</strong>
+					I have 1 objective: deliver the best possible website to you that I can craft. I will only accept to work with someone if I truly believe I can help them. If the project is outside of my skillset and problem solving abilities or expertise, my personal ethics simply won't allow me to accept the job. Am I'm a realistic at heart - knowing what I can and can't do is somewhat of a personal expertise. 
 				</p>
 
 				{/if}
