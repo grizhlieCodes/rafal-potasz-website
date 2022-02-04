@@ -13,7 +13,7 @@
 		use:flyChildren={['section.isnt-you .flex-container *', 5, 0, 0]}>
 		<Heading content="it just" content2="isn't you" type="2-special" />
 		<div class="triangle" data-direction="right" />
-		<p data-direction="left">When we fail to capture our unoqueness and essence within our website it could yield an unavoidable outcome: someone else will steal customers/attention from you as they've succeeded at standing out.</p>
+		<p data-direction="left">When we fail to capture our uniqueness and essence within our website it could yield an unavoidable outcome: someone else will steal customers/attention from you as they've succeeded at standing out.</p>
 		<p data-direction="right">
 			It is my observation that whilst a lot of developers make good websites, they struggle capturing the essence and uniqueness of their clients.
 		</p>
