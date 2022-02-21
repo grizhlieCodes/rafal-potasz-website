@@ -109,7 +109,7 @@
 				</p>
 				<p>
 					<strong>A systemic thinker who distils information and provides an accurate solution.</strong>
-					I use my character trait of distiling information to a singular vision for the benefit of my clients. I narrow down the exact need and provide an exact solution.
+					I use my character trait of distilling information to a singular vision for the benefit of my clients. I narrow down the exact need and provide an exact solution.
 				</p>
 				<p>
 					<strong>Straight shooter.</strong>
